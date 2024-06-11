@@ -3,7 +3,6 @@ import { MobileNav, IconButton } from "@material-tailwind/react";
 import { TiThMenu } from "react-icons/ti";
 import img1 from "../../assets/image/dla_logo_gradient.svg";
 import img2 from "../../assets/image/GreekTheatre.webp";
-import { ImCross } from "react-icons/im";
 import { FaFacebook, FaInstagram, FaPlus, FaSearch, FaTwitter } from "react-icons/fa";
 import { AiFillTikTok } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";

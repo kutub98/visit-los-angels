@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="35px" viewBox="0 0 22 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-next-shadow</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-15.5%" y="-15.5%" width="131.0%" height="131.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-next-shadow" filter="url(#filter-1)" transform="translate(-10.000000, 3.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <polygon id="+" transform="translate(14.485281, 14.485282) rotate(45.000000) translate(-14.485281, -14.485282) " points="24.7279216 24.7279223 22.7746736 24.7279223 22.7746736 6.19588864 4.24264057 6.19588864 4.24264057 4.24264094 24.7279216 4.24264094"></polygon>
+        </g>
+    </g>
+</svg>

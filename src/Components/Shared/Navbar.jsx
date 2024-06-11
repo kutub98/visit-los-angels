@@ -28,7 +28,7 @@ const Navbar1 = () => {
 
   return (
     <div>
-      <Navbar className="bg-[#131313] mx-auto">
+      <main className="bg-[#333333] px-5 ">
         <div className="flex justify-between items-center">
           <div>
             <IconButton
@@ -75,7 +75,7 @@ const Navbar1 = () => {
 
             <div className="max-md-hidden">
               <button onClick={toggleSearch}>
-                <CiSearch className="text-4xl" />
+                <CiSearch className="text-4xl text-white" />
               </button>
             </div>
           </div>
@@ -117,7 +117,7 @@ const Navbar1 = () => {
             </div>
           </div>
         </MobileNav>
-      </Navbar>
+      </main>
     </div>
   );
 };

@@ -3,9 +3,9 @@ import { MobileNav, IconButton } from "@material-tailwind/react";
 import { TiThMenu } from "react-icons/ti";
 import img1 from "../../assets/image/dla_logo_gradient.svg";
 import img2 from "../../assets/image/GreekTheatre.webp";
-import { ImCross } from "react-icons/im";
 import { FaFacebook, FaInstagram, FaPlus, FaSearch, FaTwitter } from "react-icons/fa";
 import { AiFillTikTok } from "react-icons/ai";
+import { RxCross1 } from "react-icons/rx";
 
 const Navbar1 = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -95,85 +95,75 @@ const Navbar1 = () => {
 
         <MobileNav
           open={openNav}
-          className="fixed inset-0 z-50 bg-gradient-to-b from-[#ff9876]  via-[#ab67aa]  to-[#1cacb1]  h-svh w-full "
+          className=" absolute md:fixed  overflow-y-auto inset-0 z-50 bg-gradient-to-b from-[#ff9876]  via-[#ab67aa]  to-[#1cacb1]  h-full w-full "
         >
           <div className="">
             <button
               onClick={() => setOpenNav(false)}
               className="absolute top-4 left-4 text-lg font-bold"
             >
-              <ImCross className="text-3xl" />
+              <RxCross1 className="text-3xl text-white" />
             </button>
 
-            <div className="p-20 grid grid-cols-2 gap-7">
+            <div className="p-5 grid md:grid-cols-2   gap-7">
 
               <div className="pl-8  flex flex-col justify-start ">
 
-                <div className="text-2xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
+                <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
                   Things to do
                   <h2>
-                    <FaPlus />
+                    <FaPlus className="text-[16px]" />
                   </h2>
                 </div>
 
                 
-                <div className="text-2xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
+                <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
                   Eat and Drinks
                   <h2>
-                    <FaPlus />
+                    <FaPlus className="text-[16px]" />
                   </h2>
                 </div>
 
-                <div className="text-2xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
+                <div className="textxl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
                   Find Events
-                  <h2>
-                    <FaPlus />
-                  </h2>
+                
                 </div>
 
-                <div className="text-2xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
+                <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
                Itineraries
-                  <h2>
-                    <FaPlus />
-                  </h2>
+                  
                 </div>
 
-                <div className="text-2xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
+                <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
                 Where to stay
-                  <h2>
-                    <FaPlus />
-                  </h2>
+                
                 </div>
 
-                <div className="text-2xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
+                <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
              Celebrate LA Heritage
                   <h2>
-                    <FaPlus />
+                    <FaPlus className="text-[16px]" />
                   </h2>
                 </div>
 
-                <div className="text-2xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
+                <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
                 Tourist Information
-                  <h2>
-                    <FaPlus />
-                  </h2>
+                 
                 </div>
 
-                <div className="text-2xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
+                <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
                Metting
-                  <h2>
-                    <FaPlus />
-                  </h2>
+                 
                 </div>
 
-                <div className="text-2xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
+                <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
                 About LA Tourism
                   <h2>
-                    <FaPlus />
+                    <FaPlus className="text-[16px]" />
                   </h2>
                 </div>
 
-              <div>
+              <div className="max-md-hidden">
                 <h2 className="text-sm ml-5  text-white hover:border-b-2">Login</h2>
                 <div className="flex gap-3 mt-5">
                   <p><FaFacebook className="text-xl"/></p>
@@ -187,10 +177,20 @@ const Navbar1 = () => {
 
               <div className="text-white">
                 <h1 className="text-3xl font-semibold">Today Must Read</h1>
-                <img src={img2} className="mt-2" alt="" />
+                <img src={img2} className="mt-2 w-[450px] " alt="" />
                 <p className="text-sm mt-2 font-semibold">
                   HIDDEN GEMS OF LOS ANGELES
                 </p>
+              </div>
+
+              <div className="md:hidden">
+                <h2 className="text-sm ml-5  text-white hover:border-b-2">Login</h2>
+                <div className="flex gap-3 mt-5">
+                  <p><FaFacebook className="text-xl"/></p>
+                  <p><FaTwitter  className="text-xl"/></p>
+                  <p><FaInstagram className="text-xl"/></p>
+                  <p><AiFillTikTok className="text-xl"/></p>
+                </div>
               </div>
             </div>
           </div>

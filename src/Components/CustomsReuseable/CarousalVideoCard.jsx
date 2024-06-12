@@ -19,12 +19,16 @@ const CarousalVideoCard = ({
 
   return (
     <div
-      className={`col-span-12 ${spanClass} relative cursor-pointer spnaBox`}
+      className={`col-span-12 ${spanClass} relative cursor-pointer spnaBox `}
       onClick={handleCardClick}
     >
-      <div className="w-full h-[450px] relative imgBox">
+      <div className="w-full h-[650px] relative imgBox">
         {!isPlaying ? (
-          <img src={finalThumbnailUrl} alt="Video Thumbnail" />
+          <img
+            src={finalThumbnailUrl}
+            className=" w-full h-full"
+            alt="Video Thumbnail"
+          />
         ) : (
           <iframe
             width="100%"
@@ -46,15 +50,13 @@ const CarousalVideoCard = ({
         </div>
       </div>
       <div className="absolute bottom-10 left-0 w-full p-4 text-left">
-        <h1 className="text-3xl text-white font-bold mt-4 hover:underline">
+        <h1 className="text-3xl text-white font-bold my-4 hover:underline">
           {title}
         </h1>
-        <h1 className="text-lg mt-3">
-          by
-          <span className="text-lg text-white hover:underline ml-2">
-            {author}
-          </span>
-        </h1>
+
+        <span className="text-lg text-white hover:underline mt-2">
+          {author}
+        </span>
       </div>
     </div>
   );

@@ -1,8 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Featurs  */
+.imgBox {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+}
+
+.imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.spnaBox:hover .imgBox img {
+  transform: scale(1.1) translate(0.5rem, 0.5rem);
+}
+
+.CustomBg {
+  background: linear-gradient(
+    to top right,
+    rgba(28, 96, 150, 1),
+    rgba(0, 212, 255, 0)
+  );
+  position: absolute;
+  inset: 0;
+}
+
+.CustomBg {
+  background-image: linear-gradient(
+    to top right,
+    rgba(28, 96, 150, 1),
+    rgba(0, 212, 255, 0)
+  );
+}
+
 @media not all and (min-width: 768px) {
-    .max-md-hidden {
-        display: none;
-    }
+  .max-md-hidden {
+    display: none;
   }
+}

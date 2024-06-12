@@ -26,8 +26,9 @@ const Navbar1 = () => {
 
   return (
     <div>
-      <main className="bg-[#333333] px-5 fixed z-40 w-full">
-        <div className="flex justify-between items-center">
+      <main className="  ">
+
+        <div className="bg-[#333333] fixed z-40 w-full px-5 flex justify-between items-center">
           <div>
             <IconButton
               variant="text"
@@ -74,6 +75,7 @@ const Navbar1 = () => {
             </div>
           </div>
         </div>
+
         <div>
           {searchVisible && (
             <div className="md:hidden relative  flex justify-end  mx-auto gap-2  pb-2">

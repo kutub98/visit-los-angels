@@ -26,7 +26,7 @@ const Navbar1 = () => {
 
   return (
     <div>
-      <main className="bg-[#333333] px-5 ">
+      <main className="bg-[#333333] px-5 fixed z-40 w-full">
         <div className="flex justify-between items-center">
           <div>
             <IconButton
@@ -76,13 +76,13 @@ const Navbar1 = () => {
         </div>
         <div>
           {searchVisible && (
-            <div className="md:hidden relative flex justify-end w-full gap-2 md:w-max pb-2">
-              <div className="relative flex w-full max-w-[24rem]">
+            <div className="md:hidden relative  flex justify-end  mx-auto gap-2  pb-2">
+              <div className=" flex relative mx-auto">
                 <input
                   type="email"
                   value={email}
                   onChange={onChange}
-                  className="pr-20 px-4 py-3 text-black bg-white"
+                  className="pr-20 px-5 py-1 w-[200px] text-black bg-white"
                   placeholder="Search"
                 />
                 <button size="md" className="px-5 py-2  bg-[#893a9c]">

@@ -13,7 +13,7 @@ const currentYear = new Date().getFullYear();
 
 const Footer = () => {
   return (
-    <footer className="prcolor text-blue-gray-100 relative w-full p-10">
+    <footer className="prcolor border text-blue-gray-100 relative w-full p-2 pt-10 pb-10">
       <div className="w-[50%] mx-auto flex justify-between">
         <div>
           <h2 className="font-bold">Thing to do</h2>
@@ -74,17 +74,34 @@ const Footer = () => {
         <img src={app} className="w-40" alt="" />
       </div>
 
-      <div className="mt-10 text-center text-sm">
-        <div className="flex justify-between">
+      <div className="mt-10 text-center text-sm ">
+
+        <div className="max-md-hidden flex justify-between">
           <h2>PRIVECY POLICY </h2>
-          <p>|</p>
+
           <h2>PRIVECY SETTING</h2>
-          <p>|</p>
+
           <h2>COOKIE PREFERENCES</h2>
-          <p>|</p>
+
           <h2>ADVERTISE</h2>
-          <p>|</p>
+
           <h2>ACCESIBLITY</h2>
+        </div>
+
+        <div className="md:hidden w-full">
+          <div className="flex justify-between">
+            <h2>PRIVECY POLICY </h2>
+
+            <h2>PRIVECY SETTING</h2>
+
+            <h2>COOKIE PREFERENCES</h2>
+          </div>
+
+          <div className=" grid grid-cols-2 mx-auto mt-2">
+            <h2>ADVERTISE</h2>
+
+            <h2>ACCESIBLITY</h2>
+          </div>
         </div>
         <div className="mt-5">
           <h1>
@@ -97,6 +114,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
+
     </footer>
   );
 };

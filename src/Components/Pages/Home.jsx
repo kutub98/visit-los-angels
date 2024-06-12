@@ -1,9 +1,13 @@
-import Featurs from '../UI/Featurs';
+
+import Section1 from "./Section1";
+
 
 const Home = () => {
   return (
     <div>
-      <Featurs />
+
+      <Section1 />
+
     </div>
   );
 };

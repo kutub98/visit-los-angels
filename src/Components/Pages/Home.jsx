@@ -1,10 +1,9 @@
-import { Button } from '@material-tailwind/react';
+import Section1 from "./Section1";
 
 const Home = () => {
   return (
     <div>
-      <h1>This is home page</h1>
-      <Button>Material Tailwind Button</Button>
+      <Section1 />
     </div>
   );
 };

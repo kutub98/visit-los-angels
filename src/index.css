@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.prcolor{
+  background-color: #333333;
+}
+
 /* Featurs  */
 .imgBox {
   position: relative;

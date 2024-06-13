@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-const NextArrow = ({ onClick, currentSlide, slideCount, disable }) => {
+const NextArrow = ({ onClick, currentSlide, slideCount }) => {
   const isLastSlide = currentSlide === slideCount - 1;
 
   return (
@@ -7,10 +7,11 @@ const NextArrow = ({ onClick, currentSlide, slideCount, disable }) => {
       className={`absolute top-1/2 transform -translate-y-1/2 right-0 z-10 cursor-pointer text-white ${
         isLastSlide ? 'opacity-50 pointer-events-none' : ''
       }`}
-      onClick={() => onClick(isLastSlide, disable)}
+      // onClick={isLastSlide ? 'disable cursor-not-allowed' : onClick}
+      onClick={onClick}
     >
       <svg
-        className="w-8 h-8"
+        className="w-8 h-8 "
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -27,15 +28,16 @@ const NextArrow = ({ onClick, currentSlide, slideCount, disable }) => {
   );
 };
 
-const PrevArrow = ({ onClick, currentSlide, disable }) => {
+const PrevArrow = ({ onClick, currentSlide }) => {
   const isFirstSlide = currentSlide === 0;
 
   return (
     <div
       className={`absolute top-1/2 transform -translate-y-1/2 left-0 z-10 cursor-pointer text-white ${
-        isFirstSlide ? 'opacity-50 pointer-events-none' : ''
+        isFirstSlide ? ' pointer-events-none' : ''
       }`}
-      onClick={() => onClick(isFirstSlide, disable)}
+      // onClick={isFirstSlide ? 'disable cursor-not-allowed' : onClick}
+      onClick={onClick}
     >
       <svg
         className="w-8 h-8"

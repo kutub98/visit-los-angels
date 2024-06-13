@@ -1,8 +1,10 @@
-/* eslint-disable react/prop-types */
+import { useState, useRef, useEffect } from 'react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import CarousalVideoCard from '../CustomsReuseable/CarousalVideoCard';
+import { NextArrow, PrevArrow } from '../lib';
+import Container from '../Shared/Container';
 import image1 from '../../assets/image/image (3).jpeg';
 import image2 from '../../assets/image/image (16).jpg';
 import image3 from '../../assets/image/image (11).png';
@@ -22,9 +24,7 @@ import image16 from '../../assets/image/vc16.webp';
 import image17 from '../../assets/image/vc17.webp';
 import image18 from '../../assets/image/vc18.webp';
 import image19 from '../../assets/image/vc19.webp';
-import { NextArrow, PrevArrow } from '../lib';
-import Container from '../Shared/Container';
-import { useState } from 'react';
+import { IoMdClose } from 'react-icons/io';
 
 const videoList = [
   {
@@ -161,31 +161,70 @@ const videoList = [
     spanClass: 'lg:col-span-5',
   },
 ];
-
 const VideoCard = () => {
-  const [disable, setDisable] = useState(false);
+  const [disable, setDisable] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState(null);
+  const sliderRef = useRef(null);
 
-  const handleArrowClick = () => {
-    setDisable(disable);
+  useEffect(() => {
+    if (openModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [openModal]);
+
+  const handleOpenModal = video => {
+    setSelectedVideo(video);
+    setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+    setSelectedVideo(null);
+  };
+
+  const handleNextClick = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickNext();
+    }
+  };
+
+  const handlePrevClick = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickPrev();
+    }
+  };
+
+  const updateDisableState = currentSlide => {
+    const slideCount = videoList.length;
+    if (currentSlide === 0 || currentSlide >= slideCount - 3.5) {
+      setDisable(true);
+    } else {
+      setDisable(false);
+    }
   };
 
   const settings = {
     dots: false,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 3,
+    slidesToShow: 3.5,
+    slidesToScroll: 3.5,
+    afterChange: current => {
+      updateDisableState(current);
+    },
     nextArrow: (
       <NextArrow
-        onClick={isDisabled => handleArrowClick(isDisabled)}
-        disable={disable}
+        className="bg-black w-96 h-full"
+        onClick={handleNextClick}
+        isDisabled={disable}
       />
     ),
-    prevArrow: (
-      <PrevArrow
-        onClick={isDisabled => handleArrowClick(isDisabled)}
-        disable={disable}
-      />
-    ),
+    prevArrow: <PrevArrow onClick={handlePrevClick} isDisabled={disable} />,
     responsive: [
       {
         breakpoint: 1024,
@@ -214,17 +253,14 @@ const VideoCard = () => {
   return (
     <Container>
       <div>
-        <h1
-          className={`text-4xl font-bold ${
-            disable ? 'lg:ml-56' : ''
-          } my-10 tracking-wider uppercase`}
-        >
+        <h1 className="lg:text-5xl text-2xl font-bold lg:ml-44 mt-32 mb-20 tracking-wider uppercase">
           Now Streaming
         </h1>
         <div className={`${disable && 'lg:ml-56'}`}>
-          <Slider {...settings}>
+          <Slider ref={sliderRef} {...settings}>
             {videoList.map((item, index) => (
               <CarousalVideoCard
+                onClick={() => handleOpenModal(item)}
                 key={index}
                 videoId={item.videoId}
                 title={item.title}
@@ -233,6 +269,26 @@ const VideoCard = () => {
               />
             ))}
           </Slider>
+          {openModal && selectedVideo && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 h-full w-full z-[999] flex justify-center items-center">
+              <div className=" p-4 pt-8 rounded relative">
+                <button
+                  onClick={handleCloseModal}
+                  className="absolute -top-2 right-2 bg-black text-white p-2 rounded"
+                >
+                  <IoMdClose className="h-8 w-8" />
+                </button>
+                <iframe
+                  className="lg:w-[800px] lg:h-[600px]"
+                  src={`https://www.youtube.com/embed/${selectedVideo.videoId}`}
+                  title={selectedVideo.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </Container>

@@ -14,14 +14,14 @@ const currentYear = new Date().getFullYear();
 const Footer = () => {
   return (
     <footer className="prcolor border text-blue-gray-100 relative w-full p-2 pt-10 pb-10">
-      <div className="w-[50%] mx-auto flex justify-between">
-        <div>
+      <div className=" mx-auto flex justify-center gap-4">
+        <div className="lg:flex gap-4">
           <h2 className="font-bold">Thing to do</h2>
           <h2 className="font-bold">FInd event</h2>
           <h2 className="font-bold">Tourist Info</h2>
           <h2 className="font-bold">About LA Tourism</h2>
         </div>
-        <div>
+        <div className="lg:flex gap-4">
           <h2 className="font-bold">Eat & Drinks</h2>
           <h2 className="font-bold">Where to stay</h2>
           <h2 className="font-bold">Meeting</h2>
@@ -30,8 +30,8 @@ const Footer = () => {
 
       <div className="mt-10">
         <h2 className="text-3xl font-bold text-center ">PARTNERS</h2>
-        <div className="flex justify-between w-[50%] mx-auto mt-5">
-          <div>
+        <div className="flex justify-center gap-4  mx-auto mt-5">
+          <div className="lg:flex gap-4">
             <div>
               <img src={img} alt="" />
             </div>
@@ -42,14 +42,14 @@ const Footer = () => {
               <img src={img2} alt="" />
             </div>
           </div>
-          <div>
+          <div className="lg:flex gap-4">
             <img src={img3} alt="" />
             <img src={img4} alt="" />
           </div>
         </div>
       </div>
 
-      <div className="mt-10 w-[70%] mx-auto">
+      <div className="mt-10 w-[40%] mx-auto">
         <h2 className="text-3xl font-bold text-center">FOLLOW US</h2>
         <div>
           <div className="flex gap-5 justify-between mt-5">
@@ -76,7 +76,7 @@ const Footer = () => {
 
       <div className="mt-10 text-center text-sm ">
 
-        <div className="max-md-hidden flex justify-between">
+        <div className="max-md-hidden w-[60%] mx-auto flex justify-between gap-4">
           <h2>PRIVECY POLICY </h2>
 
           <h2>PRIVECY SETTING</h2>
@@ -88,8 +88,8 @@ const Footer = () => {
           <h2>ACCESIBLITY</h2>
         </div>
 
-        <div className="md:hidden w-full">
-          <div className="flex justify-between">
+        <div className="md:hidden w-[90%] mx-auto ">
+          <div className="flex justify-between gap-4">
             <h2>PRIVECY POLICY </h2>
 
             <h2>PRIVECY SETTING</h2>
@@ -103,6 +103,7 @@ const Footer = () => {
             <h2>ACCESIBLITY</h2>
           </div>
         </div>
+
         <div className="mt-5">
           <h1>
             The official guide to Los Angeles. Find great deals, things to do,

@@ -3,7 +3,7 @@
 const Featurss = ({ img, button1, button2, title, author, spanClass }) => {
   return (
     <div className={`col-span-12 ${spanClass} relative cursor-pointer spnaBox`}>
-      <div className="w-full h-[450px] relative imgBox">
+      <div className="w-full  relative imgBox">
         <img src={img} alt="Feature" />
       </div>
 

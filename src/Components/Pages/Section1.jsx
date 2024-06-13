@@ -6,7 +6,7 @@ import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 
 const Section1 = () => {
   return (
-    <div className="">
+    <div className="mx-auto">
       <Carousel
         className="rounded-xl"
         prevArrow={({ handlePrev }) => (

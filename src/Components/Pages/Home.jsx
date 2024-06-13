@@ -8,7 +8,7 @@ import Section1 from './Section1';
 
 const Home = () => {
   return (
-    <div>
+    <div >
       <Section1 />
       <Quata/>
       <Featurs />

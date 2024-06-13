@@ -20,7 +20,7 @@ import img from "../../assets/image/dave.webp";
 
 const Quata = () => {
   return (
-    <div className=" p-4 relative">
+    <div className=" p-4 mt-5 mb-5 relative">
       <div className=" relative">
         <img src={img} alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 flex items-center justify-center p-4  bg-opacity-50">

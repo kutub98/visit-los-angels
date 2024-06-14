@@ -4,6 +4,7 @@ import Login from '../Components/Pages/Login';
 import Home from '../Components/Pages/Home';
 
 import Rootlayout from '../Components/Layouts/Rootlayout';
+import EventHotel from '../Components/Pages/EventHotel';
 const route = createBrowserRouter([
   {
     path: '/',
@@ -11,9 +12,10 @@ const route = createBrowserRouter([
 
     children: [
       { path: '/', element: <Home></Home> },
-      { path: 'Home', element: <Home></Home> },
-      { path: 'login', element: <Login></Login> },
-      { path: 'register', element: <Register></Register> },
+      { path: '/Home', element: <Home></Home> },
+      { path: '/login', element: <Login></Login> },
+      { path: '/register', element: <Register></Register> },
+      { path: '/event-hotel', element: <EventHotel/> },
     ],
   },
 ]);

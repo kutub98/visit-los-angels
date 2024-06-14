@@ -199,8 +199,8 @@ const EventHotel = () => {
       </div>
       {/* part 2 */}
       <div className="p-6">
-        <div className="flex justify-center gap-4 border mb-6">
-          <div>
+        <div className="md:flex justify-center gap-4 border mb-6">
+          <div className="">
             <input
               type="text"
               placeholder="Search by hotel name"
@@ -209,7 +209,7 @@ const EventHotel = () => {
               onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
-          <div>
+          <div className="mt-2 md:mt-0">
             <select
               className="border border-gray-400 p-2"
               value={selectedRegion}
@@ -223,7 +223,7 @@ const EventHotel = () => {
               ))}
             </select>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 mt-2 md:mt-0">
             <button
               className="bg-[#783A9C] px-5 py-2 text-white"
               onClick={handleSearch}
@@ -241,23 +241,23 @@ const EventHotel = () => {
 
         {filteredHotels.map((m) => (
           <div
-            className="grid grid-cols-4 p-6 mt-5 border border-gray-400"
+            className="grid md:grid-cols-4 p-6 mt-5 border border-gray-400 "
             key={m.id}
           >
             <div>
-              <img src={m.img} className="w-40 h-40 bg-blue-gray-400" alt="" />
+              <img src={m.img} className="w-full md:w-40 md:h-40 bg-blue-gray-400" alt="" />
             </div>
-            <div>
+            <div className="mt-2 md:mt-0">
               <h2 className="text-xl font-semibold">{m.name}</h2>
               <h2 className="mt-3 flex gap-2 items-center text-[#783A9C]">
                 <FaLocationArrow /> {m.road_name}
               </h2>
             </div>
             <div>
-              <h2>{m.region}</h2>
+              <h2 className="mt-2 md:mt-0">{m.region}</h2>
             </div>
             <div>
-              <button className="bg-[#783A9C] px-5 py-2 text-white">
+              <button className="bg-[#783A9C] px-5 mt-2 md:mt-0 py-2 text-white">
                 Book Now
               </button>
             </div>

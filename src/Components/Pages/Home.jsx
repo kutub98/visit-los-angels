@@ -1,3 +1,5 @@
+import Container from '../Shared/Container';
+import AboutTown from '../UI/AboutTown';
 import Featurs from '../UI/Featurs';
 import FeatursTwo from '../UI/FeatursTwo';
 import FindPlace from '../UI/FindPlace';
@@ -11,7 +13,7 @@ import Section1 from './Section1';
 
 const Home = () => {
   return (
-    <div>
+    <Container>
       <Section1 />
       <Quata />
       <Featurs />
@@ -21,7 +23,8 @@ const Home = () => {
       <FindPlace />
       <NewslaterUp />
       <Newslatter />
-    </div>
+      <AboutTown />
+    </Container>
   );
 };
 

@@ -3,6 +3,7 @@ import { Carousel, IconButton } from "@material-tailwind/react";
 import img1 from "../../assets/image/Hero-1.webp";
 import img2 from "../../assets/image/hero-2.webp";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Section1 = () => {
   return (
@@ -35,9 +36,11 @@ const Section1 = () => {
         <div className="relative h-[500px] w-full">
           <img src={img1} alt="image 1" className="h-full w-full object-cover" />
           <div className="absolute bottom-16 left-7">
-            <button className="bg-[#783a9c] px-7 py-3 text-white">
+           <Link to="/event-hotel">
+           <button className="bg-[#783a9c] px-7 py-3 text-white">
               Find Event
             </button>
+           </Link>
           </div>
         </div>
 

@@ -20,10 +20,10 @@ const Home = () => {
       <VideoCard />
       <FeatursTwo />
       <UpCommingEvent />
+      <AboutTown />
       <FindPlace />
       <NewslaterUp />
       <Newslatter />
-      <AboutTown />
     </Container>
   );
 };

@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Carousel, IconButton } from "@material-tailwind/react";
-import img1 from "../../assets/image/Hero-1.webp";
-import img2 from "../../assets/image/hero-2.webp";
-import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Carousel, IconButton } from '@material-tailwind/react';
+import img1 from '../../assets/image/Hero-1.webp';
+import img2 from '../../assets/image/hero-2.webp';
+import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const Section1 = () => {
   return (
@@ -34,18 +34,26 @@ const Section1 = () => {
         )}
       >
         <div className="relative h-[500px] w-full">
-          <img src={img1} alt="image 1" className="h-full w-full object-cover" />
+          <img
+            src={img1}
+            alt="image 1"
+            className="h-full w-full object-cover"
+          />
           <div className="absolute bottom-16 left-7">
-           <Link to="/event-hotel">
-           <button className="bg-[#783a9c] px-7 py-3 text-white">
-              Find Event
-            </button>
-           </Link>
+            <Link to="/event-hotel">
+              <button className="bg-[#783a9c] px-7 py-3 text-white">
+                Find Event
+              </button>
+            </Link>
           </div>
         </div>
 
         <div className="relative h-[500px] w-full">
-          <img src={img2} alt="image 2" className="h-full w-full object-cover" />
+          <img
+            src={img2}
+            alt="image 2"
+            className="h-full w-full object-cover"
+          />
           <div className="absolute bottom-16 left-7">
             <h2 className="text-2xl md:text-4xl font-bold text-white">
               IT'S SPRING IN LA
@@ -56,7 +64,7 @@ const Section1 = () => {
               many parks, so much fun!
             </p>
             <button className="bg-[#783a9c] px-7 mt-2 py-3 text-white">
-              Read More
+              <Link to="/guideForPark">Read More</Link>
             </button>
           </div>
         </div>

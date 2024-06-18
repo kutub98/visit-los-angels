@@ -5,6 +5,7 @@ import Home from '../Components/Pages/Home';
 
 import Rootlayout from '../Components/Layouts/Rootlayout';
 import EventHotel from '../Components/Pages/EventHotel';
+import GuideToLosAnglesPark from '../Components/Pages/GuideToLosAnglesPark';
 const route = createBrowserRouter([
   {
     path: '/',
@@ -15,7 +16,8 @@ const route = createBrowserRouter([
       { path: '/Home', element: <Home></Home> },
       { path: '/login', element: <Login></Login> },
       { path: '/register', element: <Register></Register> },
-      { path: '/event-hotel', element: <EventHotel/> },
+      { path: '/event-hotel', element: <EventHotel /> },
+      { path: '/guideForPark', element: <GuideToLosAnglesPark /> },
     ],
   },
 ]);

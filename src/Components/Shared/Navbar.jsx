@@ -1,27 +1,28 @@
-import React, { useState } from "react";
-import { MobileNav, IconButton } from "@material-tailwind/react";
-import { TiThMenu } from "react-icons/ti";
-import img1 from "../../assets/image/dla_logo_gradient.svg";
-import img2 from "../../assets/image/GreekTheatre.webp";
-import { FaFacebook, FaInstagram, FaPlus, FaTwitter } from "react-icons/fa";
-import { AiFillTikTok } from "react-icons/ai";
-import { RxCross1 } from "react-icons/rx";
-import { IoIosSearch } from "react-icons/io";
+import React, { useState } from 'react';
+import { MobileNav, IconButton } from '@material-tailwind/react';
+import { TiThMenu } from 'react-icons/ti';
+import img1 from '../../assets/image/dla_logo_gradient.svg';
+import img2 from '../../assets/image/GreekTheatre.webp';
+import { FaFacebook, FaInstagram, FaPlus, FaTwitter } from 'react-icons/fa';
+import { AiFillTikTok } from 'react-icons/ai';
+import { RxCross1 } from 'react-icons/rx';
+import { IoIosSearch } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 const Navbar1 = () => {
   const [openNav, setOpenNav] = useState(false);
   const [searchVisible, setSearchVisible] = useState(false);
-  const [email, setEmail] = React.useState("");
+  const [email, setEmail] = React.useState('');
   const onChange = ({ target }) => setEmail(target.value);
 
   const toggleSearch = () => {
-    setSearchVisible((prev) => !prev);
+    setSearchVisible(prev => !prev);
   };
 
   React.useEffect(() => {
     window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false)
+      'resize',
+      () => window.innerWidth >= 960 && setOpenNav(false),
     );
   }, []);
 
@@ -42,7 +43,9 @@ const Navbar1 = () => {
             </div>
 
             <div>
-              <img src={img1} className=" w-20 h-20 md:w-36  " alt="Logo" />
+              <Link to="/home">
+                <img src={img1} className=" w-20 h-20 md:w-36  " alt="Logo" />
+              </Link>
             </div>
 
             <div className="md:flex gap-5 items-center">

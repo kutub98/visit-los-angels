@@ -176,11 +176,11 @@ const MapContent = ({ className }) => {
             The burrito, a beloved Mexican food item featuring a flour tortilla
             and a range of fillings, has origins in northern Mexico, with most
             people pointing toward the border town of Ciudad Juárez. Los Angeles
-            isn't bound by any particular traditions, so you’ll find a wide
+            is not t bound by any particular traditions, so you’ll find a wide
             variety of burritos, including numerous veg-friendly options. The
-            city's most famous burrito may be at El Tepeyac Café in Boyle
+            city is most famous burrito may be at El Tepeyac Café in Boyle
             Heights, but there are many more options besides the ginormous
-            Manuel's Special Burrito. From classics to new school variations,
+            Manuel is Special Burrito. From classics to new school variations,
             read on for the best burritos in LA.
           </h1>
         </div>

@@ -16,7 +16,7 @@ const route = createBrowserRouter([
       { path: '/Home', element: <Home></Home> },
       { path: '/login', element: <Login></Login> },
       { path: '/register', element: <Register></Register> },
-      { path: '/event-hotel', element: <EventHotel /> },
+      { path: '/eventHotel', element: <EventHotel /> },
       { path: '/guideForPark', element: <GuideToLosAnglesPark /> },
     ],
   },

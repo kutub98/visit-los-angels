@@ -40,7 +40,7 @@ const Section1 = () => {
             className="h-full w-full object-cover"
           />
           <div className="absolute bottom-16 left-7">
-            <Link to="/event-hotel">
+            <Link to="/eventHotel">
               <button className="bg-[#783a9c] px-7 py-3 text-white">
                 Find Event
               </button>

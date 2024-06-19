@@ -13,12 +13,12 @@ const route = createBrowserRouter([
 
     children: [
       { path: '/', element: <Home></Home> },
-      { path: '/Home', element: <Home></Home> },
-      { path: '/login', element: <Login></Login> },
-      { path: '/register', element: <Register></Register> },
-      { path: '/eventHotel', element: <EventHotel /> },
-      { path: '/guideForPark', element: <GuideToLosAnglesPark /> },
-      { path: '/thingstodo', element: <ThingsToDo /> },
+      { path: 'Home', element: <Home></Home> },
+      { path: 'login', element: <Login></Login> },
+      { path: 'register', element: <Register></Register> },
+      { path: 'eventHotel', element: <EventHotel /> },
+      { path: 'guideForPark', element: <GuideToLosAnglesPark /> },
+      { path: 'thingstodo', element: <ThingsToDo /> },
     ],
   },
 ]);

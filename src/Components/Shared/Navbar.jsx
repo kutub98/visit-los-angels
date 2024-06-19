@@ -114,7 +114,7 @@ const Navbar1 = () => {
             <div className="p-5 grid md:grid-cols-2   gap-7">
               <div className="pl-8  flex flex-col justify-start ">
                 <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
-                  Things to do
+                  <Link to="/thingstodo"> Things to do</Link>
                   <h2>
                     <FaPlus className="text-[16px]" />
                   </h2>

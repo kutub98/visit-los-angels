@@ -2,11 +2,10 @@ import { createBrowserRouter } from 'react-router-dom';
 import Register from '../Components/Pages/Register';
 import Login from '../Components/Pages/Login';
 import Home from '../Components/Pages/Home';
-
 import Rootlayout from '../Components/Layouts/Rootlayout';
-import EventHotel from '../Components/Pages/EventHotel';
 import GuideToLosAnglesPark from '../Components/Pages/GuideToLosAnglesPark';
 import ThingsToDo from '../Components/Pages/ThingsToDo';
+import EventHotel from '../Components/Pages/EventHotel';
 const route = createBrowserRouter([
   {
     path: '/',

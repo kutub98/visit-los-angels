@@ -6,6 +6,7 @@ import Home from '../Components/Pages/Home';
 import Rootlayout from '../Components/Layouts/Rootlayout';
 import EventHotel from '../Components/Pages/EventHotel';
 import GuideToLosAnglesPark from '../Components/Pages/GuideToLosAnglesPark';
+import ThingsToDo from '../Components/Pages/ThingsToDo';
 const route = createBrowserRouter([
   {
     path: '/',
@@ -18,6 +19,7 @@ const route = createBrowserRouter([
       { path: '/register', element: <Register></Register> },
       { path: '/eventHotel', element: <EventHotel /> },
       { path: '/guideForPark', element: <GuideToLosAnglesPark /> },
+      { path: '/thingsToDo', element: <ThingsToDo /> },
     ],
   },
 ]);

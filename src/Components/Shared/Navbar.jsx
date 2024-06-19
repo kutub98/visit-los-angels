@@ -43,7 +43,7 @@ const Navbar1 = () => {
             </div>
 
             <div>
-              <Link to="/home">
+              <Link to="home">
                 <img src={img1} className=" w-20 h-20 md:w-36  " alt="Logo" />
               </Link>
             </div>
@@ -114,7 +114,7 @@ const Navbar1 = () => {
             <div className="p-5 grid md:grid-cols-2   gap-7">
               <div className="pl-8  flex flex-col justify-start ">
                 <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
-                  <Link to="/thingstodo"> Things to do</Link>
+                  <Link to="thingstodo"> Things to do</Link>
                   <h2>
                     <FaPlus className="text-[16px]" />
                   </h2>
@@ -128,7 +128,7 @@ const Navbar1 = () => {
                 </div>
 
                 <div className="textxl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
-                  Find Events
+                  <Link to="eventHotel">Find Events</Link>
                 </div>
 
                 <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">

@@ -7,6 +7,7 @@ import { FaFacebook, FaInstagram, FaPlus, FaTwitter } from "react-icons/fa";
 import { AiFillTikTok } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
 import { IoIosSearch } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Navbar1 = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -124,9 +125,11 @@ const Navbar1 = () => {
                   </h2>
                 </div>
 
-                <div className="textxl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
+               <Link to="/events">
+               <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
                   Find Events
                 </div>
+               </Link>
 
                 <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
                   Itineraries

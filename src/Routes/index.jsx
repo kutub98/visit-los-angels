@@ -5,6 +5,7 @@ import Home from '../Components/Pages/Home';
 
 import Rootlayout from '../Components/Layouts/Rootlayout';
 import EventHotel from '../Components/Pages/EventHotel';
+import Events from '../Components/Pages/Events';
 const route = createBrowserRouter([
   {
     path: '/',
@@ -15,6 +16,7 @@ const route = createBrowserRouter([
       { path: '/Home', element: <Home></Home> },
       { path: '/login', element: <Login></Login> },
       { path: '/register', element: <Register></Register> },
+      { path: '/events', element: <Events/> },
       { path: '/event-hotel', element: <EventHotel/> },
     ],
   },

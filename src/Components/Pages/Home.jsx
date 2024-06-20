@@ -1,4 +1,9 @@
+import Container from '../Shared/Container';
+import AboutTown from '../UI/AboutTown';
 import Featurs from '../UI/Featurs';
+import FeatursTwo from '../UI/FeatursTwo';
+import FindPlace from '../UI/FindPlace';
+import UpCommingEvent from '../UI/UpcomingEvent';
 import VideoCard from '../UI/VidoeCarousal';
 import NewslaterUp from './NewslaterUp';
 import Newslatter from './Newslatter';
@@ -8,14 +13,18 @@ import Section1 from './Section1';
 
 const Home = () => {
   return (
-    <div >
+    <Container>
       <Section1 />
-      <Quata/>
+      <Quata />
       <Featurs />
       <VideoCard />
-      <NewslaterUp/>
-      <Newslatter/>
-    </div>
+      <FeatursTwo />
+      <UpCommingEvent />
+      <AboutTown />
+      <FindPlace />
+      <NewslaterUp />
+      <Newslatter />
+    </Container>
   );
 };
 

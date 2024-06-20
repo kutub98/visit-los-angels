@@ -1,12 +1,14 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
 import { IoIosVideocam } from 'react-icons/io';
+
 const CarousalVideoCard = ({
   videoId,
   title,
   author,
   spanClass,
   thumbnailUrl,
+  onClick,
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -15,6 +17,7 @@ const CarousalVideoCard = ({
 
   const handleCardClick = () => {
     setIsPlaying(true);
+    onClick();
   };
 
   return (

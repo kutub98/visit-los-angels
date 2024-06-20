@@ -125,7 +125,7 @@ const Navbar1 = () => {
                   </h2>
                 </div>
 
-               <Link to="/events">
+               <Link  onClick={() => setOpenNav(false)} to="/events">
                <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
                   Find Events
                 </div>

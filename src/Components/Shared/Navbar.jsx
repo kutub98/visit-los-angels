@@ -1,3 +1,14 @@
+
+import React, { useState } from "react";
+import { MobileNav, IconButton } from "@material-tailwind/react";
+import { TiThMenu } from "react-icons/ti";
+import img1 from "../../assets/image/dla_logo_gradient.svg";
+import img2 from "../../assets/image/GreekTheatre.webp";
+import { FaFacebook, FaInstagram, FaPlus, FaTwitter } from "react-icons/fa";
+import { AiFillTikTok } from "react-icons/ai";
+import { RxCross1 } from "react-icons/rx";
+import { IoIosSearch } from "react-icons/io";
+import { Link } from "react-router-dom";
 import React, { useState } from 'react';
 import { MobileNav, IconButton } from '@material-tailwind/react';
 import { TiThMenu } from 'react-icons/ti';
@@ -8,6 +19,7 @@ import { AiFillTikTok } from 'react-icons/ai';
 import { RxCross1 } from 'react-icons/rx';
 import { IoIosSearch } from 'react-icons/io';
 import { Link } from 'react-router-dom';
+
 
 const Navbar1 = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -127,9 +139,14 @@ const Navbar1 = () => {
                   </h2>
                 </div>
 
-                <div className="textxl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
-                  <Link to="eventHotel">Find Events</Link>
+<<<<<<
+               <Link  onClick={() => setOpenNav(false)} to="/events">
+               <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
+                  Find Events
+
+                
                 </div>
+               </Link>
 
                 <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
                   Itineraries

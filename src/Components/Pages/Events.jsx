@@ -358,7 +358,7 @@ const Events = () => {
       <div className="max-w-6xl mx-auto p-5">
       <div className="mt-6">
             <h3 className="text-2xl font-bold mb-2">Event List</h3>
-            <ul className="space-y-2 grid grid-cols-3">
+            <ul className="space-y-2 grid sm:grid-cols-2 lg:grid-cols-3">
               {filteredEvents.map((event, index) => (
                 <li key={index} className="border p-4 rounded">
                   <img src={event.event_image} alt={event.event_title} className="mb-2 w-[250px] h-[250px]    rounded" />

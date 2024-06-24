@@ -4,13 +4,13 @@ import { Carousel } from '@material-tailwind/react';
 import image1 from '../../assets/image/visitOne.webp';
 import image2 from '../../assets/image/visit2.webp';
 import image3 from '../../assets/image/visit3.webp';
+import { FindItinerary } from '../CustomsReuseable/FindItinerary';
 import FeatursTwo from '../UI/FeatursTwo';
 import UpCommingEvent from '../UI/UpcomingEvent';
 import AboutTown from '../UI/AboutTown';
 import FindPlace from '../UI/FindPlace';
 import NewslaterUp from './NewslaterUp';
 import Newslatter from './Newslatter';
-import { FindItinerary } from '../CustomsReuseable/FindItinerary';
 const Visit = () => {
     const today = new Date();
     const options = {year: 'numeric', month: "long", day: "numeric"}

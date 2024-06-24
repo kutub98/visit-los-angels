@@ -6,6 +6,10 @@
   background-color: #333333;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 944d7bae0cd2eb49175cb45d3628cbdc37a1b3fd
 /* Features  */
 .imgBox {
   position: relative;
@@ -51,6 +55,8 @@
   );
 }
 
+/* absolute inset-0 z-10 h-full bg-white rounded-md shadow */
+/* absolute top-1/2 transform -translate-y-1/2 right-0 z-10 cursor-pointer text-white  */
 /* vidoe carousel  */
 .z-10 {
   background-color: rgba(0, 0, 0, 0.673);

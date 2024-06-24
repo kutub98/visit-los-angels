@@ -18,7 +18,7 @@ export function FindItinerary() {
       mapIcon: <FaMapMarkerAlt />,
       href:"https://www.discoverlosangeles.com/visit/3-days-of-vintage-la",
       detailsImg:image2,
-      button: <button className="px-6 py-3  bg-opacity-30 text-white">Read More</button>
+      button: <button className="px-6 py-3  bg-gray-900 text-white">Read More</button>
     },
     {
       src: image1,

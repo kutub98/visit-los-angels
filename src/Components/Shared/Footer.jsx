@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
+        
       <div className="mt-10 w-[40%] mx-auto">
         <h2 className="text-2xl font-bold text-center">FOLLOW US</h2>
         <div>
@@ -90,20 +90,20 @@ const Footer = () => {
           <h2 className="text-[12px] font-semibold">PRIVECY POLICY </h2>
           <h2>|</h2>
 
-          <h2 className="text-[12px] font-semibold">PRIVECY SETTING</h2>
+          <h2 className="text-[12px] font-semibold">PRIVACY SETTING</h2>
           <h2>|</h2>
           <h2 className="text-[12px] font-semibold">COOKIE PREFERENCES</h2>
           <h2>|</h2>
           <h2 className="text-[12px] font-semibold">ADVERTISE</h2>
           <h2>|</h2>
-          <h2 className="text-[12px] font-semibold">ACCESIBLITY</h2>
+          <h2 className="text-[12px] font-semibold">ACCESSIBILITY</h2>
         </div>
 
         <div className="md:hidden w-[90%] mx-auto ">
           <div className="flex justify-between gap-4">
-            <h2 className="text-[12px] font-semibold">PRIVECY POLICY </h2>
+            <h2 className="text-[12px] font-semibold">PRIVACY POLICY </h2>
             <h2>|</h2>
-            <h2 className="text-[12px] font-semibold">PRIVECY SETTING</h2>
+            <h2 className="text-[12px] font-semibold">PRIVACY SETTING</h2>
             <h2>|</h2>
             <h2 className="text-[12px] font-semibold">COOKIE PREFERENCES</h2>
           </div>
@@ -111,7 +111,7 @@ const Footer = () => {
           <div className=" flex justify-evenly gap-2 mx-auto mt-2">
             <h2 className="text-[12px] font-semibold">ADVERTISE</h2>
             <h2>|</h2>
-            <h2 className="text-[12px] font-semibold">ACCESIBLITY</h2>
+            <h2 className="text-[12px] font-semibold">ACCESSIBILITY</h2>
           </div>
         </div>
 

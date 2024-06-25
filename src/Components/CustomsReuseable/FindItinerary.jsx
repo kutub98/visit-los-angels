@@ -1,6 +1,7 @@
 
 import { useState } from "react";
-import image1 from "../../assets/image/mapMark.png"
+// import image1 from "../../assets/image/mapMark.png"
+import image1 from "../../"
 import image2 from "../../assets/image/playing.webp"
 import image3 from "../../assets/image/milenium.webp"
 import image4 from "../../assets/image/truck.webp"

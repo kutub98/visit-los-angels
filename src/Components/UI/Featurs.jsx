@@ -1,7 +1,8 @@
 import Container from '../Shared/Container';
-import image1 from '../../assets/image/image.jpeg';
+// import image1 from '../../assets/image/image.jpeg';
+import image1 from "../../assets/image/image.jpeg"
 import image2 from '../../assets/image/image (1).jpeg';
-import image3 from '../../assets/image/image (2).jpeg';
+import image3 from '../../Components/img/image (2).jpeg';
 import image4 from '../../assets/image/image (21).jpg';
 import Featurss from '../CustomsReuseable/Featurs';
 

@@ -1,5 +1,5 @@
 import image1 from '../../assets/image/barlis-michaelmundy.webp';
-import image2 from '../../assets/image/image (12).png';
+import image2 from "../../assets/image/image (3).png";
 import image3 from '../../assets/image/image (2).jpg';
 import image4 from '../../assets/image/image (4).jpg';
 

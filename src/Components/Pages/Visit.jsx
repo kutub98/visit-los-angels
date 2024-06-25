@@ -5,6 +5,12 @@ import image1 from '../../assets/image/visitOne.webp';
 import image2 from '../../assets/image/visit2.webp';
 import image3 from '../../assets/image/visit3.webp';
 import { FindItinerary } from '../CustomsReuseable/FindItinerary';
+import FeatursTwo from '../UI/FeatursTwo';
+import UpCommingEvent from '../UI/UpcomingEvent';
+import AboutTown from '../UI/AboutTown';
+import FindPlace from '../UI/FindPlace';
+import NewslaterUp from './NewslaterUp';
+import Newslatter from './Newslatter';
 const Visit = () => {
     const today = new Date();
     const options = {year: 'numeric', month: "long", day: "numeric"}
@@ -169,14 +175,21 @@ const Visit = () => {
       </div>
       {/* FIND YOUR PERFECT ITINERARY */}
       <div className=' ITINERARY lg:px-20 lg:py-8'>
-        <div className='w-full max-w-7xl mx-auto'>
+        <div className='w-full  mx-auto'>
         <h1 className='lg:text-4xl font-semibold lg:my-10 my-6 text-2xl text-white'>FIND YOUR PERFECT ITINERARY</h1>
         <div>
           <FindItinerary/>
         </div>
+        
         </div>
        
       </div>
+      <FeatursTwo />
+      <UpCommingEvent />
+      <AboutTown />
+      <FindPlace />
+      <NewslaterUp />
+      <Newslatter />
     </div>
     );
 };

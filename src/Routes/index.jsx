@@ -6,10 +6,9 @@ import Rootlayout from '../Components/Layouts/Rootlayout';
 import GuideToLosAnglesPark from '../Components/Pages/GuideToLosAnglesPark';
 import ThingsToDo from '../Components/Pages/ThingsToDo';
 import EventHotel from '../Components/Pages/EventHotel';
-
 import Visit from '../Components/Pages/Visit';
-
 import Events from '../Components/Pages/Events';
+
 
 const route = createBrowserRouter([
   {
@@ -27,7 +26,6 @@ const route = createBrowserRouter([
       { path: '/eventHotel', element: <EventHotel /> },
       { path: '/guideForPark', element: <GuideToLosAnglesPark /> },
       { path: '/thingstodo', element: <ThingsToDo /> },
-
       { path: '/visit', element: <Visit /> },
     ],
   },

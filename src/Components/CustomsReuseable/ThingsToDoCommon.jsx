@@ -1,6 +1,6 @@
 import { Carousel } from '@material-tailwind/react';
-
-import image1 from '../../assets/image/image (5).jpg';
+// import image1 from '../../assets/image/image (5).jpg';
+import image1 from "../../assets/image/image (5).jpg"
 import Featurs from '../UI/Featurs';
 import VideoCard from '../UI/VidoeCarousal';
 import image2 from '../../assets/image/perkspass_0.webp';

@@ -180,7 +180,16 @@ const Visit = () => {
         <div>
           <FindItinerary/>
         </div>
+<<<<<<< HEAD
         
+=======
+        <FeatursTwo />
+      <UpCommingEvent />
+      <AboutTown />
+      <FindPlace />
+      <NewslaterUp />
+      <Newslatter />
+>>>>>>> 6f47b3bceb622ef3d5d7ab934b947ef2fb1c152b
         </div>
        
       </div>

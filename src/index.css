@@ -1,3 +1,5 @@
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,8 +8,7 @@
   background-color: #333333;
 }
 
-
-/* Features  */
+/* Featurs  */
 .imgBox {
   position: relative;
   width: 100%;
@@ -52,8 +53,6 @@
   );
 }
 
-/* absolute inset-0 z-10 h-full bg-white rounded-md shadow */
-/* absolute top-1/2 transform -translate-y-1/2 right-0 z-10 cursor-pointer text-white  */
 /* vidoe carousel  */
 .z-10 {
   background-color: rgba(0, 0, 0, 0.673);
@@ -63,15 +62,6 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-.inset-0 {
-  width: 100%;
-  background-color: white;
-  
-}
-.ITINERARY {
-  background: -webkit-gradient(linear, left top, left bottom, from(#783F9A), color-stop(45%, #4D4F97), to(#2C5F93)) fixed;
-  background-color:linear-gradient(#783F9A 0%, #4D4F97 45%, #2C5F93 100%) fixed;
 }
 
 /* selected map area  */
@@ -146,6 +136,10 @@
   width: 40px;
   border-radius: 50%;
 }
+.ITINERARY {
+  background: -webkit-gradient(linear, left top, left bottom, from(#783F9A), color-stop(45%, #4D4F97), to(#2C5F93)) fixed;
+  background-color:linear-gradient(#783F9A 0%, #4D4F97 45%, #2C5F93 100%) fixed;
+}
 
 .CityDetailsBg {
   background-color: rgba(0, 0, 0, 0.669);
@@ -161,11 +155,6 @@
   }
   .z-10 {
     width: 50px;
-  }
-  .inset-0 {
-    width: 100%;
-    background-color: white;
-    
   }
   .iconMainBox {
     flex-direction: column;

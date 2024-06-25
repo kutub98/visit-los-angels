@@ -180,17 +180,7 @@ const Visit = () => {
         <div>
           <FindItinerary/>
         </div>
-
-
-        <FeatursTwo />
-      <UpCommingEvent />
-      <AboutTown />
-      <FindPlace />
-      <NewslaterUp />
-      <Newslatter />
-
         </div>
-       
       </div>
       <FeatursTwo />
       <UpCommingEvent />
@@ -198,6 +188,11 @@ const Visit = () => {
       <FindPlace />
       <NewslaterUp />
       <Newslatter />
+      <div>
+        <h1>lorem100</h1>
+
+              <p>hello</p>
+      </div>
     </div>
     );
 };

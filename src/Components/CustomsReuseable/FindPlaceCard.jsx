@@ -20,9 +20,7 @@ const FindPlaceCard = ({ img, title, button1, button2 }) => {
           </button>
         </div>
 
-        <h1 className="text-4xl font-bold mt-3 text-white hover:underline ">
-          {title}
-        </h1>
+        <h1 className="text-4xl font-bold mt-3 text-white hover:underline ">{title}</h1>
       </div>
     </div>
   );

@@ -4,14 +4,14 @@ export default withMT({
     './index.html',
     './src/**/*.{vue,js,ts,jsx,tsx}',
     'path-to-your-node_modules/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}',
-    'path-to-your-node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}',
+    'path-to-your-node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
     extend: {
       colors: {
-        'regal-blue': '#243c5a',
-      },
-    },
+        'regal-blue': '#243c5a'
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 });

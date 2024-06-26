@@ -1,12 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import {
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Button,
-} from '@material-tailwind/react';
+import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from '@material-tailwind/react';
 
 const CustomModal = ({ isOpen, onClose, videoId }) => {
   const youtubeUrl = `https://www.youtube.com/embed/${videoId}`;

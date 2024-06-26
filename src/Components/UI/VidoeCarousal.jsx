@@ -32,134 +32,134 @@ const videoList = [
     videoId: '2UkhO78ol8s',
     title: 'OZZIE JUAREZ',
     author: 'Art History in Real Time',
-    spanClass: 'lg:col-span-5',
+    spanClass: 'lg:col-span-5'
   },
   {
     thumbnailUrl: image2,
     videoId: '3GtvByLHvkk',
     title: 'CAIN CARIAS',
     author: 'Next Generation Artist and Puppeteer',
-    spanClass: 'lg:col-span-7',
+    spanClass: 'lg:col-span-7'
   },
   {
     thumbnailUrl: image3,
     videoId: 'nUEyy8EB-IY',
     title: 'MISTER CARTOON',
     author: 'La in my work & Everything I do',
-    spanClass: 'lg:col-span-7',
+    spanClass: 'lg:col-span-7'
   },
   {
     thumbnailUrl: image4,
     videoId: 'vdbe4BYDes4',
     title: 'MARCEDES DORIME',
     author: 'What its mean to be an indigenous person contemporary La',
-    spanClass: 'lg:col-span-5',
+    spanClass: 'lg:col-span-5'
   },
   {
     thumbnailUrl: image5,
     videoId: 'uNVGaiLb6Y4',
     title: 'Nipsey Hussle Murals',
     author: 'Honoring Nipsey Hussle',
-    spanClass: 'lg:col-span-5',
+    spanClass: 'lg:col-span-5'
   },
   {
     thumbnailUrl: image6,
     videoId: 'kRGW_heqInA',
     title: 'Estevan Oriol x Amanda Lopez',
     author: 'La Próxima Generación',
-    spanClass: 'lg:col-span-5',
+    spanClass: 'lg:col-span-5'
   },
   {
     thumbnailUrl: image7,
     videoId: 'Dmpc-ZqG92I',
     title: 'Maurice Harris',
     author: 'Bloom & Plume Coffee centers the other',
-    spanClass: 'lg:col-span-5',
+    spanClass: 'lg:col-span-5'
   },
   {
     thumbnailUrl: image8,
     videoId: 'N-rBoMLQpvk',
     title: 'Hugh Augustine',
     author: 'Musician, Chef and Activist',
-    spanClass: 'lg:col-span-5',
+    spanClass: 'lg:col-span-5'
   },
   {
     thumbnailUrl: image9,
     videoId: 'JJVOQifbsZo',
     title: 'Kenturah Davis',
     author: 'Find your sense of wonder and curiosity',
-    spanClass: 'lg:col-span-5',
+    spanClass: 'lg:col-span-5'
   },
   {
     thumbnailUrl: image10,
     videoId: 'YXLjBEZB4kw',
     title: 'Elisabetta Perfetti',
     author: 'City of Murals',
-    spanClass: 'lg:col-span-5',
+    spanClass: 'lg:col-span-5'
   },
   {
     thumbnailUrl: image11,
     videoId: 'znsqycSJttI',
     title: 'Gajin Fujita',
     author: 'Violate people’s expectations',
-    spanClass: 'lg:col-span-5',
+    spanClass: 'lg:col-span-5'
   },
   {
     thumbnailUrl: image12,
     videoId: 'wGrNxwhU9w8',
     title: 'Dechel McKillian',
     author: 'Embrace your power, pay it forward',
-    spanClass: 'lg:col-span-5',
+    spanClass: 'lg:col-span-5'
   },
   {
     thumbnailUrl: image13,
     videoId: 'omrqHu3Ux2k',
     title: 'Patrick Martinez',
     author: 'The streets of LA reveal themselves',
-    spanClass: 'lg:col-span-5',
+    spanClass: 'lg:col-span-5'
   },
   {
     thumbnailUrl: image14,
     videoId: 'SSs42V7H9o8',
     title: 'Genevieve Gaignard',
     author: 'Literally in TV, driving through LA',
-    spanClass: 'lg:col-span-5',
+    spanClass: 'lg:col-span-5'
   },
   {
     thumbnailUrl: image15,
     videoId: 'Xwgs_pk9QSE',
     title: 'Naima Keith',
     author: "This is LA's Museum",
-    spanClass: 'lg:col-span-5',
+    spanClass: 'lg:col-span-5'
   },
   {
     thumbnailUrl: image16,
     videoId: 'FOwlzLqRJwQ',
     title: 'Essence Harden',
     author: 'Examines the artist community being built',
-    spanClass: 'lg:col-span-5',
+    spanClass: 'lg:col-span-5'
   },
   {
     thumbnailUrl: image17,
     videoId: 'ZGAX58D_SqI',
     title: 'Olympia Auset',
     author: 'SÜPRMARKT started out of necessity',
-    spanClass: 'lg:col-span-5',
+    spanClass: 'lg:col-span-5'
   },
   {
     thumbnailUrl: image18,
     videoId: 'oRzpZ2kIzL4',
     title: 'Spencer Paysinger',
     author: 'Find your Hilltop',
-    spanClass: 'lg:col-span-5',
+    spanClass: 'lg:col-span-5'
   },
   {
     thumbnailUrl: image19,
     videoId: 'oRzpZ2kIzL4',
     title: 'Kohshin Finley',
     author: 'Telling the story of people in LA',
-    spanClass: 'lg:col-span-5',
-  },
+    spanClass: 'lg:col-span-5'
+  }
 ];
 const VideoCard = () => {
   const [disable, setDisable] = useState(true);
@@ -178,7 +178,7 @@ const VideoCard = () => {
     };
   }, [openModal]);
 
-  const handleOpenModal = video => {
+  const handleOpenModal = (video) => {
     setSelectedVideo(video);
     setOpenModal(true);
   };
@@ -200,7 +200,7 @@ const VideoCard = () => {
     }
   };
 
-  const updateDisableState = currentSlide => {
+  const updateDisableState = (currentSlide) => {
     const slideCount = videoList.length;
     if (currentSlide === 0 || currentSlide >= slideCount - 3.5) {
       setDisable(true);
@@ -214,15 +214,11 @@ const VideoCard = () => {
     speed: 500,
     slidesToShow: 3.5,
     slidesToScroll: 3.5,
-    afterChange: current => {
+    afterChange: (current) => {
       updateDisableState(current);
     },
     nextArrow: (
-      <NextArrow
-        className="bg-black w-96 h-full"
-        onClick={handleNextClick}
-        isDisabled={disable}
-      />
+      <NextArrow className="bg-black w-96 h-full" onClick={handleNextClick} isDisabled={disable} />
     ),
     prevArrow: <PrevArrow onClick={handlePrevClick} isDisabled={disable} />,
     responsive: [
@@ -230,24 +226,24 @@ const VideoCard = () => {
         breakpoint: 1024,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 3,
-        },
+          slidesToScroll: 3
+        }
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
-        },
+          slidesToScroll: 2
+        }
       },
       {
         breakpoint: 640,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   return (

@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import Container from '../Shared/Container';
 import AboutTown from '../UI/AboutTown';
 import Featurs from '../UI/Featurs';

@@ -1,6 +1,6 @@
 import Container from '../Shared/Container';
 // import image1 from '../../assets/image/image.jpeg';
-import image1 from "../../assets/image/image.jpeg"
+import image1 from '../../assets/image/image.jpeg';
 import image2 from '../../assets/image/image (1).jpeg';
 import image3 from '../../Components/img/image (2).jpeg';
 import image4 from '../../assets/image/image (21).jpg';
@@ -13,7 +13,7 @@ const imageList = [
     button2: 'Restaurants',
     title: "LA'S BEST BURRITOS",
     author: 'Discover Los Angeles',
-    spanClass: 'lg:col-span-5',
+    spanClass: 'lg:col-span-5'
   },
   {
     src: image2,
@@ -21,7 +21,7 @@ const imageList = [
     button2: 'Shopping',
     title: 'LA FOR PLANT PARENTS',
     author: 'Paul Rogers',
-    spanClass: 'lg:col-span-7',
+    spanClass: 'lg:col-span-7'
   },
   {
     src: image3,
@@ -29,7 +29,7 @@ const imageList = [
     button2: 'ARTS & CULTURES',
     title: ' "BARBIE" LOCATIONS IN LA',
     author: 'Liz Ohanesian',
-    spanClass: 'lg:col-span-7',
+    spanClass: 'lg:col-span-7'
   },
   {
     src: image4,
@@ -37,8 +37,8 @@ const imageList = [
     button2: 'ATTRACTIONS & TOURS',
     title: 'DRAGONS IN LA',
     author: 'Daniel Djang',
-    spanClass: 'lg:col-span-5',
-  },
+    spanClass: 'lg:col-span-5'
+  }
 ];
 
 const Featurs = () => {

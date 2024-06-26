@@ -1,10 +1,6 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { useState } from 'react';
-import {
-  FaBookmark,
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-} from 'react-icons/fa';
+import { FaBookmark, FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { IoCloseSharp, IoShareOutline } from 'react-icons/io5';
 import { RiFlag2Line } from 'react-icons/ri';
 
@@ -20,7 +16,7 @@ const LoginShare = () => {
     setLoginBox2(true);
   };
 
-  const handleLoginBoxClose = event => {
+  const handleLoginBoxClose = (event) => {
     event.stopPropagation();
     setLoginBox(false);
     setLoginBox2(false);
@@ -62,16 +58,11 @@ const LoginShare = () => {
           </div>
           {loginBox2 && (
             <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-white px-4 py-3 rounded-sm shadow-lg z-50">
-              <div
-                className="flex justify-end cursor-pointer"
-                onClick={handleLoginBoxClose}
-              >
+              <div className="flex justify-end cursor-pointer" onClick={handleLoginBoxClose}>
                 <IoCloseSharp className="mb-2 h-6 w-6" />
               </div>
               <div className="flex justify-center z-50">
-                <button className="px-4 py-2 font-semibold text-indigo-400 mx-2">
-                  Login
-                </button>
+                <button className="px-4 py-2 font-semibold text-indigo-400 mx-2">Login</button>
                 <button className="font-semibold text-white px-4 py-2 bg-indigo-400 mx-2">
                   Register
                 </button>
@@ -89,16 +80,11 @@ const LoginShare = () => {
           </div>
           {loginBox && (
             <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-white px-4 py-3 rounded-sm shadow-lg z-50">
-              <div
-                className="flex justify-end cursor-pointer"
-                onClick={handleLoginBoxClose}
-              >
+              <div className="flex justify-end cursor-pointer" onClick={handleLoginBoxClose}>
                 <IoCloseSharp className="mb-2 h-6 w-6" />
               </div>
               <div className="flex justify-center z-50">
-                <button className="px-4 py-2 font-semibold text-indigo-400 mx-2">
-                  Login
-                </button>
+                <button className="px-4 py-2 font-semibold text-indigo-400 mx-2">Login</button>
                 <button className="font-semibold text-white px-4 py-2 bg-indigo-400 mx-2">
                   Register
                 </button>

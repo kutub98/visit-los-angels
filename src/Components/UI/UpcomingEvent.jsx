@@ -18,50 +18,50 @@ const videoList = [
     title: 'Luke Combs ',
     date: 'June 16, 2024 ',
     time: '5:35pm-8:00pm',
-    type: 'Music',
+    type: 'Music'
   },
   {
     img: image2,
     title: 'Juneteenth Celebration at CAAM',
     date: 'June 16, 2024 ',
     time: '5:35pm-8:00pm',
-    type: 'Cultural Heritage',
+    type: 'Cultural Heritage'
   },
   {
     img: image3,
     title: 'Juneteenth Celebration: T-Pain with Special Guests',
     date: 'June 16, 2024 ',
     time: '5:35pm-8:00pm',
-    type: 'Festivals',
+    type: 'Festivals'
   },
   {
     img: image4,
     title: 'Roots Picnic: Hip-Hop is the Love of My Life',
     date: 'June 16, 2024 ',
     time: '5:35pm-8:00pm',
-    type: 'Music',
+    type: 'Music'
   },
   {
     img: image4,
     title: 'Roots Picnic: Hip-Hop is the Love of My Life',
     date: 'June 16, 2024 ',
     time: '5:35pm-8:00pm',
-    type: 'Music',
+    type: 'Music'
   },
   {
     img: image4,
     title: 'Roots Picnic: Hip-Hop is the Love of My Life',
     date: 'June 16, 2024 ',
     time: '5:35pm-8:00pm',
-    type: 'Music',
+    type: 'Music'
   },
   {
     img: image4,
     title: 'Roots Picnic: Hip-Hop is the Love of My Life',
     date: 'June 16, 2024 ',
     time: '5:35pm-8:00pm',
-    type: 'Music',
-  },
+    type: 'Music'
+  }
 ];
 const UpCommingEvent = () => {
   const [disable, setDisable] = useState(true);
@@ -79,7 +79,7 @@ const UpCommingEvent = () => {
     }
   };
 
-  const updateDisableState = currentSlide => {
+  const updateDisableState = (currentSlide) => {
     if (currentSlide !== 0) {
       setDisable(true);
     } else {
@@ -92,15 +92,11 @@ const UpCommingEvent = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
-    afterChange: current => {
+    afterChange: (current) => {
       updateDisableState(current);
     },
     nextArrow: (
-      <NextArrow
-        className="bg-black w-96 h-full"
-        onClick={handleNextClick}
-        isDisabled={disable}
-      />
+      <NextArrow className="bg-black w-96 h-full" onClick={handleNextClick} isDisabled={disable} />
     ),
     prevArrow: <PrevArrow onClick={handlePrevClick} isDisabled={disable} />,
     responsive: [
@@ -108,24 +104,24 @@ const UpCommingEvent = () => {
         breakpoint: 1024,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 3,
-        },
+          slidesToScroll: 3
+        }
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
-        },
+          slidesToScroll: 2
+        }
       },
       {
         breakpoint: 640,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   return (

@@ -1,5 +1,3 @@
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -36,21 +34,13 @@
 }
 
 .CustomBg {
-  background: linear-gradient(
-    to top right,
-    rgba(28, 96, 150, 1),
-    rgba(0, 212, 255, 0)
-  );
+  background: linear-gradient(to top right, rgba(28, 96, 150, 1), rgba(0, 212, 255, 0));
   position: absolute;
   inset: 0;
 }
 
 .CustomBg {
-  background-image: linear-gradient(
-    to top right,
-    rgba(28, 96, 150, 1),
-    rgba(0, 212, 255, 0)
-  );
+  background-image: linear-gradient(to top right, rgba(28, 96, 150, 1), rgba(0, 212, 255, 0));
 }
 
 /* vidoe carousel  */
@@ -115,7 +105,11 @@
   width: 100%;
   overflow: hidden;
   padding: 0 10px;
-  transition: transform 0.5s, background-color 0.5s, color 0.5s, height 0.5s,
+  transition:
+    transform 0.5s,
+    background-color 0.5s,
+    color 0.5s,
+    height 0.5s,
     top 0.5s;
 }
 
@@ -137,8 +131,16 @@
   border-radius: 50%;
 }
 .ITINERARY {
-  background: -webkit-gradient(linear, left top, left bottom, from(#783F9A), color-stop(45%, #4D4F97), to(#2C5F93)) fixed;
-  background-color:linear-gradient(#783F9A 0%, #4D4F97 45%, #2C5F93 100%) fixed;
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(#783f9a),
+      color-stop(45%, #4d4f97),
+      to(#2c5f93)
+    )
+    fixed;
+  background-color: linear-gradient(#783f9a 0%, #4d4f97 45%, #2c5f93 100%) fixed;
 }
 
 .CityDetailsBg {

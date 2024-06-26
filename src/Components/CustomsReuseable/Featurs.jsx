@@ -18,14 +18,10 @@ const Featurss = ({ img, button1, button2, title, author, spanClass }) => {
             {button2}
           </button>
         </div>
-        <h1 className="text-3xl text-white font-bold mt-4 hover:underline">
-          {title}
-        </h1>
+        <h1 className="text-3xl text-white font-bold mt-4 hover:underline">{title}</h1>
         <h1 className="text-lg mt-3">
           by
-          <span className="text-lg text-white hover:underline ml-2">
-            {author}
-          </span>
+          <span className="text-lg text-white hover:underline ml-2">{author}</span>
         </h1>
       </div>
     </div>

@@ -1,11 +1,7 @@
+/* eslint-disable react/react-in-jsx-scope */
 import image1 from '../../assets/image/guidPageImg1.webp';
 import { IoShareOutline } from 'react-icons/io5';
-import {
-  FaBookmark,
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-} from 'react-icons/fa';
+import { FaBookmark, FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { FaMapMarkedAlt } from 'react-icons/fa';
 import { IoCloseSharp } from 'react-icons/io5';
 import { useState } from 'react';
@@ -25,7 +21,7 @@ const GuideToLosAnglesPark = () => {
   const handleLoginBox = () => {
     setloginBox(true);
   };
-  const handleLoginBoxClose = event => {
+  const handleLoginBoxClose = (event) => {
     event.stopPropagation();
     setloginBox(false);
   };
@@ -35,7 +31,7 @@ const GuideToLosAnglesPark = () => {
   };
 
   return (
-    <>
+    <div>
       {/* top image and text part start */}
       <div className="grid grid-cols-12">
         <div className="lg:col-span-5 col-span-12 lg:order-first order-last flex flex-col justify-center bg-gradient-to-b from-[#ff7676] via-[#ab67aa] to-[#1cacb1] w-full lg:px-10 p-12">
@@ -66,11 +62,7 @@ const GuideToLosAnglesPark = () => {
         </div>
 
         <div className="lg:col-span-7 col-span-12">
-          <img
-            src={image1}
-            alt="Guide to Los Angeles Park"
-            className="w-full"
-          />
+          <img src={image1} alt="Guide to Los Angeles Park" className="w-full" />
         </div>
       </div>
       {/* top image and text part end */}
@@ -102,16 +94,11 @@ const GuideToLosAnglesPark = () => {
             <p>My next Trip</p>
             {loginBox && (
               <div className="absolute bg-white left-1/2 transform -translate-x-1/2 -translate-y-1/2 my-1 px-4 py-3 rounded-sm shadow-lg">
-                <div
-                  className="flex justify-end cursor-pointer"
-                  onClick={handleLoginBoxClose}
-                >
+                <div className="flex justify-end cursor-pointer" onClick={handleLoginBoxClose}>
                   <IoCloseSharp className="mb-2 h-6 w-6" />
                 </div>
                 <div className="flex">
-                  <button className="px-4 py-2 font-semibold text-indigo-400 mx-2">
-                    Login
-                  </button>
+                  <button className="px-4 py-2 font-semibold text-indigo-400 mx-2">Login</button>
                   <button className="font-semibold text-white px-4 py-2 bg-indigo-400 mx-2">
                     Register
                   </button>
@@ -131,11 +118,7 @@ const GuideToLosAnglesPark = () => {
           }`}
         >
           <MapContent
-            className={`${
-              isMapVisible
-                ? 'w-full mx-auto'
-                : 'lg:w-2/3 md:w-2/3 w-full mx-auto '
-            }`}
+            className={`${isMapVisible ? 'w-full mx-auto' : 'lg:w-2/3 md:w-2/3 w-full mx-auto '}`}
           />
         </div>
         {isMapVisible && (
@@ -155,7 +138,7 @@ const GuideToLosAnglesPark = () => {
       {/* 3rd part contents and map section end */}
       <NewslaterUp />
       <Newslatter />
-    </>
+    </div>
   );
 };
 

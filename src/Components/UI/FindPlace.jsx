@@ -15,26 +15,26 @@ const videoList = [
     img: image1,
     title: 'Luke Combs ',
     button1: 'Things to Do',
-    button2: 'Attactions & Tours',
+    button2: 'Attactions & Tours'
   },
   {
     img: image2,
     title: 'Juneteenth Celebration at CAAM',
     button1: 'Things to Do',
-    button2: 'Attactions & Tours',
+    button2: 'Attactions & Tours'
   },
   {
     img: image3,
     title: 'Juneteenth Celebration: T-Pain with Special Guests',
     button1: 'Things to Do',
-    button2: 'Attactions & Tours',
+    button2: 'Attactions & Tours'
   },
   {
     img: image4,
     title: 'Roots Picnic: Hip-Hop is the Love of My Life',
     button1: 'Things to Do',
-    button2: 'Attactions & Tours',
-  },
+    button2: 'Attactions & Tours'
+  }
 ];
 
 const FindPlace = () => {
@@ -54,7 +54,7 @@ const FindPlace = () => {
     }
   };
 
-  const updateDisableState = currentSlide => {
+  const updateDisableState = (currentSlide) => {
     if (currentSlide !== 0) {
       setDisable(true);
     } else {
@@ -68,15 +68,11 @@ const FindPlace = () => {
 
     slidesToShow: 3,
     slidesToScroll: 3.5,
-    afterChange: current => {
+    afterChange: (current) => {
       updateDisableState(current);
     },
     nextArrow: (
-      <NextArrow
-        className="bg-black w-96 h-full"
-        onClick={handleNextClick}
-        isDisabled={disable}
-      />
+      <NextArrow className="bg-black w-96 h-full" onClick={handleNextClick} isDisabled={disable} />
     ),
     prevArrow: <PrevArrow onClick={handlePrevClick} isDisabled={disable} />,
     responsive: [
@@ -84,24 +80,24 @@ const FindPlace = () => {
         breakpoint: 1024,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 3,
-        },
+          slidesToScroll: 3
+        }
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
-        },
+          slidesToScroll: 2
+        }
       },
       {
         breakpoint: 640,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
   return (
     <Container className=" ">

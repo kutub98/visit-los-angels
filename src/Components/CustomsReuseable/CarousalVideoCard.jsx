@@ -2,18 +2,10 @@
 import { useState } from 'react';
 import { IoIosVideocam } from 'react-icons/io';
 
-const CarousalVideoCard = ({
-  videoId,
-  title,
-  author,
-  spanClass,
-  thumbnailUrl,
-  onClick,
-}) => {
+const CarousalVideoCard = ({ videoId, title, author, spanClass, thumbnailUrl, onClick }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const finalThumbnailUrl =
-    thumbnailUrl || `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+  const finalThumbnailUrl = thumbnailUrl || `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
 
   const handleCardClick = () => {
     setIsPlaying(true);
@@ -27,11 +19,7 @@ const CarousalVideoCard = ({
     >
       <div className="w-full h-[650px] relative imgBox">
         {!isPlaying ? (
-          <img
-            src={finalThumbnailUrl}
-            className=" w-full h-full"
-            alt="Video Thumbnail"
-          />
+          <img src={finalThumbnailUrl} className=" w-full h-full" alt="Video Thumbnail" />
         ) : (
           <iframe
             width="100%"
@@ -53,13 +41,9 @@ const CarousalVideoCard = ({
         </div>
       </div>
       <div className="absolute bottom-10 left-0 w-full p-4 text-left">
-        <h1 className="text-3xl text-white font-bold my-4 hover:underline">
-          {title}
-        </h1>
+        <h1 className="text-3xl text-white font-bold my-4 hover:underline">{title}</h1>
 
-        <span className="text-lg text-white hover:underline mt-2">
-          {author}
-        </span>
+        <span className="text-lg text-white hover:underline mt-2">{author}</span>
       </div>
     </div>
   );

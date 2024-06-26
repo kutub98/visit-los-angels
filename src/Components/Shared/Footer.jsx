@@ -1,19 +1,14 @@
-/* eslint-disable react/no-unknown-property */
-// import { Typography } from "@material-tailwind/react";
-import img from "../../assets/image/image (1).png";
-import img1 from "../../assets/image/image (3).png";
-import img2 from "../../assets/image/image (5).png";
-import img3 from "../../assets/image/image (2).png";
-import img4 from "../../assets/image/image (4).png";
-import google from "../../assets/image/image.webp";
-import app from "../../assets/image/image (1).webp";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaPinterest,
-  FaTwitter,
-} from "react-icons/fa";
-import { AiFillTikTok } from "react-icons/ai";
+/* eslint-disable react/react-in-jsx-scope */
+
+import img from '../../assets/image/image (1).png';
+import img1 from '../../assets/image/image (3).png';
+import img2 from '../../assets/image/image (5).png';
+import img3 from '../../assets/image/image (2).png';
+import img4 from '../../assets/image/image (4).png';
+import google from '../../assets/image/image.webp';
+import app from '../../assets/image/image (1).webp';
+import { FaFacebook, FaInstagram, FaPinterest, FaTwitter } from 'react-icons/fa';
+import { AiFillTikTok } from 'react-icons/ai';
 const currentYear = new Date().getFullYear();
 
 const Footer = () => {
@@ -56,7 +51,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-        
+
       <div className="mt-10 w-[40%] mx-auto">
         <h2 className="text-2xl font-bold text-center">FOLLOW US</h2>
         <div>
@@ -117,12 +112,11 @@ const Footer = () => {
 
         <div className="mt-5">
           <h1 className="text-[12px]">
-            The official guide to Los Angeles. Find great deals, things to do,
-            California travel guides and more.
+            The official guide to Los Angeles. Find great deals, things to do, California travel
+            guides and more.
           </h1>
           <p className="text-[12px]">
-            © {currentYear} Los Angeles Tourism & Convention Board. All rights
-            reserved.
+            © {currentYear} Los Angeles Tourism & Convention Board. All rights reserved.
           </p>
         </div>
       </div>

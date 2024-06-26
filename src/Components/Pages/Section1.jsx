@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/no-unescaped-entities */
 import { Carousel, IconButton } from '@material-tailwind/react';
 import img1 from '../../assets/image/Hero-1.webp';
@@ -34,30 +35,18 @@ const Section1 = () => {
         )}
       >
         <div className="relative h-[500px] w-full">
-          <img
-            src={img1}
-            alt="image 1"
-            className="h-full w-full object-cover"
-          />
+          <img src={img1} alt="image 1" className="h-full w-full object-cover" />
           <div className="absolute bottom-16 left-7">
             <Link to="/eventHotel">
-              <button className="bg-[#783a9c] px-7 py-3 text-white">
-                Find Event
-              </button>
+              <button className="bg-[#783a9c] px-7 py-3 text-white">Find Event</button>
             </Link>
           </div>
         </div>
 
         <div className="relative h-[500px] w-full">
-          <img
-            src={img2}
-            alt="image 2"
-            className="h-full w-full object-cover"
-          />
+          <img src={img2} alt="image 2" className="h-full w-full object-cover" />
           <div className="absolute bottom-16 left-7">
-            <h2 className="text-2xl md:text-4xl font-bold text-white">
-              IT'S SPRING IN LA
-            </h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-white">IT'S SPRING IN LA</h2>
             <p className="text-white text-[15px] md:text-[18px] mt-2">
               Find your favorite part for a picnic, a bike ride, a <br />
               concert, a movie, or just a zen moment. SO <br />

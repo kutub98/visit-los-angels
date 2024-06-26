@@ -1,10 +1,9 @@
+/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable react/no-unknown-property */
 const Newslatter = () => {
   return (
     <div className="bg-[#f94a62] p-5 ">
-      <h2 className="text-3xl font-black text-center text-white">
-        DISCOVER LA NEWSLETTER
-      </h2>
+      <h2 className="text-3xl font-black text-center text-white">DISCOVER LA NEWSLETTER</h2>
       <div>
         <div className="mt-5 relative   flex justify-end  mx-auto gap-2  pb-2">
           <div className=" md:flex relative mx-auto">
@@ -50,9 +49,8 @@ const Newslatter = () => {
               class="mt-px font-light text-white text-sm cursor-pointer select-none"
               htmlFor="check"
             >
-              I consent to receive the Discover LA newsletter. You can learn
-              more by reading our privacy policy, and you can opt out at any
-              time.
+              I consent to receive the Discover LA newsletter. You can learn more by reading our
+              privacy policy, and you can opt out at any time.
             </label>
           </div>
         </div>

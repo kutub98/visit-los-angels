@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { createBrowserRouter } from 'react-router-dom';
 import Register from '../Components/Pages/Register';
 import Home from '../Components/Pages/Home';

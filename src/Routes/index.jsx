@@ -32,7 +32,8 @@ const route = createBrowserRouter([
       { path: '/guideForPark', element: <GuideToLosAnglesPark /> },
       { path: '/thingstodo', element: <ThingsToDo /> },
       { path: '/visit', element: <Visit /> }
-    ]
+    ],
+    
   },
   {
     path: '/admin',
@@ -49,5 +50,6 @@ const route = createBrowserRouter([
       }
     ]
   }
+  
 ]);
 export default route;

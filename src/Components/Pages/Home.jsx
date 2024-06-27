@@ -1,4 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
+import { Link } from 'react-router-dom';
 import Container from '../Shared/Container';
 import AboutTown from '../UI/AboutTown';
 import Featurs from '../UI/Featurs';
@@ -15,6 +16,7 @@ import Section1 from './Section1';
 const Home = () => {
   return (
     <Container>
+      <Link to="/admin">Admin</Link>
       <Section1 />
       <Quata />
       <Featurs />

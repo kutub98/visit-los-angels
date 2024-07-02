@@ -16,7 +16,6 @@ import Section1 from './Section1';
 const Home = () => {
   return (
     <Container>
-      <Link to="/admin">Admin</Link>
       <Section1 />
       <Quata />
       <Featurs />

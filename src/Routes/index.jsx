@@ -10,8 +10,8 @@ import Visit from '../Components/Pages/Visit';
 import Events from '../Components/Pages/Events';
 import AdminLayout from '../Components/Layouts/AdminLayout';
 import AddBanner from '../Components/AdminComponents/Banner/AddBanner';
-import AllBanner from '../Components/AdminComponents/Banner/AllBanner';
 import Login from '../Components/Pages/Login';
+import AddData from '../Components/AdminComponents/AddData/AddData';
 
 // import PrivateRoute from '../Auth/PrivateRoute';
 
@@ -32,12 +32,11 @@ const route = createBrowserRouter([
       { path: '/guideForPark', element: <GuideToLosAnglesPark /> },
       { path: '/thingstodo', element: <ThingsToDo /> },
       { path: '/visit', element: <Visit /> }
-    ],
-    
+    ]
   },
   {
     path: '/admin',
-    // element:<PrivateRoute><AdminLayout/></PrivateRoute>,
+
     element: <AdminLayout />,
     children: [
       {
@@ -45,11 +44,10 @@ const route = createBrowserRouter([
         element: <AddBanner />
       },
       {
-        path: '/admin/allBanner',
-        element: <AllBanner />
+        path: '/admin/addData',
+        element: <AddData />
       }
     ]
   }
-  
 ]);
 export default route;

@@ -10,7 +10,10 @@ const AdminLayout = () => {
         <DashHeader />
       </div>
       <div className="flex mt-2">
-        <DashSideBar />
+        <div className="">
+          <DashSideBar />
+        </div>
+
         <Outlet />
       </div>
     </div>

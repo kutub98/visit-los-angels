@@ -143,6 +143,10 @@
   background-color: linear-gradient(#783f9a 0%, #4d4f97 45%, #2c5f93 100%) fixed;
 }
 
+.customScrollBar {
+  scrollbar-width: none;
+}
+
 .CityDetailsBg {
   background-color: rgba(0, 0, 0, 0.669);
 }

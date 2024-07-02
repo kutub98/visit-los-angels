@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { Outlet } from 'react-router-dom';
 import Navbar1 from '../Shared/Navbar';
 import Footer from '../Shared/Footer';

@@ -12,6 +12,10 @@ import AdminLayout from '../Components/Layouts/AdminLayout';
 import AddBanner from '../Components/AdminComponents/Banner/AddBanner';
 import Login from '../Components/Pages/Login';
 import AddData from '../Components/AdminComponents/AddData/AddData';
+import Quota from '../Components/AdminComponents/Quota/Quota';
+import VideoStreaming from '../Components/AdminComponents/VideoStreaming/VideoStreaming';
+import AdvertiseImg from '../Components/AdminComponents/AdvertiseImg/AdvertiseImg';
+import CreateEvents from '../Components/AdminComponents/CreateEvents/CreateEvents';
 
 // import PrivateRoute from '../Auth/PrivateRoute';
 
@@ -40,12 +44,32 @@ const route = createBrowserRouter([
     element: <AdminLayout />,
     children: [
       {
-        path: '/admin/banner',
+        index: 'admin/addData',
+        element: <AddData />
+      },
+      {
+        path: '/admin/slider',
         element: <AddBanner />
       },
       {
         path: '/admin/addData',
         element: <AddData />
+      },
+      {
+        path: '/admin/VideoStreaming',
+        element: <VideoStreaming />
+      },
+      {
+        path: '/admin/advertisement',
+        element: <AdvertiseImg />
+      },
+      {
+        path: '/admin/quota',
+        element: <Quota />
+      },
+      {
+        path: '/admin/createEvent',
+        element: <CreateEvents />
       }
     ]
   }

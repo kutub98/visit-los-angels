@@ -1,144 +1,69 @@
-import React from 'react';
-import {
-  Card,
-  Typography,
-  List,
-  ListItem,
-  ListItemPrefix,
-  ListItemSuffix,
-  Chip,
-  Accordion,
-  AccordionHeader,
-  AccordionBody,
-  Alert
-} from '@material-tailwind/react';
+import React, { useState } from 'react';
+import { Tooltip } from '@material-tailwind/react';
+import { Link } from 'react-router-dom';
+import { BsBlockquoteRight } from 'react-icons/bs';
+import { MdEventAvailable } from 'react-icons/md';
+import { RiAdvertisementLine } from 'react-icons/ri';
+import { CiYoutube } from 'react-icons/ci';
 import { FcAddDatabase } from 'react-icons/fc';
 import { TfiLayoutSliderAlt } from 'react-icons/tfi';
-import {
-  PresentationChartBarIcon,
-  UserCircleIcon,
-  Cog6ToothIcon,
-  InboxIcon,
-  PowerIcon,
-  ChevronDownIcon
-} from '@heroicons/react/24/solid';
-import { CubeTransparentIcon } from '@heroicons/react/24/outline';
-import { Link } from 'react-router-dom';
-
-export function DashSideBar() {
-  const [open, setOpen] = React.useState(0);
-  const [openAlert, setOpenAlert] = React.useState(false);
-
-  const handleOpen = (value) => {
-    setOpen(open === value ? 0 : value);
-  };
+import { LuChevronFirst } from 'react-icons/lu';
+const DashSideBar = () => {
+  const [open, setOpen] = useState(true);
+  const Menus = [
+    { title: 'Add Data', icon: <FcAddDatabase className="h-5 w-5" />, link: '/admin/addData' },
+    { title: 'Slider', icon: <TfiLayoutSliderAlt className="h-5 w-5" />, link: '/admin/slider' },
+    { title: 'Quota', icon: <BsBlockquoteRight className="h-5 w-5" />, link: '/admin/quota' },
+    { title: 'Event', icon: <MdEventAvailable className="h-5 w-5" />, link: '/admin/createEvent' },
+    {
+      title: 'Advertisement',
+      icon: <RiAdvertisementLine className="h-5 w-5" />,
+      link: '/admin/advertisement'
+    },
+    {
+      title: 'Video Streaming ',
+      icon: <CiYoutube className="h-5 w-5" />,
+      link: '/admin/VideoStreaming'
+    }
+  ];
 
   return (
-    <Card className="h-[calc(100vh-2rem)] bg-[#1cacb1] customScrollBar  overflow-y-scroll w-full max-w-[20rem]  p-4  shadow-2xl ">
-      <List className="bg-white rounded-xl">
-        <Accordion
-          open={open === 2}
-          icon={
-            <ChevronDownIcon
-              strokeWidth={2.5}
-              className={`mx-auto h-4 w-4 transition-transform ${open === 2 ? 'rotate-180' : ''}`}
-            />
-          }>
-          <Link to="/admin/addData">
-            <ListItem>
-              <ListItemPrefix>
-                <FcAddDatabase className="h-5 w-5" />
-              </ListItemPrefix>
-              Add Data
-            </ListItem>
-          </Link>
-        </Accordion>
-        {/* banner  */}
-        <Accordion
-          open={open === 1}
-          icon={
-            <ChevronDownIcon
-              strokeWidth={2.5}
-              className={`mx-auto h-4 w-4 transition-transform ${open === 1 ? 'rotate-180' : ''}`}
-            />
-          }>
-          <ListItem className="p-0" selected={open === 1}>
-            <AccordionHeader onClick={() => handleOpen(1)} className="border-b-0 p-3">
-              <ListItemPrefix>
-                <PresentationChartBarIcon className="h-5 w-5" />
-              </ListItemPrefix>
-              <Typography color="blue-gray" className="mr-auto font-normal">
-                Slider
-              </Typography>
-            </AccordionHeader>
-          </ListItem>
-          <AccordionBody className="py-1">
-            <List className="p-0">
-              <Link to="/admin/banner">
-                <ListItem>
-                  <ListItemPrefix>
-                    <TfiLayoutSliderAlt strokeWidth={3} className="h-3 w-5" />
-                  </ListItemPrefix>
-                  Add Slider
-                </ListItem>
-              </Link>
-            </List>
-          </AccordionBody>
-        </Accordion>
-
-        <hr className="my-2 border-blue-gray-50" />
-        <ListItem>
-          <ListItemPrefix>
-            <InboxIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Inbox
-          <ListItemSuffix>
-            <Chip value="14" size="sm" variant="ghost" color="blue-gray" className="rounded-full" />
-          </ListItemSuffix>
-        </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-            <UserCircleIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Profile
-        </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-            <Cog6ToothIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Settings
-        </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-            <PowerIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Log Out
-        </ListItem>
-      </List>
-
-      <Alert open={openAlert} className="mt-auto" onClose={() => setOpenAlert(false)}>
-        <CubeTransparentIcon className="mb-4 h-12 w-12" />
-        <Typography variant="h6" className="mb-1">
-          Upgrade to PRO
-        </Typography>
-        <Typography variant="small" className="font-normal opacity-80">
-          Upgrade to Material Tailwind PRO and get even more components, plugins, advanced features
-          and premium.
-        </Typography>
-        <div className="mt-4 flex gap-3">
-          <Typography
-            as="a"
-            href="#"
-            variant="small"
-            className="font-medium opacity-80"
-            onClick={() => setOpenAlert(false)}>
-            Dismiss
-          </Typography>
-          <Typography as="a" href="#" variant="small" className="font-medium">
-            Upgrade Now
-          </Typography>
+    <div className="flex bg-[#1cacb1] p-2 shadow-inner">
+      <div
+        className={` overflow-y-scroll customScrollBar rounded-md shadow-2xl bg-white   ${
+          open ? 'w-72' : 'w-20 '
+        } bg-dark-purple h-screen p-5  pt-8 relative duration-300`}>
+        <LuChevronFirst
+          className={`absolute cursor-pointer bg-white  h-6 right-3 top-9 w-7 border-dark-purple
+           border-2 rounded-full  ${!open && 'rotate-180'}`}
+          onClick={() => setOpen(!open)}
+        />
+        <div className="flex gap-x-4 items-center">
+          <LuChevronFirst
+            className={`cursor-pointer w-6 h-6 bg-white duration-500 ${open && 'rotate-[360deg]'}`}
+          />
+          <h1 className={` origin-left font-medium text-xl duration-200 ${!open && 'scale-0'}`}>
+            Dashboard
+          </h1>
         </div>
-      </Alert>
-    </Card>
+        <ul className="pt-6">
+          {Menus.map((Menu, index) => (
+            <Link
+              to={Menu.link}
+              key={index}
+              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white  text-sm items-center gap-x-4 
+              ${Menu.gap ? 'mt-9' : 'mt-2'} ${index === 0 && 'bg-light-white'} `}>
+              <Tooltip content={Menu.title} placement="right">
+                <span>{Menu.icon}</span>
+              </Tooltip>
+
+              <span className={`${!open && 'hidden'} origin-left duration-200`}>{Menu.title}</span>
+            </Link>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
-}
+};
+
+export default DashSideBar;

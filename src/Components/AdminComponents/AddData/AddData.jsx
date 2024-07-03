@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Input, Option, Select } from '@material-tailwind/react';
 
 const categoriesWithSubcategories = {
-  thingsToDo: [
+  'things-To-Do': [
     'Attractions & Tours',
     'Arts & Cultures',
     'Outdoors & Wellness',
@@ -13,14 +13,14 @@ const categoriesWithSubcategories = {
     'Luxury',
     'Pet-friendly'
   ],
-  eatAndDrink: ['Bars', 'Clubs', 'LA Restaurants', 'Business Spotlight'],
+  ' eat-And-Drink': ['Bars', 'Clubs', 'LA Restaurants', 'Business Spotlight'],
   'find-event': [],
-  itineraries: [],
-  whereToStay: [],
+  Itineraries: [],
+  'where-To-Stay': [],
   'celebrate-la-heritage': ['AAPI Heritage', 'Black LA', 'Latino Heritage'],
   'tourist-information': [],
-  meeting: [],
-  aboutLaTourism: [
+  Meeting: [],
+  'About-La-Tourism': [
     'About LA Tourism',
     'Travel Trade',
     'Membership',

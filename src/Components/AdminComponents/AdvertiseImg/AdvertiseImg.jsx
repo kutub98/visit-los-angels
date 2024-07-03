@@ -4,86 +4,85 @@ import { Button, Dialog, DialogBody, Input } from '@material-tailwind/react';
 import React, { useState } from 'react';
 import { FaCloudUploadAlt } from 'react-icons/fa';
 
-const AddBanner = () => {
+const AdvertiseImg = () => {
   const [open, setOpen] = useState(false);
-  const [images, setImages] = useState([]);
-  const [previewImages, setPreviewImages] = useState([]);
+  const [image, setImage] = useState(null);
+  const [previewImage, setPreviewImage] = useState(null);
 
   const handleOpen = () => setOpen((cur) => !cur);
 
   const handleFileChange = (e) => {
-    const files = e.target.files;
-    if (files) {
-      const imagesArray = Array.from(files).map((file) => URL.createObjectURL(file));
-      setPreviewImages((prev) => [...prev, ...imagesArray]);
-      setImages((prev) => [...prev, ...files]);
+    const file = e.target.files[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setPreviewImage(imageUrl);
+      setImage(file);
     }
   };
 
-  const handleDeleteImage = (index) => {
-    const newImages = [...images];
-    newImages.splice(index, 1);
-    setImages(newImages);
-
-    const newPreviewImages = [...previewImages];
-    newPreviewImages.splice(index, 1);
-    setPreviewImages(newPreviewImages);
+  const handleDeleteImage = () => {
+    setPreviewImage(null);
+    setImage(null);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here, for example, send images to server or process further
-    console.log('Submitted images:', images);
+    // Handle form submission here, for example, send image to server or process further
+    console.log('Submitted image:', image);
     // Reset state after submission if needed
-    setImages([]);
-    setPreviewImages([]);
+    setPreviewImage(null);
+    setImage(null);
     setOpen(false);
   };
 
   return (
     <div className="w-full max-w-6xl mx-auto p-5">
-      <div className=" bg-white shadow-xl p-5 rounded relative">
-        <div className=" sticky top-20 w-full  flex justify-between">
-          <Button className="bg-[#1cacb1]">Total Slider</Button>
+      <div className="bg-white shadow-xl p-5 rounded relative">
+        <div className="sticky top-20 w-full flex justify-between">
+          <Button className="bg-[#1cacb1]">Total Advertisement</Button>
 
           <div className="flex gap-3">
             <Button onClick={handleOpen} className="bg-[#1cacb1]">
-              Add Slider Image
+              Add Advertisement Image
             </Button>
           </div>
         </div>
 
         <Dialog open={open} size="lg" handler={handleOpen}>
+          <div className="text-center justify-center items-center my-4">
+            <h1 className="font-semibold text-2xl">Add advertisement image</h1>
+          </div>
           <DialogBody className="overflow-y-scroll max-h-[90vh] w-full p-10">
             <form className="mt-8 mb-2" onSubmit={handleSubmit}>
               <div className="w-full my-4">
                 <label className="cursor-pointer shadow-md border items-center px-3 py-2 rounded-full flex justify-center text-center">
                   <FaCloudUploadAlt className="mr-2" />
-                  Upload Slider Image
-                  <input type="file" multiple onChange={handleFileChange} className="hidden" />
+                  Upload Advertisement Image
+                  <input type="file" onChange={handleFileChange} className="hidden" />
                 </label>
               </div>
-              <div className="flex flex-wrap gap-3 mt-7 w-full">
-                {previewImages.map((previewUrl, index) => (
-                  <div key={index} className="relative">
+              {previewImage && (
+                <div className="flex justify-center mt-7">
+                  <div className="relative">
                     <img
-                      src={previewUrl}
-                      alt={`preview-${index}`}
+                      src={previewImage}
+                      alt="preview"
                       className="w-32 h-32 object-cover rounded"
                     />
                     <button
                       type="button"
                       className="absolute top-0 right-0 h-6 w-6 text-center flex justify-center items-center rounded-full bg-red-500 text-white rounded-full"
-                      onClick={() => handleDeleteImage(index)}>
+                      onClick={handleDeleteImage}>
                       X
                     </button>
                   </div>
-                ))}
-              </div>
-              <div className="flex w-full text-center items-center  justify-end">
+                </div>
+              )}
+              <div className="flex justify-end mt-4">
                 <button
                   type="submit"
-                  className="bg-[#1cacb1] w-56 items-center my-auto text-white px-4 py-2 mt-4 rounded justify-end">
+                  className="bg-[#1cacb1] text-white px-4 py-2 rounded cursor-pointer"
+                  disabled={!previewImage}>
                   Submit
                 </button>
               </div>
@@ -95,4 +94,4 @@ const AddBanner = () => {
   );
 };
 
-export default AddBanner;
+export default AdvertiseImg;

@@ -1,7 +1,8 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { Outlet } from 'react-router-dom';
 import { DashHeader } from '../AdminComponents/DashHeader';
-import { DashSideBar } from '../AdminComponents/DashSidebar';
+import DashSideBar from '../AdminComponents/DashSidebar';
+// import { DashSideBar } from '../AdminComponents/DashSidebar';
 
 const AdminLayout = () => {
   return (
@@ -9,8 +10,8 @@ const AdminLayout = () => {
       <div className=" w-full sticky top-0  z-50">
         <DashHeader />
       </div>
-      <div className="flex mt-2">
-        <div className="">
+      <div className="flex mt-2 w-full max-w-7xl mx-auto">
+        <div className=" relative ">
           <DashSideBar />
         </div>
 

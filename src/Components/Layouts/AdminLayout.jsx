@@ -10,12 +10,14 @@ const AdminLayout = () => {
       <div className=" w-full sticky top-0  z-50">
         <DashHeader />
       </div>
-      <div className="flex mt-2 w-full max-w-7xl mx-auto">
-        <div className=" relative ">
+      <div className="flex mt-2 w-full max-w-7xl mx-auto customScrollBar  overflow-x-scroll">
+        <div className="z-[999] max-w-[20%]  ">
           <DashSideBar />
         </div>
 
-        <Outlet />
+        <div className="w-full  mx-auto">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

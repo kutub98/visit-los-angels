@@ -60,7 +60,7 @@ const CreateEvents = () => {
               <div className="col-span-12 lg:col-span-6">
                 <Input label="Event Title" />
               </div>
-              <div className="col-span-12 lg:col-span-6 row-span-4 ">
+              <div className="col-span-12 lg:col-span-6 row-span-3 ">
                 {previewImage ? (
                   <div className="col-span-12 lg:col-span-6 flex justify-center items-center">
                     <div className="relative">
@@ -93,6 +93,12 @@ const CreateEvents = () => {
 
               <div className="col-span-12 lg:col-span-6">
                 <Input label="Event Short Description" />
+              </div>
+              <div className="col-span-12 lg:col-span-6">
+                <Input label="Date and Time" />
+              </div>
+              <div className="col-span-12 lg:col-span-6">
+                <Input label="Location Link" />
               </div>
               <div className="col-span-12 lg:col-span-6">
                 <Input label="Event Link" />

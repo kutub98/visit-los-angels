@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Input, Option, Select } from '@material-tailwind/react';
+import { FaCloudUploadAlt } from 'react-icons/fa';
 
 const categoriesWithSubcategories = {
   'things-To-Do': [
@@ -154,10 +155,31 @@ const AddData = () => {
           <div className="lg:col-span-6 col-span-12 flex flex-col bg-gray-50 shadow-sm p-3">
             <h1 className="mb-5">Type Image</h1>
             <div className="w-full flex items-center">
-              <Input type="file" label="Type Image" className="w-full" />
-              <img src="" alt="Type Preview" />
+              <label className="cursor-pointer shadow-md border items-center px-3 py-2 rounded-full flex justify-center text-center">
+                <FaCloudUploadAlt className="mr-2" />
+                Upload Type Image
+                <input type="file" className="hidden" />
+              </label>
             </div>
           </div>
+          {/* thirteen column */}
+          {/* <div className="lg:col-span-6 col-span-12 flex flex-col bg-gray-50 shadow-sm p-3">
+            <h1 className="mb-5">Contact Details</h1>
+            <div className="w-full  h-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
+              <div className="mb-2">
+                <Input type="text" label="Contact Number" className=" mb-10" />
+              </div>
+              <div className="mb-2">
+                <Input type="text" label="Locations" className=" mb-10" />
+              </div>
+              <div className="mb-2">
+                <Input type="text" label="Start Date" className=" mb-10" />
+              </div>
+              <div className="mb-2">
+                <Input type="text" label="End Date" className=" mb-10" />
+              </div>
+            </div>
+          </div> */}
 
           {/* Last column */}
           <div className="col-span-12 flex flex-col justify-end">

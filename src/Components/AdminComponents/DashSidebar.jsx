@@ -258,9 +258,9 @@ const DashSideBar = () => {
   return (
     <div className="flex relative bg-[#1cacb1] h-full p-2 shadow-inner">
       <div
-        className={`overflow-y-scroll min-h-screen customScrollBar rounded-md shadow-2xl bg-white ${
-          open ? 'w-72' : 'w-20 p-0'
-        } bg-dark-purple h-screen p-5 pt-8  duration-300`}>
+        className={`overflow-y-scroll  customScrollBar rounded-md shadow-2xl bg-white ${
+          open ? 'w-72' : 'w-20 '
+        } bg-dark-purple h-screen p-4  duration-300`}>
         <LuChevronFirst
           className={` absolute cursor-pointer bg-white h-6 -right-3 top-10 w-7 border-dark-purple
            border-2 rounded-full ${!open && 'rotate-180'}`}

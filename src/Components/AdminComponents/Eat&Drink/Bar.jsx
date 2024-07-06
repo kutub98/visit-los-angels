@@ -1,9 +1,10 @@
 import React from 'react';
+import SubCommonManu from '../subCommonMenu';
 
 const Bar = () => {
   return (
     <div>
-      <h1>THis is bars page</h1>
+      <SubCommonManu datak={'bar'} />
     </div>
   );
 };

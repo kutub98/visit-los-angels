@@ -1,10 +1,11 @@
 import React from 'react';
+import SubCommonManu from '../subCommonMenu';
 
 const DineLaRestaurantsWeek = () => {
   return (
     <div>
-      <h1>dineLaRestaurantsWeek</h1>
-    </div>
+      <SubCommonManu datak={'dine_la_resturent'} />
+      </div>
   );
 };
 

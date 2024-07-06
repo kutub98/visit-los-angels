@@ -1,20 +1,25 @@
+/* eslint-disable react/prop-types */
+
+
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Button } from '@material-tailwind/react';
 import Swal from 'sweetalert2';
 
-const Meeting = () => {
-  const [meetings, setMeetings] = useState([]);
+const SubCommonManu = ({datak}) => {
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const fetchEvents = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:5000/api/v1/events');
-      const filteredMeetings = response.data.events.filter(
-        (event) => event.category === 'Meeting'
+      const response = await axios.get('http://localhost:5000/api/v1/menu');
+      console.log(response.data);
+      const filteredBars = response.data.filter(
+        (event) => event.sub_category === datak
       );
-      setMeetings(filteredMeetings);
+      setData(filteredBars);
     } catch (error) {
       console.error('Error fetching events:', error);
     }
@@ -37,7 +42,7 @@ const Meeting = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:5000/api/v1/events/${id}`);
+          await axios.delete(`http://localhost:5000/api/v1/menu/${id}`);
           fetchEvents(); // Fetch events again to update the list after deletion
           Swal.fire({
             title: 'Deleted!',
@@ -54,37 +59,38 @@ const Meeting = () => {
 
   return (
     <div>
-      <h1>All Meetings Here</h1>
       {loading ? (
         <div>Loading...</div>
       ) : (
         <div className="grid lg:grid-cols-2">
-          {meetings.length > 0 ? (
-            meetings.map((meeting) => (
-              <div key={meeting._id} className="border m-5 p-5">
-                <h2 className="font-bold">{meeting.event_title}</h2>
-                <p>{meeting.event_description}</p>
+          {data.length > 0 ? (
+            data.map((d) => (
+              <div key={d._id} className="border m-5 p-5">
+                <h2 className="font-bold">{d.headline}</h2>
+                <p>{d.short_headline_description}</p>
                 <a
                   className="text-blue-500"
-                  href={meeting.event_link}
+                  href={d.event_link}
                   target="_blank"
                   rel="noopener noreferrer">
                   Event Link
                 </a>
                 <img
-                  src={meeting.event_image}
+                  src={d.headline_image}
                   className="w-[500px] h-[250px]"
-                  alt={meeting.event_title}
+                  alt={"d"}
                 />
-                <p>Location: {meeting.location}</p>
+                <p>Location: {d.location}</p>
+                <p>Category: {d.category}</p>
+                <p>Sub Category: {d.sub_category}</p>
                 <div className="flex justify-between mt-2">
                   <Button
-                    // onClick={() => handleEditEvent(meeting)}
+                    // onClick={() => handleEditEvent(d)}
                     className="bg-[#1cacb1]">
                     Edit
                   </Button>
                   <Button
-                    onClick={() => handleDeleteEvent(meeting._id)}
+                    onClick={() => handleDeleteEvent(d._id)}
                     className="bg-red-500">
                     Delete
                   </Button>
@@ -92,7 +98,7 @@ const Meeting = () => {
               </div>
             ))
           ) : (
-            <p>No meetings found</p>
+            <p>No Data found</p>
           )}
         </div>
       )}
@@ -100,4 +106,4 @@ const Meeting = () => {
   );
 };
 
-export default Meeting;
+export default SubCommonManu;

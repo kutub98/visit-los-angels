@@ -1,10 +1,11 @@
 import React from 'react';
+import SubCommonManu from '../subCommonMenu';
 
 const BusinessSpotLight = () => {
   return (
     <div>
-      <h1>BusinessSPOT LIGHT</h1>
-    </div>
+      <SubCommonManu datak={'bussiness_spotlite'} />
+      </div>
   );
 };
 

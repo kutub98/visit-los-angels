@@ -1,9 +1,11 @@
 import React from 'react';
+import SubCommonManu from '../subCommonMenu';
 
 const Clubs = () => {
   return (
     <div>
-      <h1>This is clubs page</h1>
+            <SubCommonManu datak={'club'} />
+
     </div>
   );
 };

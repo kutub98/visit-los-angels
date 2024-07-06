@@ -44,7 +44,8 @@ const VideoStreaming = () => {
               <div className="flex w-full text-center items-center  justify-end">
                 <button
                   type="submit"
-                  className="bg-[#1cacb1] w-56 items-center my-auto text-white px-4 py-2 mt-4 rounded justify-end">
+                  className="bg-[#1cacb1] w-56 items-center my-auto text-white px-4 py-2 mt-4 rounded justify-end"
+                >
                   Submit
                 </button>
               </div>

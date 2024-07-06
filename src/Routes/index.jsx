@@ -16,6 +16,8 @@ import Quota from '../Components/AdminComponents/Quota/Quota';
 import VideoStreaming from '../Components/AdminComponents/VideoStreaming/VideoStreaming';
 import AdvertiseImg from '../Components/AdminComponents/AdvertiseImg/AdvertiseImg';
 import CreateEvents from '../Components/AdminComponents/CreateEvents/CreateEvents';
+import WhereToStay from '../Components/AdminComponents/WhereToStay/WhereToStay';
+import { SingUp } from '../Components/Pages/SignIn';
 
 // import PrivateRoute from '../Auth/PrivateRoute';
 
@@ -35,6 +37,7 @@ const route = createBrowserRouter([
       { path: '/eventHotel', element: <EventHotel /> },
       { path: '/guideForPark', element: <GuideToLosAnglesPark /> },
       { path: '/thingstodo', element: <ThingsToDo /> },
+      { path: '/signUp', element: <SingUp /> },
       { path: '/visit', element: <Visit /> }
     ]
   },
@@ -70,6 +73,10 @@ const route = createBrowserRouter([
       {
         path: '/admin/createEvent',
         element: <CreateEvents />
+      },
+      {
+        path: '/admin/whereToStay',
+        element: <WhereToStay />
       }
     ]
   }

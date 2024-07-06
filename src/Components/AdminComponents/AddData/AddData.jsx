@@ -81,7 +81,8 @@ const AddData = () => {
             <select
               className="w-full px-2 py-2 border bg-none rounded border-gray-400"
               value={selectedCategory}
-              onChange={handleCategoryChange}>
+              onChange={handleCategoryChange}
+            >
               <option value="">Select Category</option>
               {Object.keys(categoriesWithSubcategories).map((category) => (
                 <option key={category} value={category}>

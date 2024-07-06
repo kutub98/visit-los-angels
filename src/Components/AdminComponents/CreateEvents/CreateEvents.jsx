@@ -56,7 +56,8 @@ const CreateEvents = () => {
           <DialogBody className="overflow-y-scroll max-h-[90vh] w-full p-5">
             <form
               className="mt-8 mb-2 grid grid-cols-12 gap-6 row-span-full"
-              onSubmit={handleSubmit}>
+              onSubmit={handleSubmit}
+            >
               <div className="col-span-12 lg:col-span-6">
                 <Input label="Event Title" />
               </div>
@@ -72,7 +73,8 @@ const CreateEvents = () => {
                       <button
                         type="button"
                         className="absolute top-0 right-0 h-6 w-6 text-center flex justify-center items-center rounded-full bg-red-500 text-white rounded-full"
-                        onClick={handleDeleteImage}>
+                        onClick={handleDeleteImage}
+                      >
                         X
                       </button>
                     </div>

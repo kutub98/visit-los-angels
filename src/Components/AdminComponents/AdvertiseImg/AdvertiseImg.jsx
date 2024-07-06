@@ -72,7 +72,8 @@ const AdvertiseImg = () => {
                     <button
                       type="button"
                       className="absolute top-0 right-0 h-6 w-6 text-center flex justify-center items-center rounded-full bg-red-500 text-white rounded-full"
-                      onClick={handleDeleteImage}>
+                      onClick={handleDeleteImage}
+                    >
                       X
                     </button>
                   </div>
@@ -82,7 +83,8 @@ const AdvertiseImg = () => {
                 <button
                   type="submit"
                   className="bg-[#1cacb1] text-white px-4 py-2 rounded cursor-pointer"
-                  disabled={!previewImage}>
+                  disabled={!previewImage}
+                >
                   Submit
                 </button>
               </div>

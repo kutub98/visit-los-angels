@@ -84,7 +84,7 @@ const DashSideBar = () => {
     {
       title: 'Where To Stay',
       icon: <MdOutlineWhereToVote className="h-5 w-5" />,
-      link: '/admin/VideoStreaming'
+      link: '/admin/whereToStay'
     },
     {
       title: 'Itineraries',
@@ -260,7 +260,8 @@ const DashSideBar = () => {
       <div
         className={`overflow-y-scroll  customScrollBar rounded-md shadow-2xl bg-white ${
           open ? 'w-72' : 'w-20 '
-        } bg-dark-purple h-screen p-4  duration-300`}>
+        } bg-dark-purple h-screen p-4  duration-300`}
+      >
         <LuChevronFirst
           className={` absolute cursor-pointer bg-white h-6 -right-3 top-10 w-7 border-dark-purple
            border-2 rounded-full ${!open && 'rotate-180'}`}
@@ -284,12 +285,14 @@ const DashSideBar = () => {
                        hover:bg-[#1cacb1] hover:text-white
                         items-center my-1 gap-x-4font-bold text-sm
                          text-gray-900  px-2 cursor-pointer ${openCategories.includes(index) ? 'bg-gray-700 text-white' : 'bg-white'} `}
-                    onClick={() => toggleCategory(index)}>
+                    onClick={() => toggleCategory(index)}
+                  >
                     <div className="flex items-center ">
                       <Tooltip
                         content={Menu.title}
                         placement="right"
-                        className={`${open ? 'hidden' : ''}`}>
+                        className={`${open ? 'hidden' : ''}`}
+                      >
                         <span>{Menu.icon}</span>
                       </Tooltip>
                       <span className={`${!open && 'hidden'} origin-left duration-200`}>
@@ -312,7 +315,8 @@ const DashSideBar = () => {
                             location.pathname === item.link
                               ? 'bg-[#1cacb1] text-white'
                               : 'bg-white shadow'
-                          }`}>
+                          }`}
+                        >
                           <Tooltip content={item.title} placement="right">
                             <span>{item.icon}</span>
                           </Tooltip>
@@ -329,7 +333,8 @@ const DashSideBar = () => {
                   to={Menu.link}
                   className={`flex rounded-md p-2 cursor-pointer hover:bg-[#1cacb1] hover:text-white text-sm items-center my-1 gap-x-4 ${
                     location.pathname === Menu.link ? 'bg-[#1cacb1] text-white' : 'bg-white shadow'
-                  }`}>
+                  }`}
+                >
                   <Tooltip content={Menu.title} placement="right">
                     <span>{Menu.icon}</span>
                   </Tooltip>

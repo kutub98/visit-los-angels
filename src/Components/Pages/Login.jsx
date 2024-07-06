@@ -30,20 +30,18 @@ const Login = () => {
           <Button
             variant="gradient"
             className="bg-gradient-to-b from-[#ab67aa]  ]  to-[#1cacb1]"
-            fullWidth
-          >
-            Sign In
+            fullWidth>
+            Login
           </Button>
           <Typography variant="small" className="mt-6 flex justify-center">
             Don&apos;t have an account?
             <Typography
               as="a"
-              href="#signup"
+              href="/signUp"
               variant="small"
               color="blue-gray"
-              className="ml-1 font-bold"
-            >
-              Sign up
+              className="ml-1 font-bold border-b">
+              Create Account
             </Typography>
           </Typography>
         </CardFooter>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Tooltip } from '@material-tailwind/react';
 import { Link, useLocation } from 'react-router-dom';
-import { BsBlockquoteRight, BsChevronBarDown, BsChevronBarRight } from 'react-icons/bs';
+import { BsBlockquoteRight, BsChevronBarRight } from 'react-icons/bs';
 import { MdEventAvailable } from 'react-icons/md';
 import { RiAdvertisementLine } from 'react-icons/ri';
 import { CiYoutube } from 'react-icons/ci';
@@ -109,23 +109,23 @@ const DashSideBar = () => {
         {
           title: 'Bars',
           icon: <RiDrinks2Line className="h-6 w-6" />,
-          link: '/admin/thingsTodo/bars'
+          link: '/admin/Eat&Drink/bars'
         },
 
         {
           title: 'Clubs',
           icon: <CgCardClubs className="h-6 w-6" />,
-          link: '/admin/thingsTodo/clubs'
+          link: '/admin/Eat&Drink/clubs'
         },
         {
           title: 'Dine LA Restaurants Week',
           icon: <GrAttraction className="h-6 w-6" />,
-          link: '/admin/thingsTodo/dineLaRestaurantsWeek'
+          link: '/admin/Eat&Drink/dineLaRestaurantsWeek'
         },
         {
           title: 'Business Spotlight',
           icon: <SiSpotlight className="h-6 w-6" />,
-          link: '/admin/thingsTodo/businessSpotlight'
+          link: '/admin/Eat&Drink/businessSpotlight'
         }
       ]
     },
@@ -193,18 +193,18 @@ const DashSideBar = () => {
         {
           title: 'AAPI Heritage',
           icon: <BsBank className="h-6 w-6" />,
-          link: '/admin/thingsTodo/aapiHeritage'
+          link: '/admin/CelebrateLAHeritage/aapiHeritage'
         },
         {
           title: 'Black LA',
           icon: <GiBlackBridge className="h-6 w-6" />,
-          link: '/admin/thingsTodo/blackLA'
+          link: '/admin/CelebrateLAHeritage/blackLA'
         },
 
         {
           title: 'Latino Heritage',
           icon: <GrAttraction className="h-6 w-6" />,
-          link: '/admin/thingsTodo/latinoHeritage'
+          link: '/admin/CelebrateLAHeritage/latinoHeritage'
         }
       ]
     },
@@ -216,40 +216,40 @@ const DashSideBar = () => {
         {
           title: 'About LA Tourism',
           icon: <IoIosInformationCircleOutline className="h-6 w-6" />,
-          link: '/admin/thingsTodo/aboutLATourism'
+          link: '/admin/AboutLATourism/aboutLATourism'
         },
 
         {
           title: 'Travel Trade',
           icon: <FaTrademark className="h-6 w-6" />,
-          link: '/admin/thingsTodo/travelTrade'
+          link: '/admin/AboutLATourism/travelTrade'
         },
         {
           title: 'Membership',
           icon: <LiaUserFriendsSolid className="h-6 w-6" />,
-          link: '/admin/thingsTodo/membership'
+          link: '/admin/AboutLATourism/membership'
         },
 
         {
           title: 'Business Spotlight',
           icon: <IoBusinessOutline className="h-6 w-6" />,
-          link: '/admin/thingsTodo/businessSpotlight'
+          link: '/admin/AboutLATourism/businessSpotlight'
         },
         {
           title: 'Media',
           icon: <GrChannel className="h-6 w-6" />,
-          link: '/admin/thingsTodo/media'
+          link: '/admin/AboutLATourism/media'
         },
 
         {
           title: 'Research',
           icon: <GiArchiveResearch className="h-6 w-6" />,
-          link: '/admin/thingsTodo/research'
+          link: '/admin/AboutLATourism/research'
         },
         {
           title: 'Careers',
           icon: <FaAddressCard className="h-6 w-6" />,
-          link: '/admin/thingsTodo/careers'
+          link: '/admin/AboutLATourism/careers'
         }
       ]
     }
@@ -260,8 +260,7 @@ const DashSideBar = () => {
       <div
         className={`overflow-y-scroll  customScrollBar rounded-md shadow-2xl bg-white ${
           open ? 'w-72' : 'w-20 '
-        } bg-dark-purple h-screen p-4  duration-300`}
-      >
+        } bg-dark-purple h-screen p-4  duration-300`}>
         <LuChevronFirst
           className={` absolute cursor-pointer bg-white h-6 -right-3 top-10 w-7 border-dark-purple
            border-2 rounded-full ${!open && 'rotate-180'}`}
@@ -285,14 +284,12 @@ const DashSideBar = () => {
                        hover:bg-[#1cacb1] hover:text-white
                         items-center my-1 gap-x-4font-bold text-sm
                          text-gray-900  px-2 cursor-pointer ${openCategories.includes(index) ? 'bg-gray-700 text-white' : 'bg-white'} `}
-                    onClick={() => toggleCategory(index)}
-                  >
+                    onClick={() => toggleCategory(index)}>
                     <div className="flex items-center ">
                       <Tooltip
                         content={Menu.title}
                         placement="right"
-                        className={`${open ? 'hidden' : ''}`}
-                      >
+                        className={`${open ? 'hidden' : ''}`}>
                         <span>{Menu.icon}</span>
                       </Tooltip>
                       <span className={`${!open && 'hidden'} origin-left duration-200`}>
@@ -315,8 +312,7 @@ const DashSideBar = () => {
                             location.pathname === item.link
                               ? 'bg-[#1cacb1] text-white'
                               : 'bg-white shadow'
-                          }`}
-                        >
+                          }`}>
                           <Tooltip content={item.title} placement="right">
                             <span>{item.icon}</span>
                           </Tooltip>
@@ -333,8 +329,7 @@ const DashSideBar = () => {
                   to={Menu.link}
                   className={`flex rounded-md p-2 cursor-pointer hover:bg-[#1cacb1] hover:text-white text-sm items-center my-1 gap-x-4 ${
                     location.pathname === Menu.link ? 'bg-[#1cacb1] text-white' : 'bg-white shadow'
-                  }`}
-                >
+                  }`}>
                   <Tooltip content={Menu.title} placement="right">
                     <span>{Menu.icon}</span>
                   </Tooltip>

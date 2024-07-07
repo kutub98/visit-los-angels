@@ -4,7 +4,7 @@ import SubCommonManu from '../subCommonMenu';
 const Clubs = () => {
   return (
     <div>
-            <SubCommonManu datak={'club'} />
+            <SubCommonManu datak={'clubs'} />
 
     </div>
   );

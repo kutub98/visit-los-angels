@@ -4,7 +4,7 @@ import CommonManu from '../CommomMenu';
 const Meeting = () => {
   return (
     <div>
-      <CommonManu datak={"Meeting"} />
+      <CommonManu datak={"meeting"} />
     </div>
   );
 };

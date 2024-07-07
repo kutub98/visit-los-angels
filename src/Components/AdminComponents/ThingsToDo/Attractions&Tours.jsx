@@ -5,7 +5,7 @@ const AttractionsTours = () => {
   return (
     <div>
       <h1>AttractionsTours</h1>
-      <SubCommonManu datak={'attraction_&_tour'} />
+      <SubCommonManu datak={'attraction_and_tour'} />
 
     </div>
   );

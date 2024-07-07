@@ -7,32 +7,32 @@ import FormData from 'form-data';
 import Swal from 'sweetalert2';
 
 const categoriesWithSubcategories = {
-  'things-To-Do': [
-    'Attractions & Tours',
-    'Arts & Cultures',
-    'Outdoors & Wellness',
-    'Shopping',
-    'Budget',
-    'Family',
-    'Hidden Gems',
-    'Luxury',
-    'Pet-friendly'
+  'things_to_do': [
+    'attraction_and_tour',
+    'arts_and_culture',
+    'outdoor_wellness',
+    'shopping',
+    'budget',
+    'family',
+    'hidden_gems',
+    'luxury',
+    'pet_friendly'
   ],
-  'eat-And-Drink': ['Bars', 'Clubs', 'LA Restaurants', 'Business Spotlight'],
+  'eat_and_drink': ['bars', 'clubs', 'dine_la_resturent', 'bussiness_spotlite'],
   'find-event': [],
-  Itineraries: [],
-  'where-To-Stay': [],
-  'celebrate-la-heritage': ['AAPI Heritage', 'Black LA', 'Latino Heritage'],
-  'tourist-information': [],
-  Meeting: [],
-  'About-La-Tourism': [
-    'About LA Tourism',
-    'Travel Trade',
-    'Membership',
-    'Business Spotlight',
-    'Media',
-    'Research',
-    'Careers'
+  "itineraries": [],
+  'where_to_stay': [],
+  'celebrate_la_heritage': ['aapi_heritage', 'black_lA', 'latino_heritage'],
+  'tourist_information': [],
+  "meeting": [],
+  'about_la_tourism': [
+    'about_la_tourism',
+    'travel_trade',
+    'membership',
+    'business_spotlight',
+    'media',
+    'research',
+    'careers'
   ]
 };
 
@@ -243,7 +243,7 @@ const AddData = () => {
           <div className="lg:col-span-6 col-span-12 flex flex-col bg-gray-50 shadow-sm p-3">
             <h1 className="mb-5">Headline Image</h1>
             <div className="w-full flex items-center">
-              <label className="w-full p-4 shadow-lg shrink text-center rounded-full border block flex items-center">
+              <label className="w-full p-4 shadow-lg shrink text-center rounded-full border block  items-center">
                 <input
                   type="file"
                   id="headline-image"
@@ -274,7 +274,7 @@ const AddData = () => {
           <div className="lg:col-span-6 col-span-12 flex flex-col bg-gray-50 shadow-sm p-3">
             <h1 className="mb-5">Category Image</h1>
             <div className="w-full flex items-center">
-              <label className="w-full p-4 shadow-lg shrink text-center rounded-full border block flex items-center">
+              <label className="w-full p-4 shadow-lg shrink text-center rounded-full border block  items-center">
                 <input
                   type="file"
                   id="category-image"
@@ -305,7 +305,7 @@ const AddData = () => {
           <div className="lg:col-span-6 col-span-12 flex flex-col bg-gray-50 shadow-sm p-3">
             <h1 className="mb-5">Subcategory Image</h1>
             <div className="w-full flex items-center">
-              <label className="w-full p-4 shadow-lg shrink text-center rounded-full border block flex items-center">
+              <label className="w-full p-4 shadow-lg shrink text-center rounded-full border block  items-center">
                 <input
                   type="file"
                   id="subcategory-image"
@@ -340,7 +340,7 @@ const AddData = () => {
           <div className="lg:col-span-6 col-span-12 flex flex-col bg-gray-50 shadow-sm p-3">
             <h1 className="mb-5">Type Image</h1>
             <div className="w-full flex items-center">
-              <label className="w-full p-4 shadow-lg shrink text-center rounded-full border block flex items-center">
+              <label className="w-full p-4 shadow-lg shrink text-center rounded-full border block  items-center">
                 <input
                   type="file"
                   id="type-image"

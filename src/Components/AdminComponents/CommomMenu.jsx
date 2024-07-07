@@ -74,7 +74,6 @@ const CommonManu = ({ datak }) => {
                 <img src={d.headline_image} className="w-[500px] h-[250px]" alt={'d'} />
                 <p>Location: {d.location}</p>
                 <p>Category: {d.category}</p>
-                <p>Sub Category: {d.sub_category}</p>
                 <div className="flex justify-between mt-2">
                   <Button
                     // onClick={() => handleEditEvent(d)}

@@ -1,21 +1,22 @@
 /* eslint-disable react/prop-types */
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Button } from '@material-tailwind/react';
 import Swal from 'sweetalert2';
+import CommonModal from './CommonModal';
 
-const CommonManu = ({ datak }) => {
+const CommonManu = ({datak}) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [editModalOpen, setEditModalOpen] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState(null);
 
   const fetchEvents = async () => {
     setLoading(true);
     try {
       const response = await axios.get('http://localhost:5000/api/v1/menu');
-    //   console.log(response.data);
-      const filteredBars = response.data.filter((event) => event.category === datak);
-      setData(filteredBars);
+      const filteredData = response.data.filter((event) => event.category === datak);
+      setData(filteredData);
     } catch (error) {
       console.error('Error fetching events:', error);
     }
@@ -34,16 +35,16 @@ const CommonManu = ({ datak }) => {
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonText: 'Yes, delete it!',
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
           await axios.delete(`http://localhost:5000/api/v1/menu/${id}`);
-          fetchEvents(); // Fetch events again to update the list after deletion
+          fetchEvents();
           Swal.fire({
             title: 'Deleted!',
             text: 'Event deleted successfully!',
-            icon: 'success'
+            icon: 'success',
           });
         } catch (error) {
           console.error('Error deleting event:', error);
@@ -51,6 +52,11 @@ const CommonManu = ({ datak }) => {
         }
       }
     });
+  };
+
+  const handleEditEvent = (event) => {
+    setSelectedEvent(event);
+    setEditModalOpen(true);
   };
 
   return (
@@ -71,16 +77,22 @@ const CommonManu = ({ datak }) => {
                   rel="noopener noreferrer">
                   Event Link
                 </a>
-                <img src={d.headline_image} className="w-[500px] h-[250px]" alt={'d'} />
+                <img
+                  src={d.headline_image}
+                  className="w-[500px] h-[250px]"
+                  alt={d.headline}
+                />
                 <p>Location: {d.location}</p>
                 <p>Category: {d.category}</p>
                 <div className="flex justify-between mt-2">
                   <Button
-                    // onClick={() => handleEditEvent(d)}
+                    onClick={() => handleEditEvent(d)}
                     className="bg-[#1cacb1]">
                     Edit
                   </Button>
-                  <Button onClick={() => handleDeleteEvent(d._id)} className="bg-red-500">
+                  <Button
+                    onClick={() => handleDeleteEvent(d._id)}
+                    className="bg-red-500">
                     Delete
                   </Button>
                 </div>
@@ -91,6 +103,12 @@ const CommonManu = ({ datak }) => {
           )}
         </div>
       )}
+      <CommonModal
+        isOpen={editModalOpen}
+        handleClose={() => setEditModalOpen(false)}
+        eventData={selectedEvent}
+        fetchEvents={fetchEvents}
+      />
     </div>
   );
 };

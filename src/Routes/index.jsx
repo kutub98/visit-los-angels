@@ -44,6 +44,7 @@ import Research from '../Components/AdminComponents/AboutTourism/Research';
 import Media from '../Components/AdminComponents/AboutTourism/Media';
 import BusinessSpotlight from '../Components/AdminComponents/AboutTourism/BusinessSpotlight';
 import MemberShip from '../Components/AdminComponents/AboutTourism/MemberShip';
+// import Test2 from '../Components/AdminComponents/AddData/Test2';
 
 // import PrivateRoute from '../Auth/PrivateRoute';
 
@@ -57,7 +58,6 @@ const route = createBrowserRouter([
       { path: '/Home', element: <Home></Home> },
       { path: '/login', element: <Login></Login> },
       { path: '/register', element: <Register></Register> },
-
       { path: '/events', element: <Events /> },
       { path: '/event-hotel', element: <EventHotel /> },
       { path: '/eventHotel', element: <EventHotel /> },
@@ -76,6 +76,10 @@ const route = createBrowserRouter([
         index: 'admin/addData',
         element: <AddData />
       },
+      // {
+      //   path: '/admin/addDataTwo',
+      //   element: <Test2 />
+      // },
       {
         path: '/admin/slider',
         element: <AddBanner />

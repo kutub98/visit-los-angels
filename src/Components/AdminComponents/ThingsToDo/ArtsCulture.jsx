@@ -5,7 +5,7 @@ const ArtsCulture = () => {
   return (
     <div>
       <h1>This is ArtCultures</h1>
-      <SubCommonManu datak={'arts_&_culture'} />
+      <SubCommonManu datak={'arts_and_culture'} />
     </div>
   );
 };

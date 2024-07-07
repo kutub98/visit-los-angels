@@ -13,7 +13,7 @@ const CommonManu = ({ datak }) => {
     setLoading(true);
     try {
       const response = await axios.get('http://localhost:5000/api/v1/menu');
-      console.log(response.data);
+    //   console.log(response.data);
       const filteredBars = response.data.filter((event) => event.category === datak);
       setData(filteredBars);
     } catch (error) {

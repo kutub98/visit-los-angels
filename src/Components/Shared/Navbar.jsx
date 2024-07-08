@@ -38,7 +38,7 @@ const Navbar1 = () => {
 
   return (
     <div>
-      <main className="  ">
+      <main className=" relative  z-[999] w-full ">
         <div className="bg-[#333333] fixed z-40 w-full px-5">
           <div className=" flex justify-between items-center">
             <div>
@@ -88,7 +88,7 @@ const Navbar1 = () => {
               </div>
             </div>
           </div>
-          <div className="md:hidden">
+          <div className="md:hidden w-full ">
             {searchVisible && (
               <div className=" relative  flex justify-end  mx-auto gap-2  pb-2">
                 <div className=" flex relative mx-auto">
@@ -110,8 +110,8 @@ const Navbar1 = () => {
 
         <MobileNav
           open={openNav}
-          className="absolute md:fixed overflow-y-auto inset-0 z-50 bg-gradient-to-b from-[#ff9876] via-[#ab67aa] to-[#1cacb1] h-full w-full">
-          <div className="">
+          className="absolute md:fixed w-full h-screen inset-0 z-50 bg-gradient-to-b from-[#ff9876] via-[#ab67aa] to-[#1cacb1] ">
+          <div className=" absolute h-screen overflow-scroll w-full customScrollBar">
             <button
               onClick={() => setOpenNav(false)}
               className="absolute top-4 left-4 text-lg font-bold">

@@ -15,7 +15,7 @@ import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const navigate  = useNavigate()
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -55,10 +55,10 @@ const Login = () => {
           </Typography>
         </CardHeader>
         <CardBody className="flex flex-col gap-4">
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
             <Input
               label="Email"
-              size="lg"
+              className="p-2"
               {...register('email', {
                 required: 'Email is required',
                 pattern: {
@@ -70,7 +70,7 @@ const Login = () => {
             {errors.email && <span className="text-red-500">{errors.email.message}</span>}
             <Input
               label="Password"
-              size="lg"
+              className="p-2"
               type="password"
               {...register('password', { required: 'Password is required' })}
             />

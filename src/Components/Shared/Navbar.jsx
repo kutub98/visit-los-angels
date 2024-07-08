@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { MobileNav, IconButton } from '@material-tailwind/react';
+import { MobileNav, IconButton, Button } from '@material-tailwind/react';
 import { TiThMenu } from 'react-icons/ti';
 import img1 from '../../assets/image/dla_logo_gradient.svg';
 import img2 from '../../assets/image/GreekTheatre.webp';
-import { FaFacebook, FaInstagram, FaPlus, FaTwitter } from 'react-icons/fa';
+import { FaChevronLeft, FaFacebook, FaInstagram, FaPlus, FaTwitter } from 'react-icons/fa';
 import { AiFillTikTok } from 'react-icons/ai';
 import { RxCross1 } from 'react-icons/rx';
 import { IoIosSearch } from 'react-icons/io';
@@ -13,6 +13,7 @@ const Navbar1 = () => {
   const [openNav, setOpenNav] = useState(false);
   const [searchVisible, setSearchVisible] = useState(false);
   const [email, setEmail] = React.useState('');
+  const [activeCategory, setActiveCategory] = useState(null);
   const onChange = ({ target }) => setEmail(target.value);
 
   const toggleSearch = () => {
@@ -22,6 +23,18 @@ const Navbar1 = () => {
   React.useEffect(() => {
     window.addEventListener('resize', () => window.innerWidth >= 960 && setOpenNav(false));
   }, []);
+
+  const handleCategoryClick = (category) => {
+    if (activeCategory === category) {
+      setActiveCategory(null);
+    } else {
+      setActiveCategory(category);
+    }
+  };
+
+  const handleBackClick = () => {
+    setActiveCategory(null);
+  };
 
   return (
     <div>
@@ -33,8 +46,7 @@ const Navbar1 = () => {
                 variant="text"
                 className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent"
                 ripple={false}
-                onClick={() => setOpenNav(!openNav)}
-              >
+                onClick={() => setOpenNav(!openNav)}>
                 <TiThMenu className="text-white text-4xl" />
               </IconButton>
             </div>
@@ -98,70 +110,309 @@ const Navbar1 = () => {
 
         <MobileNav
           open={openNav}
-          className=" absolute md:fixed  overflow-y-auto inset-0 z-50 bg-gradient-to-b from-[#ff9876]  via-[#ab67aa]  to-[#1cacb1]  h-full w-full "
-        >
+          className="absolute md:fixed overflow-y-auto inset-0 z-50 bg-gradient-to-b from-[#ff9876] via-[#ab67aa] to-[#1cacb1] h-full w-full">
           <div className="">
             <button
               onClick={() => setOpenNav(false)}
-              className="absolute top-4 left-4 text-lg font-bold"
-            >
+              className="absolute top-4 left-4 text-lg font-bold">
               <RxCross1 className="text-3xl text-white" />
             </button>
 
-            <div className="p-5 grid md:grid-cols-2   gap-7">
-              <div className="pl-8  flex flex-col justify-start ">
-                <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
-                  <Link to="/thingstodo">Things to do</Link>
-                  <h2>
-                    <FaPlus className="text-[16px]" />
-                  </h2>
-                </div>
-
-                <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
-                  Eat and Drinks
-                  <h2>
-                    <FaPlus className="text-[16px]" />
-                  </h2>
-                </div>
-
-                <Link onClick={() => setOpenNav(false)} to="/events">
-                  <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
-                    Find Events
+            <div className="p-5 grid md:grid-cols-2 gap-7">
+              <div className="pl-8 flex flex-col justify-start menuWithSubCategory">
+                {/* Main Categories */}
+                {activeCategory ? (
+                  ''
+                ) : (
+                  <div
+                    className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2 cursor-pointer"
+                    onClick={() => handleCategoryClick('thingstodo')}>
+                    Things to do
+                    <h2>
+                      <FaPlus className="text-[16px]" />
+                    </h2>
                   </div>
-                </Link>
+                )}
+                {activeCategory === 'thingstodo' && (
+                  <div className=" transition-all duration-500">
+                    <div
+                      className={`flex flex-col gap-3 ${activeCategory ? ' origin-left transition duration-500 left-0' : 'origin-right left-24 transition duration-500'}`}>
+                      <span
+                        className="flex items-center duration-500 transition"
+                        onClick={handleBackClick}>
+                        {' '}
+                        <Button className="flex  text-xl hover:shadow-transparent items-center bg-none bg-transparent shadow-transparent text-white">
+                          <FaChevronLeft className="mr-2" /> Back
+                        </Button>
+                      </span>
+                      <Link
+                        className="lg:text-2xl text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                        to="/thingsTodo">
+                        Things To Do
+                      </Link>
+                      <Link
+                        className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                        to="/thingsToDo/attractions-tours">
+                        Attractions & Tours
+                      </Link>
+                      <Link
+                        className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                        to="/thingsToDo/arts-cultures">
+                        Arts & Cultures
+                      </Link>
+                      <Link
+                        className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                        to="/thingsToDo/outdoor-wellness">
+                        Outdoor & Wellness
+                      </Link>
+                      <Link
+                        className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                        to="/thingsToDo/shopping">
+                        Shopping
+                      </Link>
+                      <Link
+                        className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                        to="/thingsToDo/Budget">
+                        Budget
+                      </Link>
+                      <Link
+                        className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                        to="/thingsToDo/family">
+                        family
+                      </Link>
+                      <Link
+                        className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                        to="/thingsToDo/hidden-gems">
+                        Hidden Gems
+                      </Link>
+                      <Link
+                        className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                        to="/thingsToDo/luxury">
+                        Luxury
+                      </Link>
+                      <Link
+                        className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                        to="/thingsToDo/pet-friendly">
+                        Pet-Friendly
+                      </Link>
+                    </div>
+                  </div>
+                )}
 
-                <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
-                  Itineraries
-                </div>
+                {activeCategory ? (
+                  ''
+                ) : (
+                  <div className="">
+                    <div
+                      className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2 cursor-pointer"
+                      onClick={() => handleCategoryClick('eatdrinks')}>
+                      Eat and Drinks
+                      <h2>
+                        <FaPlus className="text-[16px]" />
+                      </h2>
+                    </div>
+                  </div>
+                )}
+                {activeCategory === 'eatdrinks' && (
+                  <div className="  transition-all duration-500">
+                    <span
+                      className="flex items-center duration-500 transition"
+                      onClick={handleBackClick}>
+                      {' '}
+                      <Button className="flex  text-xl hover:shadow-transparent items-center bg-none bg-transparent shadow-transparent text-white">
+                        <FaChevronLeft className="mr-2" /> Back
+                      </Button>
+                    </span>
+                    <Link
+                      className="lg:text-2xl text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                      to="/eat-drink">
+                      Eat & Drink
+                    </Link>
+                    <Link
+                      className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                      to="/eat-drink/bars">
+                      Bars
+                    </Link>
+                    <Link
+                      className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                      to="/eat-drink/clubs">
+                      Clubs
+                    </Link>
+                    <Link
+                      className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                      to="/eat-drink/dine-la-restaurant">
+                      Dine la Restaurant
+                    </Link>
+                    <Link
+                      className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                      to="/eat-drink/business-spotlight">
+                      Business Spotlight
+                    </Link>
+                    {/* Add more subcategories as needed */}
+                  </div>
+                )}
 
-                <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
-                  Where to stay
-                </div>
+                {activeCategory ? (
+                  ''
+                ) : (
+                  <Link onClick={() => setOpenNav(false)} to="/events">
+                    <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
+                      Find Events
+                    </div>
+                  </Link>
+                )}
 
-                <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
-                  Celebrate LA Heritage
-                  <h2>
-                    <FaPlus className="text-[16px]" />
-                  </h2>
-                </div>
+                {activeCategory ? (
+                  ''
+                ) : (
+                  <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
+                    Itineraries
+                  </div>
+                )}
 
-                <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
-                  Tourist Information
-                </div>
+                {activeCategory ? (
+                  ''
+                ) : (
+                  <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
+                    Where to stay
+                  </div>
+                )}
 
-                <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
-                  Metting
-                </div>
+                {activeCategory ? (
+                  ''
+                ) : (
+                  <div
+                    className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2 cursor-pointer"
+                    onClick={() => handleCategoryClick('celebrate')}>
+                    Celebrate LA Heritage
+                    <h2>
+                      <FaPlus className="text-[16px]" />
+                    </h2>
+                  </div>
+                )}
+                {activeCategory === 'celebrate' && (
+                  <div className=" transition-all duration-500">
+                    <span
+                      className="flex items-center duration-500 transition"
+                      onClick={handleBackClick}>
+                      {' '}
+                      <Button className="flex  text-xl hover:shadow-transparent items-center bg-none bg-transparent shadow-transparent text-white">
+                        <FaChevronLeft className="mr-2" /> Back
+                      </Button>
+                    </span>
+                    <Link
+                      className="lg:text-2xl text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                      to="/celebrate-la-heritage">
+                      Celebrate la Heritage
+                    </Link>
+                    <Link
+                      className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                      to="/celebrate-la-heritage/aapi-heritage">
+                      AAPI Heritage
+                    </Link>
+                    <Link
+                      className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                      to="/celebrate-la-heritage/black-la">
+                      Black LA
+                    </Link>
+                    <Link
+                      className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                      to="/celebrate-la-heritage/latino-heritage">
+                      Latino Heritage
+                    </Link>
+                    <Link
+                      className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                      to="/celebrate-la-heritage/la-fruits">
+                      La Fruits
+                    </Link>
+                    {/* Add more subcategories as needed */}
+                  </div>
+                )}
 
-                <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
-                  About LA Tourism
-                  <h2>
-                    <FaPlus className="text-[16px]" />
-                  </h2>
-                </div>
+                {activeCategory ? (
+                  ''
+                ) : (
+                  <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
+                    Tourist Information
+                  </div>
+                )}
+
+                {activeCategory ? (
+                  ''
+                ) : (
+                  <div className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2">
+                    Metting
+                  </div>
+                )}
+
+                {activeCategory ? (
+                  ''
+                ) : (
+                  <div
+                    className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2 cursor-pointer"
+                    onClick={() => handleCategoryClick('aboutla')}>
+                    About LA Tourism
+                    <h2>
+                      <FaPlus className="text-[16px]" />
+                    </h2>
+                  </div>
+                )}
+                {activeCategory === 'aboutla' && (
+                  <div className=" transition-all duration-500">
+                    <span
+                      className="flex items-center duration-500 transition"
+                      onClick={handleBackClick}>
+                      {' '}
+                      <Button className="flex  text-xl hover:shadow-transparent items-center bg-none bg-transparent shadow-transparent text-white">
+                        <FaChevronLeft className="mr-2" /> Back
+                      </Button>
+                    </span>
+                    {/* Subcategories for "About LA Tourism" */}
+                    <Link
+                      className="lg:text-2xl text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                      to="/about-la-tourism">
+                      About LA Tourism
+                    </Link>
+                    <Link
+                      className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                      to="/about-la-tourism/travel-trade">
+                      Travel Trade
+                    </Link>
+                    <Link
+                      className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                      to="/about-la-tourism/membership">
+                      Membership
+                    </Link>
+                    <Link
+                      className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                      to="/about-la-tourism/business-spotlight">
+                      Business spotlight
+                    </Link>
+                    <Link
+                      className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                      to="/about-la-tourism/careers">
+                      Careers
+                    </Link>
+                    <Link
+                      className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                      to="/about-la-tourism/media">
+                      Media
+                    </Link>
+                    <Link
+                      className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
+                      to="/about-la-tourism/researches">
+                      Researches
+                    </Link>
+                    {/* Add more subcategories as needed */}
+                  </div>
+                )}
 
                 <div className="max-md-hidden">
-                  <h2 className="text-sm ml-5  text-white hover:border-b-2">Login</h2>
+                  <Link
+                    to="/login"
+                    className="text-sm  transition-all duration-500 text-white hover:border-b-2">
+                    Login
+                  </Link>
                   <div className="flex gap-3 mt-5">
                     <p>
                       <FaFacebook className="text-xl" />
@@ -186,7 +437,11 @@ const Navbar1 = () => {
               </div>
 
               <div className="md:hidden">
-                <h2 className="text-sm ml-5  text-white hover:border-b-2">Login</h2>
+                <Link
+                  to="/login"
+                  className="text-sm  transition-all duration-500 text-white hover:border-b-2">
+                  Login
+                </Link>
                 <div className="flex gap-3 mt-5">
                   <p>
                     <FaFacebook className="text-xl" />

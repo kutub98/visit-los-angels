@@ -15,7 +15,7 @@ import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const navigate  = useNavigate()
+  const navigate  = useNavigate( )
   const {
     register,
     handleSubmit,

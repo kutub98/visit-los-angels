@@ -17,7 +17,7 @@ import VideoStreaming from '../Components/AdminComponents/VideoStreaming/VideoSt
 import AdvertiseImg from '../Components/AdminComponents/AdvertiseImg/AdvertiseImg';
 import CreateEvents from '../Components/AdminComponents/CreateEvents/CreateEvents';
 import WhereToStay from '../Components/AdminComponents/WhereToStay/WhereToStay';
-import { SingUp } from '../Components/Pages/SignIn';
+// import { SingUp } from '../Components/Pages/SignIn';
 import Itineraries from '../Components/AdminComponents/Itineraries/Itineraries';
 import TouristInformation from '../Components/AdminComponents/TouristInformation/TouristInformation';
 import Meeting from '../Components/AdminComponents/Meeting/Meeting';
@@ -44,6 +44,7 @@ import Research from '../Components/AdminComponents/AboutTourism/Research';
 import Media from '../Components/AdminComponents/AboutTourism/Media';
 import BusinessSpotlight from '../Components/AdminComponents/AboutTourism/BusinessSpotlight';
 import MemberShip from '../Components/AdminComponents/AboutTourism/MemberShip';
+import SignUp from '../Components/Pages/SignIn';
 // import Test2 from '../Components/AdminComponents/AddData/Test2';
 
 // import PrivateRoute from '../Auth/PrivateRoute';
@@ -63,7 +64,7 @@ const route = createBrowserRouter([
       { path: '/eventHotel', element: <EventHotel /> },
       { path: '/guideForPark', element: <GuideToLosAnglesPark /> },
       { path: '/thingstodo', element: <ThingsToDo /> },
-      { path: '/signUp', element: <SingUp /> },
+      { path: '/signUp', element: <SignUp /> },
       { path: '/visit', element: <Visit /> }
     ]
   },

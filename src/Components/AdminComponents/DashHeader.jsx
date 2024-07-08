@@ -1,4 +1,5 @@
-import { Navbar, Typography, Button, Input } from '@material-tailwind/react';
+/* eslint-disable react/react-in-jsx-scope */
+import { Navbar, Typography, Button, Input, Avatar } from '@material-tailwind/react';
 
 export function DashHeader() {
   return (
@@ -22,6 +23,10 @@ export function DashHeader() {
             <Button size="sm" color="white" className="!absolute right-1 top-1 rounded">
               Search
             </Button>
+          </div>
+          <div className="flex">
+            <Button className="mr-2">Logout</Button>
+            <Avatar src="https://docs.material-tailwind.com/img/face-2.jpg" alt="avatar" />
           </div>
         </div>
       </Navbar>

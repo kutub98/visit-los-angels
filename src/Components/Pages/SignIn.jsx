@@ -74,7 +74,10 @@ const SignUp = () => {
 
   return (
     <div className="w-full mx-auto">
-      <Card color="transparent" shadow={true} className="w-full max-w-5xl lg:p-10 p-6 mx-auto">
+      <Card
+        color="transparent"
+        shadow={true}
+        className="w-ful shadow-2xl  max-w-3xl lg:p-10 p-6 mx-auto">
         <Typography variant="h4" color="blue-gray">
           Sign Up
         </Typography>
@@ -169,12 +172,12 @@ const SignUp = () => {
             />
             {errors.terms && <span className="text-red-500">{errors.terms.message}</span>}
           </div>
-          <div className="col-span-12 justify-center flex p-0">
-            <div className="lg:w-1/2 w-full justify-center">
-              <Button className="mt-6" fullWidth type="submit">
+          <div className="col-span-12 justify-center flex ">
+            <div className="lg:w-1/2 w-full justify-center m-0 ">
+              <Button className="" fullWidth type="submit">
                 Create Account
               </Button>
-              <Typography color="gray" className="mt-4 text-center font-normal">
+              <Typography color="gray" className="mt-2 text-center font-normal">
                 Already have an account?{' '}
                 <a href="/login" className="font-medium text-gray-900">
                   Login here

@@ -1,7 +1,36 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { Navbar, Typography, Button, Input, Avatar } from '@material-tailwind/react';
+import useAuthUser from '../auth/getUser';
+import { auth } from '../../../firebase.config';
+import { signOut } from 'firebase/auth';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 export function DashHeader() {
+  const { user } = useAuthUser(auth);
+  const navigate = useNavigate();
+  console.log(user);
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      Swal.fire({
+        icon: 'success',
+        title: 'Signed out successfully',
+        showConfirmButton: false,
+        timer: 1500
+      }).then(() => {
+        navigate('/');
+      });
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error signing out',
+        text: error.message
+      });
+    }
+  };
+
   return (
     <>
       <Navbar className="mx-auto max-w-screen-2xl bg-[#1cacb1] text-white px-4 py-3">
@@ -25,8 +54,10 @@ export function DashHeader() {
             </Button>
           </div>
           <div className="flex">
-            <Button className="mr-2">Logout</Button>
-            <Avatar src="https://docs.material-tailwind.com/img/face-2.jpg" alt="avatar" />
+            <Button onClick={handleLogout} className="mr-2">
+              Logout
+            </Button>
+            <Avatar src={user?.img} alt="avatar" />
           </div>
         </div>
       </Navbar>

@@ -1,20 +1,24 @@
-import { Button, Dialog, DialogBody, Input } from '@material-tailwind/react';
 import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { Button, Dialog, DialogBody, Input } from '@material-tailwind/react';
 import { FaCloudUploadAlt } from 'react-icons/fa';
 import { CiImageOn } from 'react-icons/ci';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
 const CreateEvents = () => {
+  const { register, handleSubmit, reset } = useForm();
   const [open, setOpen] = useState(false);
   const [image, setImage] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
   const [events, setEvents] = useState([]);
-  // console.log(events);
   const [showEvents, setShowEvents] = useState(false);
   const [editEvent, setEditEvent] = useState(null);
   const [loading, setLoading] = useState(false);
-  const handleOpen = () => setOpen((cur) => !cur);
+  const [headlinePreview, setHeadlinePreview] = useState('');
+  const [headlineImageUrl, setHeadlineImageUrl] = useState('');
+
+  const handleOpen = () => setOpen(!open);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -30,29 +34,71 @@ const CreateEvents = () => {
     setImage(null);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append('image', image);
-    formData.append('title', e.target.title.value);
-    formData.append('description', e.target.description.value);
-    formData.append('date', e.target.date.value);
-    formData.append('location', e.target.location.value);
-    formData.append('link', e.target.link.value);
+  const handleImagePreview = async (file, setImagePreview, setImageUrl) => {
+    if (file.length > 0) {
+      const formData = new FormData();
+      formData.append('image', file[0]);
 
-    try {
-      if (editEvent) {
-        await axios.put(`http://localhost:5000/api/v1/events/${editEvent._id}`, formData);
-        Swal.fire('Success', 'Event updated successfully', 'success');
-      } else {
-        await axios.post('http://localhost:5000/api/v1/events', formData);
-        Swal.fire('Success', 'Event added successfully', 'success');
+      try {
+        const response = await axios.post(
+          'https://api.imgbb.com/1/upload?key=f38e45febf287b0c4bc835d28ec2cb8c',
+          formData,
+          {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          }
+        );
+
+        if (response.data && response.data.data && response.data.data.image) {
+          setImagePreview(response.data.data.display_url);
+          setImageUrl(response.data.data.image.url);
+        }
+      } catch (error) {
+        console.error('Error uploading image to imgBB:', error);
       }
-      fetchEvents();
-      handleClose();
+    }
+  };
+
+  const onSubmit = async (data) => {
+    console.log(data);
+    const formData = {
+      ...data,
+      event_image: headlineImageUrl,
+    };
+    try {
+      // const formData = new FormData();
+      // formData.append('image', image);
+      // formData.append('title', data.title);
+      // formData.append('description', data.description);
+      // formData.append('date', data.date);
+      // formData.append('location', data.location);
+      // formData.append('link', data.link);
+
+      const res = editEvent
+        ? await axios.put(`http://localhost:5000/api/v1/events/${editEvent._id}`, formData)
+        : await axios.post('http://localhost:5000/api/v1/events', data);
+      console.log(res);
+
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: editEvent ? 'Event updated successfully' : 'Event added successfully',
+        showConfirmButton: false,
+        timer: 1500
+      });
+
+      fetchEvents(); // Fetch events again after successful submission
+      handleClose(); // Close the dialog/modal
     } catch (error) {
-      console.error('Error submitting form:', error);
-      Swal.fire('Error', 'Error submitting form', 'error');
+      console.error('Error during form submission:', error);
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Error',
+        text: error.message || 'An error occurred. Please try again later.',
+        showConfirmButton: true
+      });
     }
   };
 
@@ -72,25 +118,24 @@ const CreateEvents = () => {
     fetchEvents();
   };
 
-
   const handleDeleteEvent = async (id) => {
     Swal.fire({
-      title: "Are you sure?",
+      title: 'Are you sure?',
       text: "You won't be able to revert this!",
-      icon: "warning",
+      icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!"
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
           await axios.delete(`http://localhost:5000/api/v1/events/${id}`);
           fetchEvents();
           Swal.fire({
-            title: "Deleted!",
-            text: "Event deleted successfully!.",
-            icon: "success"
+            title: 'Deleted!',
+            text: 'Event deleted successfully!',
+            icon: 'success'
           });
         } catch (error) {
           console.error('Error deleting event:', error);
@@ -100,10 +145,10 @@ const CreateEvents = () => {
     });
   };
 
-  const handleEditEvent = () => {
-    // setEditEvent(event);
-    // setPreviewImage(`http://localhost:5000/${event.image}`);
-    // setOpen(true);
+  const handleEditEvent = (event) => {
+    setEditEvent(event);
+    setPreviewImage(event.image); // Assuming event.image is the URL of the image
+    setOpen(true);
   };
 
   const handleClose = () => {
@@ -111,6 +156,7 @@ const CreateEvents = () => {
     setPreviewImage(null);
     setImage(null);
     setEditEvent(null);
+    reset(); // Reset the form fields
   };
 
   return (
@@ -135,9 +181,13 @@ const CreateEvents = () => {
           <DialogBody className="overflow-y-scroll max-h-[90vh] w-full p-5">
             <form
               className="mt-8 mb-2 grid grid-cols-12 gap-6 row-span-full"
-              onSubmit={handleSubmit}>
+              onSubmit={handleSubmit(onSubmit)}>
               <div className="col-span-12 lg:col-span-6">
-                <Input label="Event Title" name="title" defaultValue={editEvent?.title || ''} />
+                <Input
+                  label="Event Title"
+                  {...register('event_title')}
+                  defaultValue={editEvent?.title || ''}
+                />
               </div>
               <div className="col-span-12 lg:col-span-6 row-span-3 ">
                 {previewImage ? (
@@ -146,7 +196,12 @@ const CreateEvents = () => {
                       <img
                         src={previewImage}
                         alt="preview"
+                        {...register('event_image', { required: true })}
+
                         className=" w-32 h-32 object-cover rounded"
+                        onChange={(e) =>
+                          handleImagePreview(e.target.files, setHeadlinePreview, setHeadlineImageUrl)
+                        }
                       />
                       <button
                         type="button"
@@ -165,7 +220,12 @@ const CreateEvents = () => {
                   <label className="cursor-pointer shadow-md border items-center w-full px-3 py-2 rounded-full flex justify-center text-center">
                     <FaCloudUploadAlt className="mr-2" />
                     Upload Event Image
-                    <input type="file" onChange={handleFileChange} className="hidden" />
+                    <input
+                      type="file"
+                      {...register('event_image')}
+                      onChange={handleFileChange}
+                      className="hidden"
+                    />
                   </label>
                 </div>
               </div>
@@ -173,14 +233,14 @@ const CreateEvents = () => {
               <div className="col-span-12 lg:col-span-6">
                 <Input
                   label="Event Short Description"
-                  name="description"
+                  {...register('event_description')}
                   defaultValue={editEvent?.description || ''}
                 />
               </div>
               <div className="col-span-12 lg:col-span-6">
                 <Input
                   label="Date and Time"
-                  name="date"
+                  {...register('date')}
                   type="datetime-local"
                   defaultValue={
                     editEvent ? new Date(editEvent.date).toISOString().substring(0, 16) : ''
@@ -190,12 +250,16 @@ const CreateEvents = () => {
               <div className="col-span-12 lg:col-span-6">
                 <Input
                   label="Location Link"
-                  name="location"
+                  {...register('location')}
                   defaultValue={editEvent?.location || ''}
                 />
               </div>
               <div className="col-span-12 lg:col-span-6">
-                <Input label="Event Link" name="link" defaultValue={editEvent?.link || ''} />
+                <Input
+                  label="Event Link"
+                  {...register('event_link')}
+                  defaultValue={editEvent?.link || ''}
+                />
               </div>
 
               {/* Submit button */}
@@ -252,10 +316,7 @@ const CreateEvents = () => {
                     Event Link
                   </a>
                   <div className="flex justify-between mt-2">
-                    <Button 
-                    onClick={() => handleEditEvent(event)}
-                    
-                    className="bg-[#1cacb1]">
+                    <Button onClick={() => handleEditEvent(event)} className="bg-[#1cacb1]">
                       Edit
                     </Button>
                     <Button onClick={() => handleDeleteEvent(event._id)} className="bg-red-500">

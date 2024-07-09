@@ -7,7 +7,7 @@ import FormData from 'form-data';
 import Swal from 'sweetalert2';
 
 const categoriesWithSubcategories = {
-  'things_to_do': [
+  things_to_do: [
     'attraction_and_tour',
     'arts_and_culture',
     'outdoor_wellness',
@@ -18,14 +18,14 @@ const categoriesWithSubcategories = {
     'luxury',
     'pet_friendly'
   ],
-  'eat_and_drink': ['bars', 'clubs', 'dine_la_resturent', 'bussiness_spotlite'],
+  eat_and_drink: ['bars', 'clubs', 'dine_la_resturent', 'bussiness_spotlite'],
   'find-event': [],
-  "itineraries": [],
-  'where_to_stay': [],
-  'celebrate_la_heritage': ['aapi_heritage', 'black_lA', 'latino_heritage'],
-  'tourist_information': [],
-  "meeting": [],
-  'about_la_tourism': [
+  itineraries: [],
+  where_to_stay: [],
+  celebrate_la_heritage: ['aapi_heritage', 'black_lA', 'latino_heritage'],
+  tourist_information: [],
+  meeting: [],
+  about_la_tourism: [
     'about_la_tourism',
     'travel_trade',
     'membership',
@@ -79,7 +79,6 @@ const AddData = () => {
         }
       } catch (error) {
         console.error('Error uploading image to imgBB:', error);
-        // Handle error as needed
       }
     }
   };
@@ -143,7 +142,7 @@ const AddData = () => {
               <textarea
                 {...register('short_headline_description')}
                 placeholder="Headline Short Description"
-                className="w-full"
+                className="w-full p-2"
               />
               {errors.short_headline_description && (
                 <span className="text-red-600">This field is required</span>
@@ -243,7 +242,7 @@ const AddData = () => {
           <div className="lg:col-span-6 col-span-12 flex flex-col bg-gray-50 shadow-sm p-3">
             <h1 className="mb-5">Headline Image</h1>
             <div className="w-full flex items-center">
-              <label className="w-full p-4 shadow-lg shrink text-center rounded-full border block  items-center">
+              <label className="w-full p-4 cursor-pointer justify-center shadow-lg shrink text-center rounded-full border flex  items-center">
                 <input
                   type="file"
                   id="headline-image"
@@ -274,7 +273,7 @@ const AddData = () => {
           <div className="lg:col-span-6 col-span-12 flex flex-col bg-gray-50 shadow-sm p-3">
             <h1 className="mb-5">Category Image</h1>
             <div className="w-full flex items-center">
-              <label className="w-full p-4 shadow-lg shrink text-center rounded-full border block  items-center">
+              <label className="w-full cursor-pointer justify-center p-4 shadow-lg shrink text-center rounded-full border flex  items-center">
                 <input
                   type="file"
                   id="category-image"
@@ -305,7 +304,7 @@ const AddData = () => {
           <div className="lg:col-span-6 col-span-12 flex flex-col bg-gray-50 shadow-sm p-3">
             <h1 className="mb-5">Subcategory Image</h1>
             <div className="w-full flex items-center">
-              <label className="w-full p-4 shadow-lg shrink text-center rounded-full border block  items-center">
+              <label className=" cursor-pointer w-full p-4 shadow-lg shrink text-center rounded-full border flex justify-center  items-center">
                 <input
                   type="file"
                   id="subcategory-image"
@@ -340,7 +339,7 @@ const AddData = () => {
           <div className="lg:col-span-6 col-span-12 flex flex-col bg-gray-50 shadow-sm p-3">
             <h1 className="mb-5">Type Image</h1>
             <div className="w-full flex items-center">
-              <label className="w-full p-4 shadow-lg shrink text-center rounded-full border block  items-center">
+              <label className=" cursor-pointer w-full p-4 shadow-lg shrink text-center rounded-full border flex justify-center  items-center">
                 <input
                   type="file"
                   id="type-image"

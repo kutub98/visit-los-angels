@@ -1,6 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { createBrowserRouter } from 'react-router-dom';
-import Register from '../Components/Pages/Register';
 import Home from '../Components/Pages/Home';
 import Rootlayout from '../Components/Layouts/Rootlayout';
 import GuideToLosAnglesPark from '../Components/Pages/GuideToLosAnglesPark';
@@ -17,7 +16,7 @@ import VideoStreaming from '../Components/AdminComponents/VideoStreaming/VideoSt
 import AdvertiseImg from '../Components/AdminComponents/AdvertiseImg/AdvertiseImg';
 import CreateEvents from '../Components/AdminComponents/CreateEvents/CreateEvents';
 import WhereToStay from '../Components/AdminComponents/WhereToStay/WhereToStay';
-// import { SingUp } from '../Components/Pages/SignIn';
+
 import Itineraries from '../Components/AdminComponents/Itineraries/Itineraries';
 import TouristInformation from '../Components/AdminComponents/TouristInformation/TouristInformation';
 import Meeting from '../Components/AdminComponents/Meeting/Meeting';
@@ -45,9 +44,8 @@ import Media from '../Components/AdminComponents/AboutTourism/Media';
 import BusinessSpotlight from '../Components/AdminComponents/AboutTourism/BusinessSpotlight';
 import MemberShip from '../Components/AdminComponents/AboutTourism/MemberShip';
 import SignUp from '../Components/Pages/SignIn';
-// import Test2 from '../Components/AdminComponents/AddData/Test2';
 
-// import PrivateRoute from '../Auth/PrivateRoute';
+
 
 const route = createBrowserRouter([
   {
@@ -58,7 +56,6 @@ const route = createBrowserRouter([
       { path: '/', element: <Home></Home> },
       { path: '/Home', element: <Home></Home> },
       { path: '/login', element: <Login></Login> },
-      { path: '/register', element: <Register></Register> },
       { path: '/events', element: <Events /> },
       { path: '/event-hotel', element: <EventHotel /> },
       { path: '/eventHotel', element: <EventHotel /> },
@@ -77,10 +74,7 @@ const route = createBrowserRouter([
         index: 'admin/addData',
         element: <AddData />
       },
-      // {
-      //   path: '/admin/addDataTwo',
-      //   element: <Test2 />
-      // },
+
       {
         path: '/admin/slider',
         element: <AddBanner />

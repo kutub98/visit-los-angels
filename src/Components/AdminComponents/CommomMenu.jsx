@@ -5,7 +5,7 @@ import { Button } from '@material-tailwind/react';
 import Swal from 'sweetalert2';
 import CommonModal from './CommonModal';
 
-const CommonManu = ({datak}) => {
+const CommonManu = ({ datak }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
@@ -14,7 +14,7 @@ const CommonManu = ({datak}) => {
   const fetchEvents = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:5000/api/v1/menu');
+      const response = await axios.get('https://visitlos-server.vercel.app/api/v1/menu');
       const filteredData = response.data.filter((event) => event.category === datak);
       setData(filteredData);
     } catch (error) {
@@ -35,16 +35,16 @@ const CommonManu = ({datak}) => {
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!',
+      confirmButtonText: 'Yes, delete it!'
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:5000/api/v1/menu/${id}`);
+          await axios.delete(`https://visitlos-server.vercel.app/api/v1/menu/${id}`);
           fetchEvents();
           Swal.fire({
             title: 'Deleted!',
             text: 'Event deleted successfully!',
-            icon: 'success',
+            icon: 'success'
           });
         } catch (error) {
           console.error('Error deleting event:', error);
@@ -77,22 +77,14 @@ const CommonManu = ({datak}) => {
                   rel="noopener noreferrer">
                   Event Link
                 </a>
-                <img
-                  src={d.headline_image}
-                  className="w-[500px] h-[250px]"
-                  alt={d.headline}
-                />
+                <img src={d.headline_image} className="w-[500px] h-[250px]" alt={d.headline} />
                 <p>Location: {d.location}</p>
                 <p>Category: {d.category}</p>
                 <div className="flex justify-between mt-2">
-                  <Button
-                    onClick={() => handleEditEvent(d)}
-                    className="bg-[#1cacb1]">
+                  <Button onClick={() => handleEditEvent(d)} className="bg-[#1cacb1]">
                     Edit
                   </Button>
-                  <Button
-                    onClick={() => handleDeleteEvent(d._id)}
-                    className="bg-red-500">
+                  <Button onClick={() => handleDeleteEvent(d._id)} className="bg-red-500">
                     Delete
                   </Button>
                 </div>

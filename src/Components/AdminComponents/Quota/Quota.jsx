@@ -15,7 +15,7 @@ const Quota = () => {
   const fetchQuotas = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:5000/api/v1/quata');
+      const response = await axios.get('https://visitlos-server.vercel.app/api/v1/quata');
       setQuotas(response.data);
       setShowQuotas(true);
     } catch (error) {
@@ -30,22 +30,22 @@ const Quota = () => {
 
   const handleDeleteQuota = async (id) => {
     Swal.fire({
-      title: "Are you sure?",
+      title: 'Are you sure?',
       text: "You won't be able to revert this!",
-      icon: "warning",
+      icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!"
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:5000/api/v1/quata/${id}`);
+          await axios.delete(`https://visitlos-server.vercel.app/api/v1/quata/${id}`);
           fetchQuotas();
           Swal.fire({
-            title: "Deleted!",
-            text: "Your quota has been deleted.",
-            icon: "success"
+            title: 'Deleted!',
+            text: 'Your quota has been deleted.',
+            icon: 'success'
           });
         } catch (error) {
           console.error('Error deleting quota:', error);
@@ -58,7 +58,7 @@ const Quota = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/v1/quota', newQuota);
+      await axios.post('https://visitlos-server.vercel.app/api/v1/quota', newQuota);
       Swal.fire('Success', 'Quota added successfully', 'success');
       fetchQuotas();
       handleClose();
@@ -155,12 +155,10 @@ const Quota = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-5">
               {quotas.map((quota) => (
                 <div key={quota._id} className="p-4 border rounded shadow">
-                  <p className=' font-semibold'>{quota.quata}</p>
-                  <p className="mt-2 font-medium text-blue-400">Created By :  {quota.writer_name}</p>
+                  <p className=" font-semibold">{quota.quata}</p>
+                  <p className="mt-2 font-medium text-blue-400">Created By : {quota.writer_name}</p>
                   <div className="flex justify-between mt-2">
-                    <Button
-                      onClick={() => handleDeleteQuota(quota._id)}
-                      className="bg-red-500">
+                    <Button onClick={() => handleDeleteQuota(quota._id)} className="bg-red-500">
                       Delete
                     </Button>
                   </div>

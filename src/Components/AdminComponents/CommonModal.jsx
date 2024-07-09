@@ -10,7 +10,7 @@ const CommonModal = ({ isOpen, handleClose, eventData, fetchEvents }) => {
     short_headline_description: '',
     event_link: '',
     headline_image: '',
-    location: '',
+    location: ''
   });
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const CommonModal = ({ isOpen, handleClose, eventData, fetchEvents }) => {
         short_headline_description: eventData.short_headline_description,
         event_link: eventData.event_link,
         headline_image: eventData.headline_image,
-        location: eventData.location,
+        location: eventData.location
       });
     }
   }, [eventData]);
@@ -33,13 +33,13 @@ const CommonModal = ({ isOpen, handleClose, eventData, fetchEvents }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/v1/menu/${eventData._id}`, formData);
+      await axios.put(`https://visitlos-server.vercel.app/api/v1/menu/${eventData._id}`, formData);
       fetchEvents();
       handleClose();
       Swal.fire({
         title: 'Updated!',
         text: 'Event updated successfully!',
-        icon: 'success',
+        icon: 'success'
       });
     } catch (error) {
       console.error('Error updating event:', error);
@@ -56,35 +56,30 @@ const CommonModal = ({ isOpen, handleClose, eventData, fetchEvents }) => {
             name="headline"
             value={formData.headline}
             onChange={handleChange}
-            
           />
           <Input
             label="Short Headline Description"
             name="short_headline_description"
             value={formData.short_headline_description}
             onChange={handleChange}
-            
           />
           <Input
             label="Event Link"
             name="event_link"
             value={formData.event_link}
             onChange={handleChange}
-            
           />
           <Input
             label="Headline Image URL"
             name="headline_image"
             value={formData.headline_image}
             onChange={handleChange}
-            
           />
           <Input
             label="Location"
             name="location"
             value={formData.location}
             onChange={handleChange}
-            
           />
         </DialogBody>
         <DialogFooter>

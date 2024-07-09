@@ -42,10 +42,13 @@ const CreateEvents = () => {
 
     try {
       if (editEvent) {
-        await axios.put(`http://localhost:5000/api/v1/events/${editEvent._id}`, formData);
+        await axios.put(
+          `https://visitlos-server.vercel.app/api/v1/events/${editEvent._id}`,
+          formData
+        );
         Swal.fire('Success', 'Event updated successfully', 'success');
       } else {
-        await axios.post('http://localhost:5000/api/v1/events', formData);
+        await axios.post('https://visitlos-server.vercel.app/api/v1/events', formData);
         Swal.fire('Success', 'Event added successfully', 'success');
       }
       fetchEvents();
@@ -59,7 +62,7 @@ const CreateEvents = () => {
   const fetchEvents = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:5000/api/v1/events');
+      const response = await axios.get('https://visitlos-server.vercel.app/api/v1/events');
       setEvents(response.data);
       setShowEvents(true);
     } catch (error) {
@@ -72,25 +75,24 @@ const CreateEvents = () => {
     fetchEvents();
   };
 
-
   const handleDeleteEvent = async (id) => {
     Swal.fire({
-      title: "Are you sure?",
+      title: 'Are you sure?',
       text: "You won't be able to revert this!",
-      icon: "warning",
+      icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!"
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:5000/api/v1/events/${id}`);
+          await axios.delete(`https://visitlos-server.vercel.app/api/v1/events/${id}`);
           fetchEvents();
           Swal.fire({
-            title: "Deleted!",
-            text: "Event deleted successfully!.",
-            icon: "success"
+            title: 'Deleted!',
+            text: 'Event deleted successfully!.',
+            icon: 'success'
           });
         } catch (error) {
           console.error('Error deleting event:', error);
@@ -102,7 +104,7 @@ const CreateEvents = () => {
 
   const handleEditEvent = (event) => {
     setEditEvent(event);
-    setPreviewImage(`http://localhost:5000/${event.image}`);
+    setPreviewImage(`https://visitlos-server.vercel.app/${event.image}`);
     setOpen(true);
   };
 

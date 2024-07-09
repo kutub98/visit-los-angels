@@ -21,7 +21,7 @@ const VideoStreaming = () => {
   const fetchVideos = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:5000/api/v1/video');
+      const response = await axios.get('https://visitlos-server.vercel.app/api/v1/video');
       setVideos(response.data);
     } catch (error) {
       console.error('Error fetching videos:', error);
@@ -40,22 +40,22 @@ const VideoStreaming = () => {
 
   const handleDeleteVideo = async (id) => {
     Swal.fire({
-      title: "Are you sure?",
+      title: 'Are you sure?',
       text: "You won't be able to revert this!",
-      icon: "warning",
+      icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!"
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:5000/api/v1/video/${id}`);
+          await axios.delete(`https://visitlos-server.vercel.app/api/v1/video/${id}`);
           fetchVideos();
           Swal.fire({
-            title: "Deleted!",
-            text: "Your video has been deleted.",
-            icon: "success"
+            title: 'Deleted!',
+            text: 'Your video has been deleted.',
+            icon: 'success'
           });
         } catch (error) {
           console.error('Error deleting video:', error);
@@ -68,7 +68,7 @@ const VideoStreaming = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/v1/video', form);
+      await axios.post('https://visitlos-server.vercel.app/api/v1/video', form);
       Swal.fire('Success', 'Video added successfully', 'success');
       fetchVideos();
       handleClose();
@@ -112,35 +112,34 @@ const VideoStreaming = () => {
             <form className="mt-8 mb-2" onSubmit={handleSubmit}>
               <div className="grid grid-cols-12 gap-2">
                 <div className="w-full lg:col-span-6 col-span-12">
-                  <Input 
-                    label="Video Title" 
-                    name="video_title" 
-                    value={form.video_title} 
-                    onChange={handleChange} 
+                  <Input
+                    label="Video Title"
+                    name="video_title"
+                    value={form.video_title}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="w-full lg:col-span-6 col-span-12">
-                  <Input 
-                    label="Video Short Description" 
-                    name="video_description" 
-                    value={form.video_description} 
-                    onChange={handleChange} 
+                  <Input
+                    label="Video Short Description"
+                    name="video_description"
+                    value={form.video_description}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="w-full lg:col-span-6 col-span-12">
-                  <Input 
-                    label="Video Link" 
-                    name="video_link" 
-                    value={form.video_link} 
-                    onChange={handleChange} 
+                  <Input
+                    label="Video Link"
+                    name="video_link"
+                    value={form.video_link}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
               <div className="flex w-full text-center items-center justify-end">
                 <button
                   type="submit"
-                  className="bg-[#1cacb1] w-56 items-center my-auto text-white px-4 py-2 mt-4 rounded justify-end"
-                >
+                  className="bg-[#1cacb1] w-56 items-center my-auto text-white px-4 py-2 mt-4 rounded justify-end">
                   Submit
                 </button>
               </div>
@@ -157,8 +156,7 @@ const VideoStreaming = () => {
               className="inline w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-gray-600 dark:fill-gray-300"
               viewBox="0 0 100 101"
               fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+              xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
                 fill="currentColor"
@@ -180,8 +178,7 @@ const VideoStreaming = () => {
                 <div
                   key={video._id}
                   className="relative cursor-pointer"
-                  onClick={() => handleVideoClick(video.video_link)}
-                >
+                  onClick={() => handleVideoClick(video.video_link)}>
                   <iframe
                     width="100%"
                     height="200"
@@ -189,8 +186,7 @@ const VideoStreaming = () => {
                     frameBorder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
-                    title={video.video_title}
-                  ></iframe>
+                    title={video.video_title}></iframe>
                   <div className="mt-2">
                     <h3 className="font-semibold">{video.video_title}</h3>
                     <p>{video.video_description}</p>
@@ -201,8 +197,7 @@ const VideoStreaming = () => {
                     onClick={(e) => {
                       e.stopPropagation();
                       handleDeleteVideo(video._id);
-                    }}
-                  >
+                    }}>
                     X
                   </button>
                 </div>

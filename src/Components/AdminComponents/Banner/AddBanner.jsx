@@ -18,7 +18,7 @@ const AddBanner = () => {
   const fetchSliderImages = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:5000/api/v1/slider');
+      const response = await axios.get('https://visitlos-server.vercel.app/api/v1/slider');
       setSliderImages(response.data);
     } catch (error) {
       console.error('Error fetching slider images:', error);
@@ -61,7 +61,7 @@ const AddBanner = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:5000/api/v1/slider/${id}`);
+          await axios.delete(`https://visitlos-server.vercel.app/api/v1/slider/${id}`);
           fetchSliderImages();
           Swal.fire({
             title: 'Deleted!',
@@ -84,7 +84,7 @@ const AddBanner = () => {
     });
 
     try {
-      await axios.post('http://localhost:5000/api/v1/slider', formData, {
+      await axios.post('https://visitlos-server.vercel.app/api/v1/slider', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       Swal.fire('Success', 'Slider images added successfully', 'success');

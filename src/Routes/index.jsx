@@ -16,7 +16,6 @@ import VideoStreaming from '../Components/AdminComponents/VideoStreaming/VideoSt
 import AdvertiseImg from '../Components/AdminComponents/AdvertiseImg/AdvertiseImg';
 import CreateEvents from '../Components/AdminComponents/CreateEvents/CreateEvents';
 import WhereToStay from '../Components/AdminComponents/WhereToStay/WhereToStay';
-
 import Itineraries from '../Components/AdminComponents/Itineraries/Itineraries';
 import TouristInformation from '../Components/AdminComponents/TouristInformation/TouristInformation';
 import Meeting from '../Components/AdminComponents/Meeting/Meeting';
@@ -44,15 +43,36 @@ import Media from '../Components/AdminComponents/AboutTourism/Media';
 import BusinessSpotlight from '../Components/AdminComponents/AboutTourism/BusinessSpotlight';
 import MemberShip from '../Components/AdminComponents/AboutTourism/MemberShip';
 import SingUp from '../Components/Pages/SignIn';
-// import Test2 from '../Components/AdminComponents/AddData/Test2';
-
-// import PrivateRoute from '../Auth/PrivateRoute';
+import Partners from '../Components/AdminComponents/Partners/Partners';
+import AboutTown from '../Components/AdminComponents/AboutTown/AboutTown';
+import LaPerksPass from '../Components/Pages/LaPerksPass';
+import SubmitForm from '../Components/Pages/LaPerksSubmit';
+import AttractionsToursHome from '../Components/Pages/ThingsTodo/AttractionsTours';
+import ArtCultureHome from '../Components/Pages/ThingsTodo/ArtsCulture';
+import OutDoorWellnessHome from '../Components/Pages/ThingsTodo/OutdooWellness';
+import ShoppingHome from '../Components/Pages/ThingsTodo/Shopping';
+import BudgetHome from '../Components/Pages/ThingsTodo/Budget';
+import FamilyHome from '../Components/Pages/ThingsTodo/Family';
+import HiddenGemsHome from '../Components/Pages/ThingsTodo/HiddenGems';
+import LuxuryHome from '../Components/Pages/ThingsTodo/Luxury';
+import PetFriendlyHome from '../Components/Pages/ThingsTodo/PetFriendly';
+import ResearchHome from '../Components/Pages/AboutLaHeritage/Research';
+import MediaHome from '../Components/Pages/AboutLaHeritage/Media';
+import CareersHome from '../Components/Pages/AboutLaHeritage/Careers';
+import MembershipHome from '../Components/Pages/AboutLaHeritage/Membership';
+import TravelTradeHome from '../Components/Pages/AboutLaHeritage/TravelTrade';
+import BusinessSpotlightLaHome from '../Components/Pages/AboutLaHeritage/BusinessSpotlightLaHome';
+import AboutLaTourism from '../Components/Pages/AboutLaTourism';
+import BusinessSpotlightHome from '../Components/Pages/EatDrink/BusinessSpotlight';
+import DineLaRestaurantsHome from '../Components/Pages/EatDrink/DineLaRestaurants';
+import ClubsHome from '../Components/Pages/EatDrink/Clubs';
+import BarsHome from '../Components/Pages/EatDrink/Bars';
+import EatDrink from '../Components/Pages/EatDrink';
 
 const route = createBrowserRouter([
   {
     path: '/',
     element: <Rootlayout></Rootlayout>,
-
     children: [
       { path: '/', element: <Home></Home> },
       { path: '/Home', element: <Home></Home> },
@@ -63,7 +83,31 @@ const route = createBrowserRouter([
       { path: '/guideForPark', element: <GuideToLosAnglesPark /> },
       { path: '/thingstodo', element: <ThingsToDo /> },
       { path: '/signUp', element: <SingUp /> },
-      { path: '/visit', element: <Visit /> }
+      { path: '/visit', element: <Visit /> },
+      { path: '/about-la-tourism', element: <AboutLaTourism /> },
+      { path: '/laPerksPass', element: <LaPerksPass /> },
+      { path: '/submit', element: <SubmitForm /> },
+      { path: '/thingsToDo/attractions-tours', element: <AttractionsToursHome /> },
+      { path: '/thingsToDo/arts-cultures', element: <ArtCultureHome /> },
+      { path: '/thingsToDo/outdoor-wellness', element: <OutDoorWellnessHome /> },
+      { path: '/thingsToDo/shopping', element: <ShoppingHome /> },
+      { path: '/thingsToDo/family', element: <BudgetHome /> },
+      { path: '/thingsToDo/attractions-tours', element: <FamilyHome /> },
+      { path: '/thingsToDo/hidden-gems', element: <HiddenGemsHome /> },
+      { path: '/thingsToDo/luxury', element: <LuxuryHome /> },
+      { path: '/thingsToDo/Budget', element: <BudgetHome /> },
+      { path: '/thingsToDo/pet-friendly', element: <PetFriendlyHome /> },
+      { path: '/about-la-tourism/travel-trade', element: <BusinessSpotlightLaHome /> },
+      { path: '/about-la-tourism/business-spotlight', element: <TravelTradeHome /> },
+      { path: '/about-la-tourism/membership', element: <MembershipHome /> },
+      { path: '/about-la-tourism/careers', element: <CareersHome /> },
+      { path: '/about-la-tourism/media', element: <MediaHome /> },
+      { path: '/eat-drink/business-spotlight', element: <BusinessSpotlightHome /> },
+      { path: '/eat-drink/dine-la-restaurant', element: <DineLaRestaurantsHome /> },
+      { path: '/eat-drink/clubs', element: <ClubsHome /> },
+      { path: '/eat-drink/bars', element: <BarsHome /> },
+      { path: '/about-la-tourism/researches', element: <ResearchHome /> },
+      { path: '/eat-drink', element: <EatDrink /> }
     ]
   },
   {
@@ -103,6 +147,14 @@ const route = createBrowserRouter([
       {
         path: '/admin/whereToStay',
         element: <WhereToStay />
+      },
+      {
+        path: '/admin/partner',
+        element: <Partners />
+      },
+      {
+        path: '/admin/aboutTown',
+        element: <AboutTown />
       },
       {
         path: '/admin/itineraries',

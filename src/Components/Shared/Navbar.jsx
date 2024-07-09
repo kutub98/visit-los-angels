@@ -52,7 +52,7 @@ const Navbar1 = () => {
             </div>
 
             <div>
-              <Link to="/home">
+              <Link onClick={() => setOpenNav(!openNav)} to="/home">
                 <img src={img1} className=" w-20 h-20 md:w-36  " alt="Logo" />
               </Link>
             </div>
@@ -146,51 +146,61 @@ const Navbar1 = () => {
                         </Button>
                       </span>
                       <Link
+                        onClick={() => setOpenNav(!openNav)}
                         className="lg:text-2xl text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                         to="/thingsTodo">
                         Things To Do
                       </Link>
                       <Link
+                        onClick={() => setOpenNav(!openNav)}
                         className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                         to="/thingsToDo/attractions-tours">
                         Attractions & Tours
                       </Link>
                       <Link
+                        onClick={() => setOpenNav(!openNav)}
                         className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                         to="/thingsToDo/arts-cultures">
                         Arts & Cultures
                       </Link>
                       <Link
+                        onClick={() => setOpenNav(!openNav)}
                         className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                         to="/thingsToDo/outdoor-wellness">
                         Outdoor & Wellness
                       </Link>
                       <Link
+                        onClick={() => setOpenNav(!openNav)}
                         className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                         to="/thingsToDo/shopping">
                         Shopping
                       </Link>
                       <Link
+                        onClick={() => setOpenNav(!openNav)}
                         className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                         to="/thingsToDo/Budget">
                         Budget
                       </Link>
                       <Link
+                        onClick={() => setOpenNav(!openNav)}
                         className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                         to="/thingsToDo/family">
                         family
                       </Link>
                       <Link
+                        onClick={() => setOpenNav(!openNav)}
                         className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                         to="/thingsToDo/hidden-gems">
                         Hidden Gems
                       </Link>
                       <Link
+                        onClick={() => setOpenNav(!openNav)}
                         className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                         to="/thingsToDo/luxury">
                         Luxury
                       </Link>
                       <Link
+                        onClick={() => setOpenNav(!openNav)}
                         className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                         to="/thingsToDo/pet-friendly">
                         Pet-Friendly
@@ -224,26 +234,31 @@ const Navbar1 = () => {
                       </Button>
                     </span>
                     <Link
+                      onClick={() => setOpenNav(!openNav)}
                       className="lg:text-2xl text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                       to="/eat-drink">
                       Eat & Drink
                     </Link>
                     <Link
+                      onClick={() => setOpenNav(!openNav)}
                       className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                       to="/eat-drink/bars">
                       Bars
                     </Link>
                     <Link
+                      onClick={() => setOpenNav(!openNav)}
                       className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                       to="/eat-drink/clubs">
                       Clubs
                     </Link>
                     <Link
+                      onClick={() => setOpenNav(!openNav)}
                       className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                       to="/eat-drink/dine-la-restaurant">
                       Dine la Restaurant
                     </Link>
                     <Link
+                      onClick={() => setOpenNav(!openNav)}
                       className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                       to="/eat-drink/business-spotlight">
                       Business Spotlight
@@ -301,26 +316,31 @@ const Navbar1 = () => {
                       </Button>
                     </span>
                     <Link
+                      onClick={() => setOpenNav(!openNav)}
                       className="lg:text-2xl text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                       to="/celebrate-la-heritage">
                       Celebrate la Heritage
                     </Link>
                     <Link
+                      onClick={() => setOpenNav(!openNav)}
                       className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                       to="/celebrate-la-heritage/aapi-heritage">
                       AAPI Heritage
                     </Link>
                     <Link
+                      onClick={() => setOpenNav(!openNav)}
                       className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                       to="/celebrate-la-heritage/black-la">
                       Black LA
                     </Link>
                     <Link
+                      onClick={() => setOpenNav(!openNav)}
                       className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                       to="/celebrate-la-heritage/latino-heritage">
                       Latino Heritage
                     </Link>
                     <Link
+                      onClick={() => setOpenNav(!openNav)}
                       className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                       to="/celebrate-la-heritage/la-fruits">
                       La Fruits
@@ -369,36 +389,43 @@ const Navbar1 = () => {
                     </span>
                     {/* Subcategories for "About LA Tourism" */}
                     <Link
+                      onClick={() => setOpenNav(!openNav)}
                       className="lg:text-2xl text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                       to="/about-la-tourism">
                       About LA Tourism
                     </Link>
                     <Link
+                      onClick={() => setOpenNav(!openNav)}
                       className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                       to="/about-la-tourism/travel-trade">
                       Travel Trade
                     </Link>
                     <Link
+                      onClick={() => setOpenNav(!openNav)}
                       className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                       to="/about-la-tourism/membership">
                       Membership
                     </Link>
                     <Link
+                      onClick={() => setOpenNav(!openNav)}
                       className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                       to="/about-la-tourism/business-spotlight">
                       Business spotlight
                     </Link>
                     <Link
+                      onClick={() => setOpenNav(!openNav)}
                       className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                       to="/about-la-tourism/careers">
                       Careers
                     </Link>
                     <Link
+                      onClick={() => setOpenNav(!openNav)}
                       className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                       to="/about-la-tourism/media">
                       Media
                     </Link>
                     <Link
+                      onClick={() => setOpenNav(!openNav)}
                       className="text-xl flex justify-between text-white font-normal hover:bg-white hover:text-black p-2"
                       to="/about-la-tourism/researches">
                       Researches
@@ -409,6 +436,7 @@ const Navbar1 = () => {
 
                 <div className="max-md-hidden">
                   <Link
+                    onClick={() => setOpenNav(!openNav)}
                     to="/login"
                     className="text-sm  transition-all duration-500 text-white hover:border-b-2">
                     Login
@@ -438,6 +466,7 @@ const Navbar1 = () => {
 
               <div className="md:hidden">
                 <Link
+                  onClick={() => setOpenNav(!openNav)}
                   to="/login"
                   className="text-sm  transition-all duration-500 text-white hover:border-b-2">
                   Login

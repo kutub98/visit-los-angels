@@ -22,7 +22,7 @@ const categoriesWithSubcategories = {
   'find-event': [],
   itineraries: [],
   where_to_stay: [],
-  celebrate_la_heritage: ['aapi_heritage', 'black_lA', 'latino_heritage'],
+  celebrate_la_heritage: ['aapi_heritage', 'black_lA', 'latino_heritage', 'Discover Fruito'],
   tourist_information: [],
   meeting: [],
   about_la_tourism: [

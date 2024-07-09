@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable react/react-in-jsx-scope */
-import { Button, Dialog, DialogBody } from '@material-tailwind/react';
+import { Button, Dialog, DialogBody, Input } from '@material-tailwind/react';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
@@ -51,22 +51,22 @@ const AddBanner = () => {
 
   const handleDeleteSliderImage = async (id) => {
     Swal.fire({
-      title: "Are you sure?",
+      title: 'Are you sure?',
       text: "You won't be able to revert this!",
-      icon: "warning",
+      icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!"
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
           await axios.delete(`http://localhost:5000/api/v1/slider/${id}`);
           fetchSliderImages();
           Swal.fire({
-            title: "Deleted!",
-            text: "Your slider image has been deleted.",
-            icon: "success"
+            title: 'Deleted!',
+            text: 'Your slider image has been deleted.',
+            icon: 'success'
           });
         } catch (error) {
           console.error('Error deleting slider image:', error);
@@ -85,7 +85,7 @@ const AddBanner = () => {
 
     try {
       await axios.post('http://localhost:5000/api/v1/slider', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
+        headers: { 'Content-Type': 'multipart/form-data' }
       });
       Swal.fire('Success', 'Slider images added successfully', 'success');
       fetchSliderImages();
@@ -124,6 +124,12 @@ const AddBanner = () => {
                   Upload Slider Image
                   <input type="file" multiple onChange={handleFileChange} className="hidden" />
                 </label>
+              </div>
+              <div className="w-full my-4">
+                <Input label="Banner Headline" size="lg" />
+              </div>
+              <div className="w-full my-4">
+                <Input label="Banner Description" size="lg" />
               </div>
               <div className="flex flex-wrap gap-3 mt-7 w-full">
                 {previewImages.map((previewUrl, index) => (

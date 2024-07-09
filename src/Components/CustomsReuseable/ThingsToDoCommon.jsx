@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { Carousel } from '@material-tailwind/react';
 // import image1 from '../../assets/image/image (5).jpg';
 import image1 from '../../assets/image/image (5).jpg';
@@ -7,6 +8,7 @@ import image2 from '../../assets/image/perkspass_0.webp';
 import UpCommingEvent from '../UI/UpcomingEvent';
 import NewslaterUp from '../Pages/NewslaterUp';
 import Newslatter from '../Pages/Newslatter';
+import { Link } from 'react-router-dom';
 const ThingsToDoCommon = () => {
   return (
     <div>
@@ -232,9 +234,9 @@ const ThingsToDoCommon = () => {
               Experience the best of LA with unique dining, shopping, activity and entertainment
               offers.
             </h1>
-            <button className=" bg-purple-400 text-white px-5 py-4 uppercase my-4">
+            <Link to="/laPerksPass" className=" bg-purple-400 text-white px-5 py-4 uppercase my-4">
               See Offer
-            </button>
+            </Link>
           </div>
         </div>
       </div>

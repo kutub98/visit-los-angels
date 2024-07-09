@@ -35,9 +35,11 @@ import { LiaUserFriendsSolid } from 'react-icons/lia';
 import { IoBusinessOutline } from 'react-icons/io5';
 import { GrChannel } from 'react-icons/gr';
 import { GiArchiveResearch } from 'react-icons/gi';
+import { PiCityLight } from 'react-icons/pi';
+import { FaHandsHelping } from 'react-icons/fa';
 const DashSideBar = () => {
   const [open, setOpen] = useState(true);
-  const location = useLocation(); // React Router hook to get current location
+  const location = useLocation();
 
   const [openCategories, setOpenCategories] = useState([]);
 
@@ -81,6 +83,17 @@ const DashSideBar = () => {
       icon: <CiYoutube className="h-5 w-5" />,
       link: '/admin/VideoStreaming'
     },
+    {
+      title: 'About Town',
+      icon: <PiCityLight className="h-6 w-6" />,
+      link: '/admin/aboutTown'
+    },
+    {
+      title: 'Partners',
+      icon: <FaHandsHelping className="h-6 w-6" />,
+      link: '/admin/partner'
+    },
+
     {
       title: 'Where To Stay',
       icon: <MdOutlineWhereToVote className="h-5 w-5" />,

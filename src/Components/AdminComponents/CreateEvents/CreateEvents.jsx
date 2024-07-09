@@ -100,10 +100,10 @@ const CreateEvents = () => {
     });
   };
 
-  const handleEditEvent = (event) => {
-    setEditEvent(event);
-    setPreviewImage(`http://localhost:5000/${event.image}`);
-    setOpen(true);
+  const handleEditEvent = () => {
+    // setEditEvent(event);
+    // setPreviewImage(`http://localhost:5000/${event.image}`);
+    // setOpen(true);
   };
 
   const handleClose = () => {
@@ -252,7 +252,10 @@ const CreateEvents = () => {
                     Event Link
                   </a>
                   <div className="flex justify-between mt-2">
-                    <Button onClick={() => handleEditEvent(event)} className="bg-[#1cacb1]">
+                    <Button 
+                    onClick={() => handleEditEvent(event)}
+                    
+                    className="bg-[#1cacb1]">
                       Edit
                     </Button>
                     <Button onClick={() => handleDeleteEvent(event._id)} className="bg-red-500">

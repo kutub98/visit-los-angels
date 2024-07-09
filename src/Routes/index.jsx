@@ -45,8 +45,6 @@ import BusinessSpotlight from '../Components/AdminComponents/AboutTourism/Busine
 import MemberShip from '../Components/AdminComponents/AboutTourism/MemberShip';
 import SignUp from '../Components/Pages/SignIn';
 
-
-
 const route = createBrowserRouter([
   {
     path: '/',

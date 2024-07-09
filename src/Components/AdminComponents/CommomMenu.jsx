@@ -14,7 +14,7 @@ const CommonManu = ({datak}) => {
   const fetchEvents = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:5000/api/v1/menu');
+      const response = await axios.get('https://visitlos-server.vercel.app/api/v1/menu');
       const filteredData = response.data.filter((event) => event.category === datak);
       setData(filteredData);
     } catch (error) {
@@ -39,7 +39,7 @@ const CommonManu = ({datak}) => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:5000/api/v1/menu/${id}`);
+          await axios.delete(`https://visitlos-server.vercel.app/api/v1/menu/${id}`);
           fetchEvents();
           Swal.fire({
             title: 'Deleted!',

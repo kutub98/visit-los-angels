@@ -76,8 +76,8 @@ const CreateEvents = () => {
       // formData.append('link', data.link);
 
       const res = editEvent
-        ? await axios.put(`http://localhost:5000/api/v1/events/${editEvent._id}`, formData)
-        : await axios.post('http://localhost:5000/api/v1/events', data);
+        ? await axios.put(`https://visitlos-server.vercel.app/api/v1/events/${editEvent._id}`, formData)
+        : await axios.post('https://visitlos-server.vercel.app/api/v1/events', data);
       console.log(res);
 
       Swal.fire({
@@ -105,7 +105,7 @@ const CreateEvents = () => {
   const fetchEvents = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:5000/api/v1/events');
+      const response = await axios.get('https://visitlos-server.vercel.app/api/v1/events');
       setEvents(response.data);
       setShowEvents(true);
     } catch (error) {
@@ -130,7 +130,7 @@ const CreateEvents = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:5000/api/v1/events/${id}`);
+          await axios.delete(`https://visitlos-server.vercel.app/api/v1/events/${id}`);
           fetchEvents();
           Swal.fire({
             title: 'Deleted!',

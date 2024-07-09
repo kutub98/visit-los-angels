@@ -15,7 +15,7 @@
 //   const fetchQuotas = async () => {
 //     setLoading(true);
 //     try {
-//       const response = await axios.get('http://localhost:5000/api/v1/quata');
+//       const response = await axios.get('https://visitlos-server.vercel.app/api/v1/quata');
 //       setQuotas(response.data);
 //       setShowQuotas(true);
 //     } catch (error) {
@@ -40,7 +40,7 @@
 //     }).then(async (result) => {
 //       if (result.isConfirmed) {
 //         try {
-//           await axios.delete(`http://localhost:5000/api/v1/quata/${id}`);
+//           await axios.delete(`https://visitlos-server.vercel.app/api/v1/quata/${id}`);
 //           fetchQuotas();
 //           Swal.fire({
 //             title: "Deleted!",
@@ -59,7 +59,7 @@
 //     e.preventDefault();
 //     console.log(newQuota)
 //     try {
-//       await axios.post('http://localhost:5000/api/v1/quota', newQuota);
+//       await axios.post('https://visitlos-server.vercel.app/api/v1/quota', newQuota);
 //       Swal.fire('Success', 'Quota added successfully', 'success');
 //       fetchQuotas();
 //       handleClose();
@@ -195,7 +195,7 @@ const Quota = () => {
   const fetchQuotas = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:5000/api/v1/quata');
+      const response = await axios.get('https://visitlos-server.vercel.app/api/v1/quata');
       setQuotas(response.data);
       setShowQuotas(true);
     } catch (error) {
@@ -220,7 +220,7 @@ const Quota = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:5000/api/v1/quata/${id}`);
+          await axios.delete(`https://visitlos-server.vercel.app/api/v1/quata/${id}`);
           fetchQuotas();
           Swal.fire({
             title: "Deleted!",
@@ -238,7 +238,7 @@ const Quota = () => {
   const onSubmit = async (data) => {
     console.log(data)
     try {
-      await axios.post('http://localhost:5000/api/v1/quata', data);
+      await axios.post('https://visitlos-server.vercel.app/api/v1/quata', data);
       Swal.fire('Success', 'Quota added successfully', 'success');
       fetchQuotas();
       handleClose();

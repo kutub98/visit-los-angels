@@ -33,7 +33,7 @@ const CommonModal = ({ isOpen, handleClose, eventData, fetchEvents }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/v1/menu/${eventData._id}`, formData);
+      await axios.put(`https://visitlos-server.vercel.app/api/v1/menu/${eventData._id}`, formData);
       fetchEvents();
       handleClose();
       Swal.fire({

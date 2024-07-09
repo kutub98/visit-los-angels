@@ -53,7 +53,7 @@ const SignUp = () => {
 
       console.log(userDetails);
 
-      const response = await axios.post('http://localhost:5000/api/v1/auth/register', userDetails);
+      const response = await axios.post('https://visitlos-server.vercel.app/api/v1/auth/register', userDetails);
       console.log('Response:', response.data);
       
       await createUserWithEmailAndPassword(auth, email, password);

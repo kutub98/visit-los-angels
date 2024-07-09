@@ -94,7 +94,7 @@ const AddData = () => {
       };
 
       console.log(formData);
-      const res = await axios.post('http://localhost:5000/api/v1/menu', formData);
+      const res = await axios.post('https://visitlos-server.vercel.app/api/v1/menu', formData);
       console.log(res);
 
       Swal.fire({

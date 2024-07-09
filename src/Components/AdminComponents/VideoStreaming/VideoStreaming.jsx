@@ -21,7 +21,7 @@ const VideoStreaming = () => {
   const fetchVideos = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:5000/api/v1/video');
+      const response = await axios.get('https://visitlos-server.vercel.app/api/v1/video');
       setVideos(response.data);
     } catch (error) {
       console.error('Error fetching videos:', error);
@@ -50,7 +50,7 @@ const VideoStreaming = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:5000/api/v1/video/${id}`);
+          await axios.delete(`https://visitlos-server.vercel.app/api/v1/video/${id}`);
           fetchVideos();
           Swal.fire({
             title: "Deleted!",
@@ -68,7 +68,7 @@ const VideoStreaming = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/v1/video', form);
+      await axios.post('https://visitlos-server.vercel.app/api/v1/video', form);
       Swal.fire('Success', 'Video added successfully', 'success');
       fetchVideos();
       handleClose();

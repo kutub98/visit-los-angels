@@ -121,8 +121,8 @@ const AddData = () => {
       };
 
       console.log(formData);
-      // Replace 'http://localhost:5000/api/v1/menu' with your backend endpoint
-      const res = await axios.post('http://localhost:5000/api/v1/menu', formData);
+      // Replace 'https://visitlos-server.vercel.app/api/v1/menu' with your backend endpoint
+      const res = await axios.post('https://visitlos-server.vercel.app/api/v1/menu', formData);
       console.log(res);
 
       Swal.fire({

@@ -35,7 +35,7 @@ const AdvertiseImg = () => {
     formData.append('image', image);
 
     try {
-      await axios.post('http://localhost:5000/api/v1/advertise', formData, {
+      await axios.post('https://visitlos-server.vercel.app/api/v1/advertise', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -52,7 +52,7 @@ const AdvertiseImg = () => {
   const fetchAdvertisements = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://localhost:5000/api/v1/advertise');
+      const response = await axios.get('https://visitlos-server.vercel.app/api/v1/advertise');
       setAdvertisements(response.data);
       setShowAdvertisements(true);
     } catch (error) {
@@ -77,7 +77,7 @@ const AdvertiseImg = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:5000/api/v1/advertise/${id}`);
+          await axios.delete(`https://visitlos-server.vercel.app/api/v1/advertise/${id}`);
           fetchAdvertisements();
           Swal.fire({
             title: "Deleted!",

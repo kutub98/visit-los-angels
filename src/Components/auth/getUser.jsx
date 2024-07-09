@@ -22,7 +22,7 @@ const useAuthUser = (auth) => {
   }, []);
   useEffect(() => {
     const loader = async () => {
-      const response = await axios.get(`http://localhost:5000/api/v1/users/email/${get?.email}`);
+      const response = await axios.get(`https://visitlos-server.vercel.app/api/v1/users/email/${get?.email}`);
       if (response?.data) {
         setUser(response?.data);
         setLoading(false);

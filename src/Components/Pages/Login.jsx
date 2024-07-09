@@ -26,7 +26,7 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/v1/auth/login', data);
+      const response = await axios.post('https://visitlos-server.vercel.app/api/v1/auth/login', data);
       console.log(response.data);
       await signInWithEmailAndPassword(auth, data.email, data.password);
       Swal.fire({

@@ -13,6 +13,8 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../../firebase.config';
 
 const Login = () => {
   const navigate  = useNavigate( )
@@ -26,6 +28,7 @@ const Login = () => {
     try {
       const response = await axios.post('http://localhost:5000/api/v1/auth/login', data);
       console.log(response.data);
+      await signInWithEmailAndPassword(auth, data.email, data.password);
       Swal.fire({
         title: 'Success!',
         text: 'Account created successfully!',

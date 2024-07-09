@@ -1,33 +1,14 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { Card, Input, Checkbox, Typography, Button } from '@material-tailwind/react';
-import { Card, Input, Checkbox, Typography, Button } from '@material-tailwind/react';
 import axios from 'axios';
-import { useState } from 'react';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { CiImageOn } from 'react-icons/ci';
 import { FaCloudUploadAlt } from 'react-icons/fa';
-import { CiImageOn } from 'react-icons/ci';
-import { FaCloudUploadAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-
-const SignUp = () => {
-  const [previewImage, setPreviewImage] = useState(null);
-  const [imageFile, setImageFile] = useState(null);
-  const navigate = useNavigate();
-
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setPreviewImage(URL.createObjectURL(file));
-      setImageFile(file);
-    }
-  };
-
-  const handleDeleteImage = () => {
-    setPreviewImage(null);
-  };
+import { auth } from '../../../firebase.config';
 
 const SignUp = () => {
   const [previewImage, setPreviewImage] = useState(null);
@@ -53,6 +34,7 @@ const SignUp = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
+    const {email,password} = data;
     try {
       const formData = new FormData();
       formData.append('image', imageFile);
@@ -73,6 +55,8 @@ const SignUp = () => {
 
       const response = await axios.post('http://localhost:5000/api/v1/auth/register', userDetails);
       console.log('Response:', response.data);
+      
+      await createUserWithEmailAndPassword(auth, email, password);
 
       Swal.fire({
         title: 'Success!',
@@ -93,7 +77,6 @@ const SignUp = () => {
     }
   };
 
-
   return (
     <div className="w-full mx-auto">
       <Card color="transparent" shadow={true} className="w-full max-w-5xl lg:p-10 p-6 mx-auto">
@@ -106,15 +89,10 @@ const SignUp = () => {
         <form className="grid grid-cols-12 gap-4" onSubmit={handleSubmit(onSubmit)}>
           <div className="lg:col-span-6 col-span-12 md:col-span-6">
             <Typography variant="h6" color="blue-gray" className="mb-3">
-        <form className="grid grid-cols-12 gap-4" onSubmit={handleSubmit(onSubmit)}>
-          <div className="lg:col-span-6 col-span-12 md:col-span-6">
-            <Typography variant="h6" color="blue-gray" className="mb-3">
               Your Name
             </Typography>
             <Input
               size="lg"
-              label="Your Name"
-              className=""
               label="Your Name"
               className=""
               {...register('username', { required: 'Name is required' })}
@@ -164,8 +142,6 @@ const SignUp = () => {
               size="lg"
               label="Your Email"
               className=""
-              label="Your Email"
-              className=""
               {...register('email', {
                 required: 'Email is required',
                 pattern: {
@@ -178,16 +154,11 @@ const SignUp = () => {
           </div>
           <div className="col-span-12 lg:col-span-6 md:col-span-6">
             <Typography variant="h6" color="blue-gray" className="mb-3">
-          </div>
-          <div className="col-span-12 lg:col-span-6 md:col-span-6">
-            <Typography variant="h6" color="blue-gray" className="mb-3">
               Password
             </Typography>
             <Input
               type="password"
               size="lg"
-              label="Password"
-              className=""
               label="Password"
               className=""
               {...register('password', { required: 'Password is required' })}
@@ -225,9 +196,6 @@ const SignUp = () => {
       </Card>
     </div>
   );
-};
-
-export default SignUp;
 };
 
 export default SignUp;

@@ -3,7 +3,7 @@ import img from '../../assets/image/dave.webp';
 
 const Quata = () => {
   return (
-    <div className=" p-4 mt-5 mb-5 relative">
+    <div className=" relative">
       <div className=" relative">
         <img src={img} alt="" className="w-full h-full object-cover" />
 

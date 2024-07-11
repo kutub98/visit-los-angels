@@ -52,7 +52,7 @@ const Navbar1 = () => {
             </div>
 
             <div>
-              <Link onClick={() => setOpenNav(!openNav)} to="/home">
+              <Link to="/home">
                 <img src={img1} className=" w-20 h-20 md:w-36  " alt="Logo" />
               </Link>
             </div>
@@ -110,15 +110,17 @@ const Navbar1 = () => {
 
         <MobileNav
           open={openNav}
-          className="absolute md:fixed w-full h-screen inset-0 z-50 bg-gradient-to-b from-[#ff9876] via-[#ab67aa] to-[#1cacb1] ">
+          className={`fixed top-0 left-0 w-full h-screen inset-0 z-50 bg-gradient-to-b from-[#ff9876] via-[#ab67aa] to-[#1cacb1] ${
+            openNav ? 'translate-x-0 ' : '-translate-x-full  '
+          }  duration-500`}>
           <div className=" absolute h-screen overflow-scroll w-full customScrollBar">
             <button
               onClick={() => setOpenNav(false)}
-              className="absolute top-4 left-4 text-lg font-bold">
+              className="absolute top-6 left-6 text-lg font-bold">
               <RxCross1 className="text-3xl text-white" />
             </button>
 
-            <div className="p-5 grid md:grid-cols-2 gap-7">
+            <div className="px-5 py-20 left-5 grid md:grid-cols-2 gap-7">
               <div className="pl-8 flex flex-col justify-start menuWithSubCategory">
                 {/* Main Categories */}
                 {activeCategory ? (
